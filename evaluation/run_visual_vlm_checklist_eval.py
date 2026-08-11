@@ -33,6 +33,7 @@ import datetime
 import json
 import os
 import re
+import tempfile
 import time
 import traceback
 from dataclasses import dataclass, field
@@ -185,11 +186,11 @@ def load_tasks(tasks_json_path: str) -> List[Dict[str, Any]]:
     return [normalize_task(task) for task in tasks]
 
 
-def resolve_report_path(report_path: Optional[str], output_dir: str) -> str:
+def resolve_report_path(report_path: Optional[str], output_dir: str, model:str) -> str:
     if report_path:
         return report_path
     output_dir_path = Path(output_dir)
-    return str(output_dir_path.parent / f"evaluation_report_{output_dir_path.name}.json")
+    return str(output_dir_path / f"{model}_evaluation_report_{output_dir_path.name}.json")
 
 
 def compute_acc_from_score(score: float, threshold: float) -> int:
@@ -357,10 +358,52 @@ class ChartImageExporter:
 
         app = self._get_app()
         workbook = None
+        sanitized_xlsx_path = None
         exported_paths: List[str] = []
 
         try:
-            workbook = app.Workbooks.Open(os.path.abspath(xlsx_path))
+            absolute_xlsx_path = os.path.abspath(xlsx_path)
+            open_options = {
+                "UpdateLinks": 0,
+                "ReadOnly": True,
+                "IgnoreReadOnlyRecommended": True,
+                "Notify": False,
+                "AddToMru": False,
+            }
+            try:
+                workbook = app.Workbooks.Open(
+                    Filename=absolute_xlsx_path,
+                    **open_options,
+                )
+            except Exception as normal_open_error:
+                if not OPENPYXL_AVAILABLE:
+                    raise RuntimeError(
+                        "Excel could not open the workbook and openpyxl is unavailable "
+                        "for the temporary sanitized-copy fallback"
+                    ) from normal_open_error
+
+                print(
+                    f"  [Retry] Normal open failed: {normal_open_error}. "
+                    "Trying a temporary copy without external links..."
+                )
+                with tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False) as temp_file:
+                    sanitized_xlsx_path = temp_file.name
+
+                sanitized_workbook = None
+                try:
+                    sanitized_workbook = openpyxl.load_workbook(
+                        absolute_xlsx_path,
+                        keep_links=False,
+                    )
+                    sanitized_workbook.save(sanitized_xlsx_path)
+                finally:
+                    if sanitized_workbook is not None:
+                        sanitized_workbook.close()
+
+                workbook = app.Workbooks.Open(
+                    Filename=sanitized_xlsx_path,
+                    **open_options,
+                )
             out_dir = os.path.abspath(self.output_dir or os.path.dirname(xlsx_path))
             os.makedirs(out_dir, exist_ok=True)
 
@@ -403,6 +446,11 @@ class ChartImageExporter:
                 try:
                     workbook.Close(False)
                 except Exception:
+                    pass
+            if sanitized_xlsx_path and os.path.exists(sanitized_xlsx_path):
+                try:
+                    os.remove(sanitized_xlsx_path)
+                except OSError:
                     pass
 
     def combine_images(self, image_paths: List[str], output_path: str) -> Optional[str]:
@@ -1368,7 +1416,7 @@ def print_summary(summary: Dict[str, Any]):
 
 def main():
     args = parse_args()
-    report_path = resolve_report_path(args.report_path, args.output_dir)
+    report_path = resolve_report_path(args.report_path, args.output_dir, args.model)
     all_tasks = load_tasks(args.tasks_json)
 
     if args.task_ids:

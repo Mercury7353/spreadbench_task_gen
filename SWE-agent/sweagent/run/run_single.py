@@ -226,16 +226,65 @@ def run_from_config(config: RunSingleConfig):
     RunSingle.from_config(config).run()
 
 
-def _prepare_filtered_dataset_mount(dataset_path: Path, target_root: Path) -> Path:
-    """Copy dataset files for Docker, excluding names that contain 'golden'."""
+def _prepare_task_dataset_mount(input_path: Path, relative_input_path: Path, target_root: Path) -> Path:
+    """Create a Docker mount containing only the current task's input file."""
+    if relative_input_path.is_absolute() or ".." in relative_input_path.parts:
+        raise ValueError(f"Spreadsheet path must stay inside the dataset: {relative_input_path}")
 
-    filtered_dataset_path = target_root / dataset_path.name
+    staged_input_path = target_root / relative_input_path
+    staged_input_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(input_path, staged_input_path)
+    return target_root
 
-    def ignore_golden_names(_dir: str, names: list[str]) -> set[str]:
-        return {name for name in names if "golden" in name.lower()}
 
-    shutil.copytree(dataset_path, filtered_dataset_path, ignore=ignore_golden_names)
-    return filtered_dataset_path
+def _mount_targets_path(spec: str, container_path: str, *, mount_syntax: bool = False) -> bool:
+    """Return whether a Docker volume/mount spec targets container_path or one of its children."""
+    if mount_syntax:
+        target = next(
+            (
+                value
+                for field in spec.split(",")
+                for key, separator, value in [field.partition("=")]
+                if separator and key.strip().lower() in {"target", "dst", "destination"}
+            ),
+            "",
+        )
+    else:
+        fields = spec.rsplit(":", 2)
+        if len(fields) == 1:
+            target = fields[0]
+        else:
+            target = fields[-1] if fields[-1].startswith("/") else fields[-2]
+
+    target = target.strip().rstrip("/")
+    container_path = container_path.rstrip("/")
+    return target == container_path or target.startswith(f"{container_path}/")
+
+
+def _replace_dataset_mount(docker_args: list[str], host_path: Path, container_path: str) -> list[str]:
+    """Replace all existing dataset mounts with one read-only task-specific mount."""
+    cleaned_args: list[str] = []
+    i = 0
+    while i < len(docker_args):
+        arg = docker_args[i]
+        if arg in {"-v", "--volume", "--mount"} and i + 1 < len(docker_args):
+            spec = str(docker_args[i + 1])
+            if _mount_targets_path(spec, container_path, mount_syntax=arg == "--mount"):
+                i += 2
+                continue
+        elif arg.startswith(("-v=", "--volume=")):
+            if _mount_targets_path(arg.split("=", 1)[1], container_path):
+                i += 1
+                continue
+        elif arg.startswith("--mount="):
+            if _mount_targets_path(arg.split("=", 1)[1], container_path, mount_syntax=True):
+                i += 1
+                continue
+
+        cleaned_args.append(arg)
+        i += 1
+
+    return [*cleaned_args, "-v", f"{host_path.resolve()}:{container_path}:ro"]
 
 
 def run_from_cli(args: list[str] | None = None):
@@ -261,7 +310,6 @@ def run_from_cli(args: list[str] | None = None):
     config = BasicCLI(RunSingleConfig, help_text=help_text).get_config(remaining_args)  # type: ignore
     
     # If dataset_path is provided, process all tasks from dataset.json
-    filtered_dataset_tempdir = None
     if dataset_path:
         container_data_path = "/mnt/spreadsheet_data"
         
@@ -294,31 +342,11 @@ def run_from_cli(args: list[str] | None = None):
         output_base.mkdir(parents=True, exist_ok=True)
         container_output_root = "/mnt/spreadsheet_output"
 
-        filtered_dataset_tempdir = tempfile.TemporaryDirectory(prefix="sweagent-dataset-")
-        docker_dataset_path = _prepare_filtered_dataset_mount(dataset_path, Path(filtered_dataset_tempdir.name))
-        logger.info(f"Prepared Docker dataset mount without golden files: {docker_dataset_path}")
-
-        # Configure Docker volumes for data binding
+        # Configure the shared output volume. The task-specific input volume is configured in the loop below.
         from swerex.deployment.config import DockerDeploymentConfig
         if isinstance(config.env.deployment, DockerDeploymentConfig):
             if not hasattr(config.env.deployment, 'docker_args') or config.env.deployment.docker_args is None:
                 config.env.deployment.docker_args = []
-
-            # Check if dataset volume is already bound
-            dataset_abs_path = str(docker_dataset_path.resolve())
-            volume_bound = any(
-                arg == "-v" and container_data_path in str(config.env.deployment.docker_args[i+1] if i+1 < len(config.env.deployment.docker_args) else "")
-                for i, arg in enumerate(config.env.deployment.docker_args)
-            )
-            
-            if not volume_bound:
-                # Add volume binding: host_path -> container_path (read-only)
-                # Using :ro to prevent container modifications from affecting host files
-                config.env.deployment.docker_args.extend([
-                    "-v",
-                    f"{dataset_abs_path}:{container_data_path}:ro",
-                ])
-                logger.info(f"Configured Docker volume (read-only): {dataset_abs_path} -> {container_data_path}")
             
             # Check if output volume is already bound
             output_abs_path = str(output_base.resolve())
@@ -343,7 +371,8 @@ def run_from_cli(args: list[str] | None = None):
             logger.info(f"Processing task {idx+1}/{len(dataset)}: {task_id}")
             
             try:
-                host_input_path = dataset_path / task_data['spreadsheet_path']
+                relative_input_path = Path(task_data['spreadsheet_path'])
+                host_input_path = dataset_path / relative_input_path
                 host_output_path = output_base / f"{task_id}_output.xlsx"
                 host_output_path.parent.mkdir(parents=True, exist_ok=True)
                 
@@ -351,29 +380,45 @@ def run_from_cli(args: list[str] | None = None):
                     logger.warning(f"Spreadsheet file missing for task {task_id}: {host_input_path}")
                     continue
                 
-                # Container paths
-                container_input_path = f"{container_data_path}/{task_data['spreadsheet_path']}"
-                container_output_path = f"{container_output_root}/{task_id}_output.xlsx"
-                
-                # Create problem statement from dataset data
-                problem_statement = SpreadsheetProblemStatement(
-                    instruction=task_data['instruction'],
-                    spreadsheet_path=container_input_path,
-                    output_path=container_output_path,
-                    id=task_id,
-                )
-                
-                # Create config for this task
-                task_config = RunSingleConfig(
-                    agent=config.agent,
-                    problem_statement=problem_statement,
-                    env=config.env,
-                    output_dir=output_dir,
-                    actions=config.actions,
-                )
-                
-                # Run the task
-                run_from_config(task_config)
+                with tempfile.TemporaryDirectory(prefix=f"sweagent-task-{task_id}-") as task_tempdir:
+                    docker_dataset_path = _prepare_task_dataset_mount(
+                        host_input_path,
+                        relative_input_path,
+                        Path(task_tempdir),
+                    )
+                    if isinstance(config.env.deployment, DockerDeploymentConfig):
+                        config.env.deployment.docker_args = _replace_dataset_mount(
+                            config.env.deployment.docker_args,
+                            docker_dataset_path,
+                            container_data_path,
+                        )
+                        logger.info(
+                            f"Configured task-only Docker input (read-only): {host_input_path} -> {container_data_path}"
+                        )
+
+                    # Container paths
+                    container_input_path = f"{container_data_path}/{relative_input_path.as_posix()}"
+                    container_output_path = f"{container_output_root}/{task_id}_output.xlsx"
+
+                    # Create problem statement from dataset data
+                    problem_statement = SpreadsheetProblemStatement(
+                        instruction=task_data['instruction'],
+                        spreadsheet_path=container_input_path,
+                        output_path=container_output_path,
+                        id=task_id,
+                    )
+
+                    # Create config for this task
+                    task_config = RunSingleConfig(
+                        agent=config.agent,
+                        problem_statement=problem_statement,
+                        env=config.env,
+                        output_dir=output_dir,
+                        actions=config.actions,
+                    )
+
+                    # Run the task before deleting its temporary input mount.
+                    run_from_config(task_config)
                 
                 logger.info(f"Completed task {task_id}")
                 
@@ -389,9 +434,6 @@ def run_from_cli(args: list[str] | None = None):
                 "Please use --dataset_path to process Excel tasks from dataset.json"
             )
         run_from_config(config)
-
-    if filtered_dataset_tempdir is not None:
-        filtered_dataset_tempdir.cleanup()
 
 
 if __name__ == "__main__":
