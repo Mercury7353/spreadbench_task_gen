@@ -41,6 +41,13 @@ def register_thread_name(name: str) -> None:
     _THREAD_NAME_TO_LOG_SUFFIX[thread_name] = name
 
 
+def get_thread_log_suffix(thread_name: str | None = None) -> str | None:
+    """Return the registered task/log suffix for a thread, if any."""
+    if thread_name is None:
+        thread_name = threading.current_thread().name
+    return _THREAD_NAME_TO_LOG_SUFFIX.get(thread_name)
+
+
 class _RichHandlerWithEmoji(RichHandler):
     def __init__(self, emoji: str, *args, **kwargs):
         """Subclass of RichHandler that adds an emoji to the log message."""
@@ -94,6 +101,7 @@ def add_file_handler(
     path: PurePath | str,
     *,
     filter: str | Callable[[str], bool] | None = None,
+    record_filter: logging.Filter | Callable[[logging.LogRecord], bool] | None = None,
     level: int | str = logging.TRACE,  # type: ignore[attr-defined]
     id_: str = "",
 ) -> str:
@@ -103,6 +111,7 @@ def add_file_handler(
     Args:
         filter: If str: Check that the logger name contains the filter string.
             If callable: Check that the logger name satisfies the condition returned by the callable.
+        record_filter: Optional filter evaluated for every log record handled by this file.
         level: The level of the handler.
         id_: The id of the handler. If not provided, a random id will be generated.
 
@@ -114,6 +123,8 @@ def add_file_handler(
     formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
     handler.setFormatter(formatter)
     handler.setLevel(_interpret_level(level))
+    if record_filter is not None:
+        handler.addFilter(record_filter)
     with _LOG_LOCK:
         # Lock because other thread might be modifying the _SET_UP_LOGGERS set
         for name in _SET_UP_LOGGERS:

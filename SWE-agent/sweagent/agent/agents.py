@@ -724,6 +724,8 @@ class DefaultAgent(AbstractAgent):
                 "message_type": "action",
                 "thinking_blocks": step.thinking_blocks,
                 "reasoning_content": step.reasoning_content,
+                "reasoning_text": step.reasoning_text,
+                "reasoning_items": step.reasoning_items,
                 "reasoning_details": step.reasoning_details,  # MiniMax native field
             },
         )
@@ -1049,6 +1051,8 @@ class DefaultAgent(AbstractAgent):
             step.thought, step.action = self.tools.parse_actions(output)
             step.thinking_blocks = output.get("thinking_blocks", [])
             step.reasoning_content = output.get("reasoning_content")
+            step.reasoning_text = output.get("reasoning_text")
+            step.reasoning_items = output.get("reasoning_items")
             step.reasoning_details = output.get("reasoning_details")  # MiniMax native field
             if output.get("tool_calls") is not None:
                 step.tool_call_ids = [call["id"] for call in output["tool_calls"]]

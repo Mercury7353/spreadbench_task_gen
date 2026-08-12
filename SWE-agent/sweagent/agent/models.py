@@ -57,6 +57,101 @@ warnings.filterwarnings(
 )
 
 
+_REASONING_RESPONSE_FIELDS = ("reasoning_content", "thinking_blocks", "reasoning_items", "reasoning_details")
+
+
+def _to_plain_data(value: Any) -> Any:
+    """Convert LiteLLM/Pydantic response values into JSON-serializable containers."""
+    model_dump = getattr(value, "model_dump", None)
+    if callable(model_dump):
+        try:
+            value = model_dump(mode="json")
+        except TypeError:
+            value = model_dump()
+    else:
+        to_dict = getattr(value, "to_dict", None)
+        if callable(to_dict):
+            value = to_dict()
+
+    if isinstance(value, dict):
+        return {key: _to_plain_data(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_to_plain_data(item) for item in value]
+    return value
+
+
+def _get_present_field(value: Any, field: str) -> tuple[bool, Any]:
+    """Return field presence separately from its value so an empty string is retained."""
+    if isinstance(value, dict):
+        return field in value, value.get(field)
+    if hasattr(value, field):
+        return True, getattr(value, field)
+    return False, None
+
+
+def _collect_display_reasoning(value: Any) -> list[str]:
+    """Collect readable text without traversing encrypted or signed reasoning data."""
+    value = _to_plain_data(value)
+    if isinstance(value, str):
+        return [value] if value.strip() else []
+    if isinstance(value, list):
+        return [text for item in value for text in _collect_display_reasoning(item)]
+    if not isinstance(value, dict):
+        return []
+
+    text_parts = []
+    for key in ("text", "thinking"):
+        text = value.get(key)
+        if isinstance(text, str) and text.strip():
+            text_parts.append(text)
+    for key in ("summary", "content", "details"):
+        if key in value:
+            text_parts.extend(_collect_display_reasoning(value[key]))
+    return text_parts
+
+
+def _join_reasoning_text(parts: list[str]) -> str | None:
+    unique_parts = []
+    seen = set()
+    for part in parts:
+        normalized = part.strip()
+        if normalized and normalized not in seen:
+            unique_parts.append(normalized)
+            seen.add(normalized)
+    return "\n\n".join(unique_parts) or None
+
+
+def _extract_reasoning_fields(message: Any) -> dict[str, Any]:
+    """Extract LiteLLM reasoning fields by response shape instead of model name."""
+    provider_fields_present, provider_fields = _get_present_field(message, "provider_specific_fields")
+    provider_fields = _to_plain_data(provider_fields) if provider_fields_present else {}
+    if not isinstance(provider_fields, dict):
+        provider_fields = {}
+
+    result: dict[str, Any] = {}
+    for field in _REASONING_RESPONSE_FIELDS:
+        present, value = _get_present_field(message, field)
+        if (not present or value is None) and field in provider_fields:
+            present, value = True, provider_fields[field]
+        if present and value is not None:
+            result[field] = _to_plain_data(value)
+
+    reasoning_content = result.get("reasoning_content")
+    if isinstance(reasoning_content, str) and reasoning_content.strip():
+        reasoning_text = reasoning_content.strip()
+    else:
+        reasoning_text = None
+        for field in ("reasoning_items", "thinking_blocks", "reasoning_details"):
+            if field not in result:
+                continue
+            reasoning_text = _join_reasoning_text(_collect_display_reasoning(result[field]))
+            if reasoning_text is not None:
+                break
+    if reasoning_text is not None:
+        result["reasoning_text"] = reasoning_text
+    return result
+
+
 _THREADS_THAT_USED_API_KEYS = []
 """Keeps track of thread orders so that we can choose the same API key for the same thread."""
 
@@ -686,7 +781,7 @@ class LiteLLMModel(AbstractModel):
             GLOBAL_STATS.last_query_timestamp = time.time()
 
     def _single_query(
-        self, messages: list[dict[str, str]], n: int | None = None, temperature: float | None = None
+        self, messages: list[dict[str, Any]], n: int | None = None, temperature: float | None = None
     ) -> list[dict]:
         # # 打印传给模型的messages到JSON文件，用于调试验证
         # import datetime
@@ -702,6 +797,9 @@ class LiteLLMModel(AbstractModel):
                 del message["cache_control"]
             if "thinking_blocks" in message:
                 del message["thinking_blocks"]
+            for field in ("reasoning_items", "reasoning_details"):
+                if field in message:
+                    del message[field]
         input_tokens: int = litellm.utils.token_counter(
             messages=messages_no_cache_control,
             model=self.custom_tokenizer["identifier"] if self.custom_tokenizer is not None else self.config.name,
@@ -779,30 +877,13 @@ class LiteLLMModel(AbstractModel):
                 else:
                     tool_calls = []
                 output_dict["tool_calls"] = tool_calls
-            if (
-                hasattr(response.choices[i].message, "thinking_blocks")  # type: ignore
-                and response.choices[i].message.thinking_blocks  # type: ignore
-            ):
-                output_dict["thinking_blocks"] = response.choices[i].message.thinking_blocks  # type: ignore
-            # Save reasoning_content for thinking models
-            # MiniMax returns reasoning_details in provider_specific_fields, others return reasoning_content on message
-            if "minimax" in self.config.name.lower() or "gemini" in self.config.name.lower() or "gpt" in self.config.name.lower() or "claude" in self.config.name.lower():
-                # MiniMax returns reasoning_details in provider_specific_fields, map to unified reasoning_content
-                provider_fields = getattr(response.choices[i].message, "provider_specific_fields", {}) or {}
-                if reasoning_details := provider_fields.get("reasoning_details"):
-                    output_dict["reasoning_details"] = reasoning_details
-            elif (
-                hasattr(response.choices[i].message, "reasoning_content")  # type: ignore
-                and response.choices[i].message.reasoning_content  # type: ignore
-            ):
-                # DeepSeek/Gemini returns reasoning_content directly on message
-                output_dict["reasoning_content"] = response.choices[i].message.reasoning_content  # type: ignore
+            output_dict.update(_extract_reasoning_fields(response.choices[i].message))  # type: ignore
             outputs.append(output_dict)
         self._update_stats(input_tokens=input_tokens, output_tokens=output_tokens, cost=cost)
         return outputs
 
     def _query(
-        self, messages: list[dict[str, str]], n: int | None = None, temperature: float | None = None
+        self, messages: list[dict[str, Any]], n: int | None = None, temperature: float | None = None
     ) -> list[dict]:
         if n is None:
             return self._single_query(messages, temperature=temperature)
@@ -858,35 +939,11 @@ class LiteLLMModel(AbstractModel):
             return result[0]
         return result
 
-    def _requires_reasoning_content(self) -> bool:
-        """Check if the model requires reasoning_content field for tool calls.
-        
-        This includes:
-        - DeepSeek reasoner models (deepseek-reasoner, deepseek-r1)
-        - GLM models with thinking mode (glm-4.7, glm-4)
-        - MiniMax models with thinking mode (minimax-m2.1)
-        
-        See:
-        - DeepSeek: https://api-docs.deepseek.com/guides/thinking_mode#tool-calls
-        - GLM: Interleaved Thinking + Tool Calling
-        - MiniMax: reasoning_details field with reasoning_split=True
-        """
-        model_name = self.config.name.lower()
-        if "gemini" or "gpt" or "claude" in model_name:
-            return True
-        # GLM models (glm-4.7, glm-5, etc.)
-        if "glm-5" in model_name or "glm5" in model_name:
-            return True
-        if "minimax" or "kimi" or "qwen" or "deepseek" in model_name:
-            return True
-        return False
-
     def _history_to_messages(
         self,
         history: History,
-    ) -> list[dict[str, str]]:
+    ) -> list[dict[str, Any]]:
         history = copy.deepcopy(history)
-        requires_reasoning_content = self._requires_reasoning_content()
 
         def get_role(history_item: HistoryItem) -> str:
             if history_item["role"] == "system":
@@ -905,18 +962,10 @@ class LiteLLMModel(AbstractModel):
                 }
             elif (tool_calls := history_item.get("tool_calls")) is not None:
                 message = {"role": role, "content": history_item["content"], "tool_calls": tool_calls}
-                if thinking_blocks := history_item.get("thinking_blocks"):
-                    message["thinking_blocks"] = thinking_blocks
-                # Models with thinking mode require reasoning_content field for assistant messages with tool calls
-                # to keep the reasoning coherent across turns
-                if requires_reasoning_content and role == "assistant":
-                    if "minimax" in self.config.name.lower() or "gemini" in self.config.name.lower() or "gpt" in self.config.name.lower() or "claude" in self.config.name.lower():
-                        reasoning = history_item.get("reasoning_details") or ""
-                        if reasoning:
-                            message["reasoning_details"] = reasoning
-                    else:
-                        reasoning = history_item.get("reasoning_content") or ""
-                        message["reasoning_content"] = reasoning
+                if role == "assistant":
+                    for field in _REASONING_RESPONSE_FIELDS:
+                        if field in history_item and history_item[field] is not None:
+                            message[field] = history_item[field]
             else:
                 message = {"role": role, "content": history_item["content"]}
             if "cache_control" in history_item:

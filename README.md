@@ -7,7 +7,6 @@
   </p>
 </div>
 
-
 <p align="center">
   <img src="images/overview.png" alt="SpreadsheetBench 2 overview" width="90%">
 </p>
@@ -21,7 +20,6 @@ SpreadsheetBench 2 is a benchmark for evaluating agents on end-to-end business s
 ## 📦 Dataset Introduction
 
 Place the dataset under the `data/` directory. SpreadsheetBench 2 contains four categories:
-
 
 | Category            | Description                              |
 | ------------------- | ---------------------------------------- |
@@ -80,8 +78,15 @@ sweagent run \
   --agent.model.name='openrouter/z-ai/glm-5' \
   --agent.model.api_key='<your_api_key>' \
   --agent.model.completion_kwargs='{"extra_body": {"reasoning": {"enabled": true}}}' \
+  --num_workers 4 \
   --dataset_path ../data/spreadsheetbench-v2/<Category>
 ```
+
+`--num_workers` controls the maximum number of tasks running concurrently and defaults to `1`.
+Each worker starts an independent Docker environment. For every task, only the file selected by
+its `spreadsheet_path` is mounted into that container (read-only); its output directory is also
+private and is copied into the shared results directory after the container stops. Choose the
+worker count according to available Docker resources and the model API's concurrency/rate limits.
 
 Replace `<Category>` with one of:
 
@@ -101,6 +106,7 @@ sweagent run \
   --agent.model.name='openrouter/z-ai/glm-5' \
   --agent.model.api_key='<your_api_key>' \
   --agent.model.completion_kwargs='{"extra_body": {"reasoning": {"enabled": true}}}' \
+  --num_workers 4 \
   --dataset_path ../data/spreadsheetbench-v2/Visualization
 ```
 
@@ -122,6 +128,8 @@ python evaluation/evaluation.py \
   --outputs-dir <path_to_output_excel> \
   --workers <N>
 ```
+
+`--num_workers` is used during agent execution, while evaluation uses its existing `--workers` option.
 
 Results are written to `results/<Category>/`.
 

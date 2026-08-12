@@ -1,12 +1,14 @@
 import asyncio
 import logging
 import shlex
+import subprocess
 from pathlib import PurePath
 from typing import Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field
 from swerex.deployment.abstract import AbstractDeployment
 from swerex.deployment.config import DeploymentConfig, DockerDeploymentConfig, get_deployment
+from swerex.deployment.docker import DockerDeployment
 from swerex.runtime.abstract import (
     BashAction,
     BashInterruptAction,
@@ -19,6 +21,9 @@ from swerex.runtime.abstract import Command as RexCommand
 from sweagent.environment.hooks.abstract import CombinedEnvHooks, EnvHook
 from sweagent.environment.repo import Repo, RepoConfig
 from sweagent.utils.log import get_logger
+
+_DEPLOYMENT_STOP_TIMEOUT = 45
+_FORCE_REMOVE_TIMEOUT = 15
 
 
 class EnvironmentConfig(BaseModel):
@@ -168,8 +173,41 @@ class SWEEnv:
     def close(self) -> None:
         """Shutdown SWE-ReX deployment etc."""
         self.logger.info("Beginning environment shutdown...")
-        asyncio.run(self.deployment.stop())
-        self._chook.on_close()
+        try:
+            asyncio.run(asyncio.wait_for(self.deployment.stop(), timeout=_DEPLOYMENT_STOP_TIMEOUT))
+        except TimeoutError as error:
+            self._force_remove_timed_out_container(error)
+        finally:
+            self._chook.on_close()
+        self.logger.info("Environment shutdown completed")
+
+    def _force_remove_timed_out_container(self, timeout_error: TimeoutError) -> None:
+        if not isinstance(self.deployment, DockerDeployment):
+            raise timeout_error
+
+        container_name = self.deployment.container_name
+        if container_name is None:
+            return
+
+        runtime = self.deployment._config.container_runtime
+        self.logger.warning("Environment shutdown timed out; force-removing container %s", container_name)
+        try:
+            result = subprocess.run(
+                [runtime, "rm", "-f", container_name],
+                capture_output=True,
+                text=True,
+                timeout=_FORCE_REMOVE_TIMEOUT,
+                check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired) as error:
+            raise RuntimeError(
+                f"Failed to force-remove container {container_name}: {error}"
+            ) from timeout_error
+
+        if result.returncode != 0 and "no such container" not in result.stderr.lower():
+            raise RuntimeError(
+                f"Failed to force-remove container {container_name}: {result.stderr.strip()}"
+            ) from timeout_error
 
     # MARK: Helper functions #
 

@@ -27,6 +27,8 @@ class StepOutput(BaseModel):
     tool_call_ids: list[str] | None = None
     thinking_blocks: list[dict[str, Any]] | None = None
     reasoning_content: str | None = None
+    reasoning_text: str | None = None
+    reasoning_items: list[dict[str, Any]] | None = None
     reasoning_details: Any | None = None  # MiniMax native field, can be array type
 
     """State of the environment at the end of the step"""
@@ -73,6 +75,8 @@ class HistoryItem(_HistoryItem, total=False):
     cache_control: dict[str, Any] | None
     thinking_blocks: list[dict[str, Any]] | None
     reasoning_content: str | None
+    reasoning_text: str | None
+    reasoning_items: list[dict[str, Any]] | None
     reasoning_details: Any | None  # MiniMax native field, can be array type
 
     """HistoryProcessors can add these tags to enable special processing"""

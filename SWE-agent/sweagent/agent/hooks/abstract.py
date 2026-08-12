@@ -46,7 +46,10 @@ class AbstractAgentHook:
         action: str = "",
         tool_calls: list[dict[str, str]] | None = None,
         tool_call_ids: list[str] | None = None,
+        thinking_blocks: list[dict[str, Any]] | None = None,
         reasoning_content: str | None = None,
+        reasoning_text: str | None = None,
+        reasoning_items: list[dict[str, Any]] | None = None,
         reasoning_details: Any | None = None,  # MiniMax native field
     ): ...
 
@@ -118,8 +121,10 @@ class CombinedAgentHook(AbstractAgentHook):
         action: str = "",
         tool_calls: list[dict[str, str]] | None = None,
         tool_call_ids: list[str] | None = None,
-        thinking_blocks: list[dict[str, str]] | None = None,
+        thinking_blocks: list[dict[str, Any]] | None = None,
         reasoning_content: str | None = None,
+        reasoning_text: str | None = None,
+        reasoning_items: list[dict[str, Any]] | None = None,
         reasoning_details: Any | None = None,  # MiniMax native field
     ):
         for hook in self.hooks:
@@ -133,7 +138,10 @@ class CombinedAgentHook(AbstractAgentHook):
                 action=action,
                 tool_calls=tool_calls,
                 tool_call_ids=tool_call_ids,
+                thinking_blocks=thinking_blocks,
                 reasoning_content=reasoning_content,
+                reasoning_text=reasoning_text,
+                reasoning_items=reasoning_items,
                 reasoning_details=reasoning_details,
             )
 
