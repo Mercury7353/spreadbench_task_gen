@@ -15,9 +15,12 @@ ENV PATH="$PATH:/root/.local/bin/"
 # Install any extra dependencies
 RUN pip install flake8
 RUN pip install openpyxl numpy pandas matplotlib xlsxwriter
-RUN sed -i 's|deb.debian.org|deb.debian.org|g' /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -y libreoffice libreoffice-script-provider-python
+RUN sed -i \
+    -e 's|http://deb.debian.org|https://mirrors.aliyun.com|g' \
+    -e 's|http://security.debian.org|https://mirrors.aliyun.com/debian-security|g' \
+    /etc/apt/sources.list
+RUN apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=120 update
+RUN apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=120 install -y libreoffice libreoffice-script-provider-python
 
 # Add LibreOffice UNO library to Python path
 ENV PYTHONPATH="/usr/lib/libreoffice/program:/usr/lib/python3/dist-packages:${PYTHONPATH}"

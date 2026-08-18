@@ -1,0 +1,290 @@
+{
+  "task_id": "debugging-04-financial-projection",
+  "category": "debugging",
+  "source": {
+    "slug": "financial-projection",
+    "filename": "Financial Projection Model.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "05_01",
+    "05_02"
+  ],
+  "weaknesses": [
+    "incomplete-target-coverage",
+    "over-editing",
+    "exactness-near-miss"
+  ],
+  "source_case_weaknesses": {
+    "05_01": [
+      "exactness-near-miss",
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "05_02": [
+      "exactness-near-miss",
+      "incomplete-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "8. Income Statement!J6",
+    "8. Income Statement!E40",
+    "8. Income Statement!L60",
+    "8. Income Statement!P18",
+    "8. Income Statement!G41",
+    "8. Income Statement!F47",
+    "8. Income Statement!J17",
+    "8. Income Statement!M16",
+    "12. Income Statement (2)!E41",
+    "12. Income Statement (2)!P26",
+    "12. Income Statement (2)!I35",
+    "12. Income Statement (2)!H60",
+    "12. Income Statement (2)!L48",
+    "12. Income Statement (2)!O54",
+    "12. Income Statement (2)!B10",
+    "12. Income Statement (2)!O11",
+    "15. Income Statement (3)!B49",
+    "15. Income Statement (3)!P42",
+    "15. Income Statement (3)!O66",
+    "15. Income Statement (3)!P44",
+    "15. Income Statement (3)!F19",
+    "15. Income Statement (3)!J22",
+    "15. Income Statement (3)!K53",
+    "15. Income Statement (3)!E41",
+    "20. Amoritization Schedule!N25",
+    "20. Amoritization Schedule!S19",
+    "20. Amoritization Schedule!H25",
+    "20. Amoritization Schedule!K19",
+    "20. Amoritization Schedule!I36",
+    "20. Amoritization Schedule!R45",
+    "20. Amoritization Schedule!O15",
+    "20. Amoritization Schedule!J23"
+  ],
+  "mutations": [
+    {
+      "sheet": "8. Income Statement",
+      "cell": "J6",
+      "operator": "sign_flip",
+      "reference": "='4. Projected Sales Forecast'!M6",
+      "injected": "=-1*('4. Projected Sales Forecast'!M6)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "E40",
+      "operator": "offset",
+      "reference": "='3. Fixed Operating Expenses'!G17",
+      "injected": "=1+('3. Fixed Operating Expenses'!G17)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "L60",
+      "operator": "reference_drift",
+      "reference": "='20. Amoritization Schedule'!N15",
+      "injected": "='20. Amoritization Schedule'!N16"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "P18",
+      "operator": "sign_flip",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$10>0,'5. Projected Sales Forecast (2)'!$E$10*'5. Projected Sales Forecast (2)'!S14,\"\")",
+      "injected": "=-1*(IF('5. Projected Sales Forecast (2)'!$E$10>0,'5. Projected Sales Forecast (2)'!$E$10*'5. Projected Sales Forecast (2)'!S14,\"\"))"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "G41",
+      "operator": "offset",
+      "reference": "=F41",
+      "injected": "=1+(F41)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "F47",
+      "operator": "reference_drift",
+      "reference": "=E47",
+      "injected": "=E48"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "J17",
+      "operator": "sign_flip",
+      "reference": "='4. Projected Sales Forecast'!$E$32*'4. Projected Sales Forecast'!M36",
+      "injected": "=-1*('4. Projected Sales Forecast'!$E$32*'4. Projected Sales Forecast'!M36)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "M16",
+      "operator": "offset",
+      "reference": "='4. Projected Sales Forecast'!$E$10*'4. Projected Sales Forecast'!P14",
+      "injected": "=1+('4. Projected Sales Forecast'!$E$10*'4. Projected Sales Forecast'!P14)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "E41",
+      "operator": "reference_drift",
+      "reference": "='3. Fixed Operating Expenses'!J18/12",
+      "injected": "='3. Fixed Operating Expenses'!J19/12"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "P26",
+      "operator": "sign_flip",
+      "reference": "=O26",
+      "injected": "=-1*(O26)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "I35",
+      "operator": "offset",
+      "reference": "=H35",
+      "injected": "=1+(H35)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "H60",
+      "operator": "reference_drift",
+      "reference": "='20. Amoritization Schedule'!J19",
+      "injected": "='20. Amoritization Schedule'!J20"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "L48",
+      "operator": "sign_flip",
+      "reference": "=K48",
+      "injected": "=-1*(K48)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "O54",
+      "operator": "offset",
+      "reference": "=SUM(O34:O53)",
+      "injected": "=1+(SUM(O34:O53))"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "B10",
+      "operator": "reference_drift",
+      "reference": "='4. Projected Sales Forecast'!A30",
+      "injected": "='4. Projected Sales Forecast'!A31"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "O11",
+      "operator": "sign_flip",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$9>0,'5. Projected Sales Forecast (2)'!$E$9*'5. Projected Sales Forecast (2)'!R15,\"\")",
+      "injected": "=-1*(IF('5. Projected Sales Forecast (2)'!$E$9>0,'5. Projected Sales Forecast (2)'!$E$9*'5. Projected Sales Forecast (2)'!R15,\"\"))"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "B49",
+      "operator": "offset",
+      "reference": "='3. Fixed Operating Expenses'!B26",
+      "injected": "=1+('3. Fixed Operating Expenses'!B26)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "P42",
+      "operator": "reference_drift",
+      "reference": "=O42",
+      "injected": "=O43"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "O66",
+      "operator": "sign_flip",
+      "reference": "=O22-O31-O54-O64",
+      "injected": "=-1*(O22-O31-O54-O64)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "P44",
+      "operator": "offset",
+      "reference": "=O44",
+      "injected": "=1+(O44)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "F19",
+      "operator": "reference_drift",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$32>0,'5. Projected Sales Forecast (2)'!$E$32*'5. Projected Sales Forecast (2)'!I38,\"\")",
+      "injected": "=IF('5. Projected Sales Forecast (2)'!$E$33>0,'5. Projected Sales Forecast (2)'!$E$32*'5. Projected Sales Forecast (2)'!I38,\"\")"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "J22",
+      "operator": "sign_flip",
+      "reference": "=J13-J20",
+      "injected": "=-1*(J13-J20)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "K53",
+      "operator": "offset",
+      "reference": "=J53",
+      "injected": "=1+(J53)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "E41",
+      "operator": "reference_drift",
+      "reference": "='3. Fixed Operating Expenses'!K18/12",
+      "injected": "='3. Fixed Operating Expenses'!K19/12"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "N25",
+      "operator": "sign_flip",
+      "reference": "=M25-N24",
+      "injected": "=-1*(M25-N24)"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "S19",
+      "operator": "offset",
+      "reference": "=SUM(G19:R19)",
+      "injected": "=1+(SUM(G19:R19))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "H25",
+      "operator": "reference_drift",
+      "reference": "=G25-H24",
+      "injected": "=G26-H24"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "K19",
+      "operator": "sign_flip",
+      "reference": "=ABS(IPMT($E$10/12,17,$E$11,$E$9))",
+      "injected": "=-1*(ABS(IPMT($E$10/12,17,$E$11,$E$9)))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "I36",
+      "operator": "offset",
+      "reference": "=ABS(PPMT($E$30/12,3,$E$31,$E$29))",
+      "injected": "=1+(ABS(PPMT($E$30/12,3,$E$31,$E$29)))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "R45",
+      "operator": "reference_drift",
+      "reference": "=Q45-R44",
+      "injected": "=Q46-R44"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "O15",
+      "operator": "sign_flip",
+      "reference": "=ABS(IPMT($E$10/12,9,$E$11,$E$9))",
+      "injected": "=-1*(ABS(IPMT($E$10/12,9,$E$11,$E$9)))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "J23",
+      "operator": "offset",
+      "reference": "=ABS(IPMT($E$10/12,28,$E$11,$E$9))",
+      "injected": "=1+(ABS(IPMT($E$10/12,28,$E$11,$E$9)))"
+    }
+  ]
+}

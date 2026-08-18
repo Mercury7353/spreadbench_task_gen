@@ -1,0 +1,191 @@
+{
+    "id": "f62bf429-68a4-4e32-8ddc-1fcdf73f485d",
+    "task_name": "spreadsheet-eval/debugging-04-financial-projection",
+    "trial_name": "debugging-04-financial-projectio__aL5p7fB",
+    "trial_uri": "file:///Users/mercury/Desktop/kimi-interview/spreadsheetbench-v2/jobs/real-deepseek-full/debugging-04-financial-projectio__aL5p7fB",
+    "task_id": {
+        "path": "SpreadsheetEval/debugging-04-financial-projection"
+    },
+    "source": "SpreadsheetEval",
+    "task_checksum": "bc68a39991b4a4a6f667c0fb47269e3d451f7afdb74cd810abccc5b81d143d74",
+    "config": {
+        "task": {
+            "path": "SpreadsheetEval/debugging-04-financial-projection",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "SpreadsheetEval"
+        },
+        "trial_name": "debugging-04-financial-projectio__aL5p7fB",
+        "trials_dir": "jobs/real-deepseek-full",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "terminus-2",
+            "import_path": null,
+            "model_name": "deepseek/deepseek-chat",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "include_logs": [
+                "**/*"
+            ],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "ignore",
+            "memory_enforcement_policy": "ignore",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [
+            "/workspace/output.xlsx"
+        ],
+        "extra_instruction_paths": [],
+        "job_id": "043f8cb9-081a-4821-8878-91b84424d29a",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "terminus-2",
+        "version": "2.0.0",
+        "model_info": {
+            "name": "deepseek-chat",
+            "provider": "deepseek"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 4166022,
+        "n_cache_tokens": 4067072,
+        "n_output_tokens": 23332,
+        "cost_usd": 0.03177376159999999,
+        "rollout_details": [],
+        "metadata": {
+            "n_episodes": 66,
+            "api_request_times_msec": [
+                5079.391241073608,
+                3221.5890884399414,
+                4821.980953216553,
+                3624.206066131592,
+                5636.291980743408,
+                4649.073839187622,
+                6866.625070571899,
+                3633.3680152893066,
+                3232.2099208831787,
+                4670.478105545044,
+                3661.3948345184326,
+                3724.7989177703857,
+                3243.388891220093,
+                3806.2758445739746,
+                3806.92195892334,
+                3170.793056488037,
+                5076.068162918091,
+                4789.700031280518,
+                5907.057762145996,
+                5584.908008575439,
+                5979.1259765625,
+                10513.959884643555,
+                6502.949953079224,
+                2765.500068664551,
+                4021.419048309326,
+                4473.597764968872,
+                2640.230894088745,
+                5389.652967453003,
+                2489.199161529541,
+                3594.9220657348633,
+                3229.8381328582764,
+                5737.457036972046,
+                4487.339973449707,
+                2427.7589321136475,
+                7359.611988067627,
+                2299.4539737701416,
+                3250.450849533081,
+                4958.12201499939,
+                5726.376056671143,
+                6785.572290420532,
+                3606.8592071533203,
+                4053.8489818573,
+                3090.888023376465,
+                3784.56974029541,
+                4230.532884597778,
+                6394.905805587769,
+                3109.5433235168457,
+                3929.288387298584,
+                3814.8179054260254,
+                4170.508861541748,
+                6788.130044937134,
+                5475.08692741394,
+                9856.287002563477,
+                4033.626079559326,
+                11277.734756469727,
+                6895.305395126343,
+                3528.2859802246094,
+                6183.258056640625,
+                16414.8268699646,
+                10773.060083389282,
+                4878.407716751099,
+                6572.699069976807,
+                5357.561111450195,
+                5820.879220962524,
+                3694.035053253174,
+                3833.2359790802
+            ],
+            "summarization_count": 0
+        }
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-08-18T01:39:20.878359Z",
+    "finished_at": "2026-08-18T01:46:16.080612Z",
+    "environment_setup": {
+        "started_at": "2026-08-18T01:39:20.931680Z",
+        "finished_at": "2026-08-18T01:39:25.134450Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-08-18T01:39:25.134676Z",
+        "finished_at": "2026-08-18T01:39:34.734556Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-08-18T01:39:34.735051Z",
+        "finished_at": "2026-08-18T01:46:04.117512Z"
+    },
+    "verifier": {
+        "started_at": "2026-08-18T01:46:04.783426Z",
+        "finished_at": "2026-08-18T01:46:05.302724Z"
+    },
+    "step_results": null
+}

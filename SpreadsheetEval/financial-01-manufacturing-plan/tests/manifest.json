@@ -1,0 +1,1009 @@
+{
+  "task_id": "financial-01-manufacturing-plan",
+  "category": "financial",
+  "source": {
+    "slug": "manufacturing-plan",
+    "filename": "5 Year Financial Plan for Manufacturing Company.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "04_04",
+    "06_01"
+  ],
+  "weaknesses": [
+    "zero-target-coverage"
+  ],
+  "source_case_weaknesses": {
+    "04_04": [
+      "zero-target-coverage"
+    ],
+    "06_01": [
+      "zero-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "Loan Payment Calculator!F258",
+    "Loan Payment Calculator!G267",
+    "Loan Payment Calculator!E136",
+    "Loan Payment Calculator!G97",
+    "Loan Payment Calculator!G47",
+    "Loan Payment Calculator!D198",
+    "Loan Payment Calculator!E302",
+    "Loan Payment Calculator!G161",
+    "Loan Payment Calculator!F330",
+    "Loan Payment Calculator!E307",
+    "Loan Payment Calculator!E72",
+    "Loan Payment Calculator!F171",
+    "Loan Payment Calculator!D307",
+    "Loan Payment Calculator!F131",
+    "Loan Payment Calculator!G249",
+    "Loan Payment Calculator!D88",
+    "Loan Payment Calculator!D290",
+    "Loan Payment Calculator!D108",
+    "Loan Payment Calculator!D346",
+    "Loan Payment Calculator!G227",
+    "Loan Payment Calculator!D273",
+    "Loan Payment Calculator!G239",
+    "Loan Payment Calculator!F83",
+    "Loan Payment Calculator!F100",
+    "Loan Payment Calculator!G13",
+    "Loan Payment Calculator!F340",
+    "Loan Payment Calculator!G229",
+    "Loan Payment Calculator!D54",
+    "Balance Sheet!E47",
+    "Balance Sheet!E37",
+    "Balance Sheet!H8",
+    "Balance Sheet!F22",
+    "Balance Sheet!G18",
+    "Balance Sheet!G37",
+    "Balance Sheet!F34",
+    "Balance Sheet!D20",
+    "Balance Sheet!I39",
+    "Balance Sheet!E16",
+    "Balance Sheet!D52",
+    "Balance Sheet!D43",
+    "Balance Sheet!F7",
+    "Balance Sheet!E52",
+    "Balance Sheet!I16",
+    "Balance Sheet!F24",
+    "Balance Sheet!G31",
+    "Balance Sheet!G47",
+    "Balance Sheet!E9",
+    "Balance Sheet!H52",
+    "Balance Sheet!F29",
+    "Balance Sheet!E34",
+    "Balance Sheet!I8",
+    "Balance Sheet!F11",
+    "Balance Sheet!F46",
+    "Balance Sheet!H49",
+    "Balance Sheet!F9",
+    "Balance Sheet!E32",
+    "Cash Flow!E9",
+    "Cash Flow!H8",
+    "Cash Flow!G13",
+    "Cash Flow!H12",
+    "Cash Flow!E12",
+    "Cash Flow!F13",
+    "Cash Flow!H11",
+    "Cash Flow!F15",
+    "Cash Flow!E36",
+    "Cash Flow!E28",
+    "Cash Flow!I8",
+    "Cash Flow!I29",
+    "Cash Flow!G21",
+    "Cash Flow!E31",
+    "Cash Flow!F14",
+    "Cash Flow!I21",
+    "Cash Flow!F23",
+    "Cash Flow!H13",
+    "Cash Flow!I12",
+    "Cash Flow!F8",
+    "Cash Flow!D35",
+    "Cash Flow!G8",
+    "Cash Flow!E29",
+    "Cash Flow!G35",
+    "Cash Flow!E23",
+    "Cash Flow!F28",
+    "Cash Flow!E19",
+    "Cash Flow!F26",
+    "Profit and Loss!I25",
+    "Profit and Loss!G21",
+    "Profit and Loss!E28",
+    "Profit and Loss!F27",
+    "Profit and Loss!E48",
+    "Profit and Loss!G44",
+    "Profit and Loss!E44",
+    "Profit and Loss!B2",
+    "Profit and Loss!I26",
+    "Profit and Loss!H17",
+    "Profit and Loss!F37",
+    "Profit and Loss!H30",
+    "Profit and Loss!F39",
+    "Profit and Loss!E17",
+    "Profit and Loss!I29",
+    "Profit and Loss!I21",
+    "Profit and Loss!F46",
+    "Profit and Loss!H33",
+    "Profit and Loss!G37",
+    "Profit and Loss!G31",
+    "Profit and Loss!H13",
+    "Profit and Loss!G39",
+    "Profit and Loss!E15",
+    "Profit and Loss!H25",
+    "Profit and Loss!I13",
+    "Profit and Loss!H27",
+    "Profit and Loss!H32",
+    "Profit and Loss!I27",
+    "Model Inputs!E26",
+    "Model Inputs!E31",
+    "Model Inputs!D31",
+    "Model Inputs!C28",
+    "Model Inputs!F31",
+    "Model Inputs!C33",
+    "Model Inputs!C35",
+    "Model Inputs!D26",
+    "Model Inputs!C31",
+    "Model Inputs!D33",
+    "Model Inputs!C26",
+    "Model Inputs!E33",
+    "Model Inputs!F33",
+    "Model Inputs!F26",
+    "Loan Payment Calculator!G250",
+    "Loan Payment Calculator!G358",
+    "Loan Payment Calculator!D181",
+    "Loan Payment Calculator!D245",
+    "Loan Payment Calculator!G141",
+    "Loan Payment Calculator!F56",
+    "Loan Payment Calculator!F21",
+    "Loan Payment Calculator!D62",
+    "Loan Payment Calculator!G180",
+    "Profit and Loss!E21",
+    "Loan Payment Calculator!D353",
+    "Loan Payment Calculator!F161",
+    "Loan Payment Calculator!D53",
+    "Cash Flow!E21"
+  ],
+  "mutations": [
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F258",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D258"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G267",
+      "operator": "blank_formula",
+      "reference": "=IF(C267>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "E136",
+      "operator": "blank_formula",
+      "reference": "=G136-F136"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G97",
+      "operator": "blank_formula",
+      "reference": "=IF(C97>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G47",
+      "operator": "blank_formula",
+      "reference": "=IF(C47>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D198",
+      "operator": "blank_formula",
+      "reference": "=D197+E197"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "E302",
+      "operator": "blank_formula",
+      "reference": "=G302-F302"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G161",
+      "operator": "blank_formula",
+      "reference": "=IF(C161>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F330",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D330"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "E307",
+      "operator": "blank_formula",
+      "reference": "=G307-F307"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "E72",
+      "operator": "blank_formula",
+      "reference": "=G72-F72"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F171",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D171"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D307",
+      "operator": "blank_formula",
+      "reference": "=D306+E306"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F131",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D131"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G249",
+      "operator": "blank_formula",
+      "reference": "=IF(C249>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D88",
+      "operator": "blank_formula",
+      "reference": "=D87+E87"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D290",
+      "operator": "blank_formula",
+      "reference": "=D289+E289"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D108",
+      "operator": "blank_formula",
+      "reference": "=D107+E107"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D346",
+      "operator": "blank_formula",
+      "reference": "=D345+E345"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G227",
+      "operator": "blank_formula",
+      "reference": "=IF(C227>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D273",
+      "operator": "blank_formula",
+      "reference": "=D272+E272"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G239",
+      "operator": "blank_formula",
+      "reference": "=IF(C239>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F83",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D83"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F100",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D100"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G13",
+      "operator": "blank_formula",
+      "reference": "=IF(C13>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F340",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D340"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G229",
+      "operator": "blank_formula",
+      "reference": "=IF(C229>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D54",
+      "operator": "blank_formula",
+      "reference": "=D53+E53"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E47",
+      "operator": "blank_formula",
+      "reference": "=+D47"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E37",
+      "operator": "blank_formula",
+      "reference": "='Loan Payment Calculator'!D24"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "H8",
+      "operator": "blank_formula",
+      "reference": "=G8"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F22",
+      "operator": "blank_formula",
+      "reference": "=+E22"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G18",
+      "operator": "blank_formula",
+      "reference": "=F18"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G37",
+      "operator": "blank_formula",
+      "reference": "='Loan Payment Calculator'!D48"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F34",
+      "operator": "blank_formula",
+      "reference": "=+E34"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "D20",
+      "operator": "blank_formula",
+      "reference": "=SUM(D15:D18)-D19"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "I39",
+      "operator": "blank_formula",
+      "reference": "=I35+I37+I38"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E16",
+      "operator": "blank_formula",
+      "reference": "=+D16"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "D52",
+      "operator": "blank_formula",
+      "reference": "=D50+D43"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "D43",
+      "operator": "blank_formula",
+      "reference": "=D35+D37+D41"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F7",
+      "operator": "blank_formula",
+      "reference": "=+'Cash Flow'!E36"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E52",
+      "operator": "blank_formula",
+      "reference": "=E50+E43"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "I16",
+      "operator": "blank_formula",
+      "reference": "=+H16"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F24",
+      "operator": "blank_formula",
+      "reference": "=+E24"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G31",
+      "operator": "blank_formula",
+      "reference": "=+F31"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G47",
+      "operator": "blank_formula",
+      "reference": "=F47"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E9",
+      "operator": "blank_formula",
+      "reference": "=D9"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "H52",
+      "operator": "blank_formula",
+      "reference": "=H50+H43"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F29",
+      "operator": "blank_formula",
+      "reference": "=F6"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E34",
+      "operator": "blank_formula",
+      "reference": "=+D34"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "I8",
+      "operator": "blank_formula",
+      "reference": "=H8"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F11",
+      "operator": "blank_formula",
+      "reference": "=+E11"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F46",
+      "operator": "blank_formula",
+      "reference": "=E46"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "H49",
+      "operator": "blank_formula",
+      "reference": "=+G49+'Profit and Loss'!H48"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F9",
+      "operator": "blank_formula",
+      "reference": "=E9"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E32",
+      "operator": "blank_formula",
+      "reference": "=+D32"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E9",
+      "operator": "blank_formula",
+      "reference": "='Profit and Loss'!F26"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "H8",
+      "operator": "blank_formula",
+      "reference": "=+'Profit and Loss'!I48"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G13",
+      "operator": "blank_formula",
+      "reference": "=F13"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "H12",
+      "operator": "blank_formula",
+      "reference": "=+'Balance Sheet'!I30-'Balance Sheet'!H30"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E12",
+      "operator": "blank_formula",
+      "reference": "=+'Balance Sheet'!F30-'Balance Sheet'!E30"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F13",
+      "operator": "blank_formula",
+      "reference": "=E13"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "H11",
+      "operator": "blank_formula",
+      "reference": "=+'Balance Sheet'!H9-'Balance Sheet'!I9"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F15",
+      "operator": "blank_formula",
+      "reference": "=E15"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E36",
+      "operator": "blank_formula",
+      "reference": "=E35+E33"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E28",
+      "operator": "blank_formula",
+      "reference": "=D28"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "I8",
+      "operator": "blank_formula",
+      "reference": "=SUM(D8:H8)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "I29",
+      "operator": "blank_formula",
+      "reference": "=SUM(D29:H29)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G21",
+      "operator": "blank_formula",
+      "reference": "=(-1*MIN(0,SUM('Balance Sheet'!H15:H18)-SUM('Balance Sheet'!G15:G18))-'Profit and Loss'!H41)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E31",
+      "operator": "blank_formula",
+      "reference": "=SUM(E26:E30)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F14",
+      "operator": "blank_formula",
+      "reference": "=E14"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "I21",
+      "operator": "blank_formula",
+      "reference": "=SUM(D21:H21)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F23",
+      "operator": "blank_formula",
+      "reference": "=SUM(F19:F22)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "H13",
+      "operator": "blank_formula",
+      "reference": "=G13"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "I12",
+      "operator": "blank_formula",
+      "reference": "=SUM(D12:H12)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F8",
+      "operator": "blank_formula",
+      "reference": "=+'Profit and Loss'!G48"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "D35",
+      "operator": "blank_formula",
+      "reference": "=+'Balance Sheet'!D7"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G8",
+      "operator": "blank_formula",
+      "reference": "=+'Profit and Loss'!H48"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E29",
+      "operator": "blank_formula",
+      "reference": "=D29"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G35",
+      "operator": "blank_formula",
+      "reference": "=F36"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E23",
+      "operator": "blank_formula",
+      "reference": "=SUM(E19:E22)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F28",
+      "operator": "blank_formula",
+      "reference": "=E28"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E19",
+      "operator": "blank_formula",
+      "reference": "=-1*MAX(0,SUM('Balance Sheet'!F15:F18)-SUM('Balance Sheet'!E15:E18))"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F26",
+      "operator": "blank_formula",
+      "reference": "='Balance Sheet'!G37+'Balance Sheet'!G38-('Balance Sheet'!F37+'Balance Sheet'!F38)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I25",
+      "operator": "blank_formula",
+      "reference": "=+H25*(1+I$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "G21",
+      "operator": "blank_formula",
+      "reference": "=+G17+G19+G20"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "E28",
+      "operator": "blank_formula",
+      "reference": "=+'Balance Sheet'!D18*'Model Inputs'!$C$38"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "F27",
+      "operator": "blank_formula",
+      "reference": "=+E27*(1+F$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "E48",
+      "operator": "blank_formula",
+      "reference": "=E44-E46"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "G44",
+      "operator": "blank_formula",
+      "reference": "=G39+G41+G42"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "E44",
+      "operator": "blank_formula",
+      "reference": "=E39+E41+E42"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "B2",
+      "operator": "blank_formula",
+      "reference": "=+'Model Inputs'!B2"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I26",
+      "operator": "blank_formula",
+      "reference": "=('Balance Sheet'!H15+'Balance Sheet'!H17+'Balance Sheet'!H18)/'Model Inputs'!$C$40*(1+I$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H17",
+      "operator": "blank_formula",
+      "reference": "=H15-H16"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "F37",
+      "operator": "blank_formula",
+      "reference": "=-SUM('Loan Payment Calculator'!F24:F35)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H30",
+      "operator": "blank_formula",
+      "reference": "=+G30*(1+H$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "F39",
+      "operator": "blank_formula",
+      "reference": "=+F35-F37"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "E17",
+      "operator": "blank_formula",
+      "reference": "=E15-E16"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I29",
+      "operator": "blank_formula",
+      "reference": "=+H29*(1+I$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I21",
+      "operator": "blank_formula",
+      "reference": "=+I17+I19+I20"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "F46",
+      "operator": "blank_formula",
+      "reference": "=IF(F44<0,0,$D$46*F44)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H33",
+      "operator": "blank_formula",
+      "reference": "=SUM(H24:H32)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "G37",
+      "operator": "blank_formula",
+      "reference": "=-SUM('Loan Payment Calculator'!F36:F47)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "G31",
+      "operator": "blank_formula",
+      "reference": "=+F31*(1+G$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H13",
+      "operator": "blank_formula",
+      "reference": "=+H7"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "G39",
+      "operator": "blank_formula",
+      "reference": "=+G35-G37"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "E15",
+      "operator": "blank_formula",
+      "reference": "=+'Model Inputs'!C28"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H25",
+      "operator": "blank_formula",
+      "reference": "=+G25*(1+H$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I13",
+      "operator": "blank_formula",
+      "reference": "=+I7"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H27",
+      "operator": "blank_formula",
+      "reference": "=+G27*(1+H$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H32",
+      "operator": "blank_formula",
+      "reference": "=+G32*(1+H$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I27",
+      "operator": "blank_formula",
+      "reference": "=+H27*(1+I$9)"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "E26",
+      "operator": "blank_formula",
+      "reference": "=+E24*E25"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "E31",
+      "operator": "blank_formula",
+      "reference": "=E23"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "D31",
+      "operator": "blank_formula",
+      "reference": "=D23"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "C28",
+      "operator": "blank_formula",
+      "reference": "=SUM(C26:F26)"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "F31",
+      "operator": "blank_formula",
+      "reference": "=F23"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "C33",
+      "operator": "blank_formula",
+      "reference": "=+C26*C32"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "C35",
+      "operator": "blank_formula",
+      "reference": "=SUM(C33:F33)"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "D26",
+      "operator": "blank_formula",
+      "reference": "=+D24*D25"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "C31",
+      "operator": "blank_formula",
+      "reference": "=C23"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "D33",
+      "operator": "blank_formula",
+      "reference": "=+D26*D32"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "C26",
+      "operator": "blank_formula",
+      "reference": "=+C24*C25"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "E33",
+      "operator": "blank_formula",
+      "reference": "=+E26*E32"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "F33",
+      "operator": "blank_formula",
+      "reference": "=+F26*F32"
+    },
+    {
+      "sheet": "Model Inputs",
+      "cell": "F26",
+      "operator": "blank_formula",
+      "reference": "=+F24*F25"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G250",
+      "operator": "blank_formula",
+      "reference": "=IF(C250>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G358",
+      "operator": "blank_formula",
+      "reference": "=IF(C358>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D181",
+      "operator": "blank_formula",
+      "reference": "=D180+E180"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D245",
+      "operator": "blank_formula",
+      "reference": "=D244+E244"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G141",
+      "operator": "blank_formula",
+      "reference": "=IF(C141>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F56",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D56"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F21",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D21"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D62",
+      "operator": "blank_formula",
+      "reference": "=D61+E61"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G180",
+      "operator": "blank_formula",
+      "reference": "=IF(C180>$C$8,0,$C$9)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "E21",
+      "operator": "blank_formula",
+      "reference": "=+E17+E19+E20"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D353",
+      "operator": "blank_formula",
+      "reference": "=D352+E352"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F161",
+      "operator": "blank_formula",
+      "reference": "=-$C$6*D161"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D53",
+      "operator": "blank_formula",
+      "reference": "=D52+E52"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E21",
+      "operator": "blank_formula",
+      "reference": "=(-1*MIN(0,SUM('Balance Sheet'!F15:F18)-SUM('Balance Sheet'!E15:E18))-'Profit and Loss'!F41)"
+    }
+  ]
+}

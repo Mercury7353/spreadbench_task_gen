@@ -1,0 +1,52 @@
+[
+  {
+    "task": "debugging-01-manufacturing-plan",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [],\n  \"extra\": [\n    \"Balance Sheet!D43\",\n    \"Balance Sheet!E43\",\n    \"Balance Sheet!F43\",\n    \"Balance Sheet!G43\",\n    \"Balance Sheet!H43\",\n    \"Balance Sheet!I43\",\n    \"Model Inputs!C31\",\n    \"Model Inputs!C33\",\n    \"Model Inputs!D31\",\n    \"Model Inputs!D33\",\n    \"Model Inputs!E31\",\n    \"Model Inputs!E33\",\n    \"Model Inputs!F31\",\n    \"Model Inputs!F33\"\n  ]\n}"
+  },
+  {
+    "task": "debugging-02-commercial-real-estate",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [],\n  \"extra\": [\n    \"Model!E61\",\n    \"Model!F60\",\n    \"Model!F61\",\n    \"Model!G61\",\n    \"Model!H61\",\n    \"Model!I61\",\n    \"Model!J61\",\n    \"Model!L61\",\n    \"Model!M61\",\n    \"Model!N61\"\n  ]\n}"
+  },
+  {
+    "task": "debugging-03-coal-india",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"P&L!K59\"\n  ],\n  \"extra\": []\n}"
+  },
+  {
+    "task": "debugging-04-financial-projection",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"12. Income Statement (2)!B10\",\n    \"12. Income Statement (2)!E41\",\n    \"12. Income Statement (2)!H60\",\n    \"15. Income Statement (3)!E41\",\n    \"15. Income Statement (3)!F19\",\n    \"15. Income Statement (3)!P42\",\n    \"8. Income Statement!L60\"\n  ],\n  \"extra\": [\n    \"17. Balance Sheet (3)!I13\",\n    \"4. Projected Sales Forecast!H37\",\n    \"4. Projected Sales Forecast!H38\",\n    \"4. Projected Sales Forecast!I37\",\n    \"4. Projected Sales Forecast!I38\",\n    \"4. Projected Sales Forecast!J37\",\n    \"4. Projected Sales Forecast!J38\",\n    \"4. Projected Sales Forecast!K37\",\n    \"4. Projected Sales Forecast!K38\",\n    \"4. Projected Sales Forecast!L37\",\n    \"4. Projected Sales Forecast!L38\",\n    \"4. Projected Sales Forecast!M37\",\n    \"4. Projected Sales Forecast!M38\",\n    \"4. Projected Sales Forecast!N37\",\n    \"4. Projected Sales Forecast!N38\",\n    \"4. Projected Sales Forecast!O37\",\n    \"4. Projected Sales Forecast!O38\",\n    \"4. Projected Sales Forecast!P37\",\n    \"4. Projected Sales Forecast!P38\",\n    \"4. Projected Sales Forecast!Q37\",\n    \"4. Projected Sales Forecast!Q38\",\n    \"4. Projected Sales Forecast!R37\",\n    \"4. Projected Sales Forecast!R38\",\n    \"4. Projected Sales Forecast!S37\",\n    \"4. Projected Sales Forecast!S38\",\n    \"5. Projected Sales Forecast (2)!H37\",\n    \"5. Projected Sales Forecast (2)!H38\",\n    \"5. Projected Sales Forecast (2)!I37\",\n    \"5. Projected Sales Forecast (2)!I38\",\n    \"5. Projected Sales Forecast (2)!J37\",\n    \"5. Projected Sales Forecast (2)!J38\",\n    \"5. Projected Sales Forecast (2)!K37\",\n    \"5. Projected Sales Forecast (2)!K38\",\n    \"5. Projected Sales Forecast (2)!L37\",\n    \"5. Projected Sales Forecast (2)!L38\",\n    \"5. Projected Sales Forecast (2)!M37\",\n    \"5. Projected Sales Forecast (2)!M38\",\n    \"5. Projected Sales Forecast (2)!N37\",\n    \"5. Projected Sales Forecast (2)!N38\",\n    \"5. Projected Sales Forecast (2)!O37\",\n    \"5. Projected Sales Forecast (2)!O38\",\n    \"5. Projected Sales Forecast (2)!P37\",\n    \"5. Projected Sales Forecast (2)!P38\",\n    \"5. Projected Sales Forecast (2)!Q37\",\n    \"5. Projected Sales Forecast (2)!Q38\",\n    \"5. Projected Sales Forecast (2)!R37\",\n    \"5. Projected Sales Forecast (2)!R38\",\n    \"5. Projected Sales Forecast (2)!S37\",\n    \"5. Projected Sales Forecast (2)!S38\"\n  ]\n}"
+  },
+  {
+    "task": "debugging-05-project-finance",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"CFS!L23\",\n    \"CFS!R14\",\n    \"Construction!AB16\",\n    \"P&L!AP11\",\n    \"Ratios!AC12\",\n    \"Ratios!AI10\",\n    \"Ratios!Y15\"\n  ],\n  \"extra\": []\n}"
+  },
+  {
+    "task": "financial-01-manufacturing-plan",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"Balance Sheet!E32\",\n    \"Balance Sheet!F11\",\n    \"Balance Sheet!F22\",\n    \"Balance Sheet!F24\",\n    \"Balance Sheet!F29\",\n    \"Balance Sheet!F7\",\n    \"Balance Sheet!G18\",\n    \"Balance Sheet!G31\",\n    \"Balance Sheet!G47\",\n    \"Cash Flow!E29\",\n    \"Cash Flow!F26\",\n    \"Cash Flow!F8\",\n    \"Cash Flow!G21\",\n    \"Cash Flow!G35\",\n    \"Cash Flow!H11\",\n    \"Cash Flow!I12\",\n    \"Cash Flow!I21\",\n    \"Model Inputs!C31\",\n    \"Model Inputs!D31\",\n    \"Model Inputs!E31\",\n    \"Model Inputs!F31\",\n    \"Profit and Loss!B2\"\n  ],\n  \"extra\": [\n    \"Cash Flow!I35\",\n    \"Cash Flow!I36\"\n  ]\n}"
+  },
+  {
+    "task": "financial-02-commercial-real-estate",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [],\n  \"extra\": [\n    \"Model!D72\"\n  ]\n}"
+  },
+  {
+    "task": "financial-03-coal-india",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"Assumptions!I60\",\n    \"BS!F40\",\n    \"BS!F9\",\n    \"BS!K18\",\n    \"BS!K21\",\n    \"BS!K33\",\n    \"BS!O39\",\n    \"BS!O4\",\n    \"BS!O40\",\n    \"CF!G12\",\n    \"CF!G33\",\n    \"CF!J7\",\n    \"CF!N42\",\n    \"CF!O10\",\n    \"CF!O32\",\n    \"CF!O42\",\n    \"P&L!G22\",\n    \"P&L!J22\",\n    \"P&L!K7\",\n    \"P&L!O28\",\n    \"P&L!O33\",\n    \"P&L!O34\",\n    \"Reserves!F13\",\n    \"Reserves!F4\",\n    \"Reserves!G10\",\n    \"Reserves!K11\",\n    \"Reserves!K9\",\n    \"Reserves!N13\",\n    \"Reserves!O13\",\n    \"Reserves!O19\",\n    \"Valuation!G14\",\n    \"Valuation!H19\",\n    \"Valuation!I20\",\n    \"Valuation!L19\",\n    \"Valuation!L24\",\n    \"Valuation!L41\",\n    \"Valuation!L43\",\n    \"Valuation!L53\",\n    \"Valuation!M11\",\n    \"Valuation!M14\",\n    \"Valuation!M20\",\n    \"Valuation!M35\",\n    \"Valuation!M47\",\n    \"Valuation!M54\",\n    \"Valuation!O16\",\n    \"Valuation!P39\",\n    \"Valuation!R40\",\n    \"Valuation!S44\",\n    \"Valuation!T37\",\n    \"Valuation!T40\",\n    \"Valuation!U42\",\n    \"Valuation!V34\",\n    \"Valuation!V54\"\n  ],\n  \"extra\": []\n}"
+  },
+  {
+    "task": "financial-04-financial-projection",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"13. Cash Flow Statement (2)!Q28\",\n    \"15. Income Statement (3)!B10\",\n    \"15. Income Statement (3)!B52\"\n  ],\n  \"extra\": [\n    \"12. Income Statement (2)!Q70\",\n    \"12. Income Statement (2)!Q71\",\n    \"13. Cash Flow Statement (2)!Q37\",\n    \"13. Cash Flow Statement (2)!Q8\",\n    \"15. Income Statement (3)!Q70\",\n    \"15. Income Statement (3)!Q71\",\n    \"16. Cash Flow Statement (3)!Q33\",\n    \"16. Cash Flow Statement (3)!Q37\",\n    \"16. Cash Flow Statement (3)!Q40\",\n    \"16. Cash Flow Statement (3)!Q8\",\n    \"20. Amoritization Schedule!S17\",\n    \"20. Amoritization Schedule!S21\",\n    \"20. Amoritization Schedule!S25\",\n    \"20. Amoritization Schedule!S37\",\n    \"20. Amoritization Schedule!S41\",\n    \"20. Amoritization Schedule!S45\",\n    \"8. Income Statement!Q70\",\n    \"8. Income Statement!Q71\",\n    \"9. Cash Flow Statement!Q33\",\n    \"9. Cash Flow Statement!Q37\",\n    \"9. Cash Flow Statement!Q40\",\n    \"9. Cash Flow Statement!Q8\"\n  ]\n}"
+  },
+  {
+    "task": "financial-05-project-finance",
+    "reward": 0.0,
+    "verifier_stdout": "{\n  \"reason\": \"modified_set_mismatch\",\n  \"missing\": [\n    \"Balance Sheet!F14\",\n    \"CFS!AS25\",\n    \"Operation!AC20\",\n    \"Operation!AD20\",\n    \"Operation!K14\",\n    \"Operation!L14\",\n    \"Operation!M21\",\n    \"Operation!N21\",\n    \"Operation!S8\",\n    \"Operation!T8\",\n    \"P&L!AS23\",\n    \"Ratios!F16\"\n  ],\n  \"extra\": []\n}"
+  }
+]

@@ -1,0 +1,449 @@
+{
+  "task_id": "financial-02-commercial-real-estate",
+  "category": "financial",
+  "source": {
+    "slug": "commercial-real-estate",
+    "filename": "Commercial Real Estate Valuation Model.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "06_02",
+    "06_03"
+  ],
+  "weaknesses": [
+    "zero-target-coverage"
+  ],
+  "source_case_weaknesses": {
+    "06_02": [
+      "zero-target-coverage"
+    ],
+    "06_03": [
+      "zero-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "Model!J35",
+    "Model!F51",
+    "Model!H43",
+    "Model!H49",
+    "Model!K62",
+    "Model!K75",
+    "Model!G46",
+    "Model!L57",
+    "Model!G58",
+    "Model!E42",
+    "Model!M67",
+    "Model!K56",
+    "Model!I61",
+    "Model!J47",
+    "Model!N72",
+    "Model!L61",
+    "Model!M51",
+    "Model!J43",
+    "Model!M49",
+    "Model!G45",
+    "Model!N59",
+    "Model!E85",
+    "Model!H56",
+    "Model!C28",
+    "Model!G75",
+    "Model!G51",
+    "Model!H75",
+    "Model!G47",
+    "Model!K46",
+    "Model!O58",
+    "Model!O46",
+    "Model!M35",
+    "Model!L43",
+    "Model!M45",
+    "Model!I65",
+    "Model!I74",
+    "Model!F56",
+    "Model!G66",
+    "Model!E82",
+    "Model!G56",
+    "Model!E66",
+    "Model!J65",
+    "Model!C24",
+    "Model!K74",
+    "Model!O73",
+    "Model!L75",
+    "Model!E60",
+    "Model!H34",
+    "Model!E87",
+    "Model!K58",
+    "Model!G48",
+    "Model!J45",
+    "Model!K50",
+    "Model!K42",
+    "Model!N73",
+    "Model!O72",
+    "Model!E72",
+    "Model!L74",
+    "Model!H59",
+    "Model!I56"
+  ],
+  "mutations": [
+    {
+      "sheet": "Model",
+      "cell": "J35",
+      "operator": "blank_formula",
+      "reference": "=J34/((1+$C$14)^J33)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "F51",
+      "operator": "blank_formula",
+      "reference": "=F49+F50"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H43",
+      "operator": "blank_formula",
+      "reference": "=-(H42*$C$5)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H49",
+      "operator": "blank_formula",
+      "reference": "=H46+H47+H48"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K62",
+      "operator": "blank_formula",
+      "reference": "=K50"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K75",
+      "operator": "blank_formula",
+      "reference": "=K73+K74"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G46",
+      "operator": "blank_formula",
+      "reference": "=SUM(G44:G45)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L57",
+      "operator": "blank_formula",
+      "reference": "=L43"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G58",
+      "operator": "blank_formula",
+      "reference": "=G44"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E42",
+      "operator": "blank_formula",
+      "reference": "=C4"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M67",
+      "operator": "blank_formula",
+      "reference": "=M65/M66"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K56",
+      "operator": "blank_formula",
+      "reference": "=K42"
+    },
+    {
+      "sheet": "Model",
+      "cell": "I61",
+      "operator": "blank_formula",
+      "reference": "=H61"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J47",
+      "operator": "blank_formula",
+      "reference": "=J74"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N72",
+      "operator": "blank_formula",
+      "reference": "=M76"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L61",
+      "operator": "blank_formula",
+      "reference": "=K61"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M51",
+      "operator": "blank_formula",
+      "reference": "=M49+M50"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J43",
+      "operator": "blank_formula",
+      "reference": "=-(J42*$C$5)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M49",
+      "operator": "blank_formula",
+      "reference": "=M46+M47+M48"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G45",
+      "operator": "blank_formula",
+      "reference": "=F45*(1+$C$8)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N59",
+      "operator": "blank_formula",
+      "reference": "=M59*(1+$C$8)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E85",
+      "operator": "blank_formula",
+      "reference": "=-(C24+(SUM(E48:N48)))"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H56",
+      "operator": "blank_formula",
+      "reference": "=H42"
+    },
+    {
+      "sheet": "Model",
+      "cell": "C28",
+      "operator": "blank_formula",
+      "reference": "=C24-C27"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G75",
+      "operator": "blank_formula",
+      "reference": "=G73+G74"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G51",
+      "operator": "blank_formula",
+      "reference": "=G49+G50"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H75",
+      "operator": "blank_formula",
+      "reference": "=H73+H74"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G47",
+      "operator": "blank_formula",
+      "reference": "=G74"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K46",
+      "operator": "blank_formula",
+      "reference": "=SUM(K44:K45)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "O58",
+      "operator": "blank_formula",
+      "reference": "=O44"
+    },
+    {
+      "sheet": "Model",
+      "cell": "O46",
+      "operator": "blank_formula",
+      "reference": "=SUM(O44:O45)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M35",
+      "operator": "blank_formula",
+      "reference": "=M34/((1+$C$14)^M33)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L43",
+      "operator": "blank_formula",
+      "reference": "=-(L42*$C$5)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M45",
+      "operator": "blank_formula",
+      "reference": "=L45*(1+$C$8)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "I65",
+      "operator": "blank_formula",
+      "reference": "=SUM(I63:I64)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "I74",
+      "operator": "blank_formula",
+      "reference": "=$C$10*-I72"
+    },
+    {
+      "sheet": "Model",
+      "cell": "F56",
+      "operator": "blank_formula",
+      "reference": "=F42"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G66",
+      "operator": "blank_formula",
+      "reference": "=(1+$C$13)^G55"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E82",
+      "operator": "blank_formula",
+      "reference": "=E80/E81"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G56",
+      "operator": "blank_formula",
+      "reference": "=G42"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E66",
+      "operator": "blank_formula",
+      "reference": "=(1+$C$13)^E55"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J65",
+      "operator": "blank_formula",
+      "reference": "=SUM(J63:J64)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "C24",
+      "operator": "blank_formula",
+      "reference": "=(E46/(C17*100))*100"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K74",
+      "operator": "blank_formula",
+      "reference": "=$C$10*-K72"
+    },
+    {
+      "sheet": "Model",
+      "cell": "O73",
+      "operator": "blank_formula",
+      "reference": "=N73"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L75",
+      "operator": "blank_formula",
+      "reference": "=L73+L74"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E60",
+      "operator": "blank_formula",
+      "reference": "=SUM(E58:E59)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H34",
+      "operator": "blank_formula",
+      "reference": "=H67"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E87",
+      "operator": "blank_formula",
+      "reference": "=E86*C22"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K58",
+      "operator": "blank_formula",
+      "reference": "=K44"
+    },
+    {
+      "sheet": "Model",
+      "cell": "G48",
+      "operator": "blank_formula",
+      "reference": "=F48"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J45",
+      "operator": "blank_formula",
+      "reference": "=I45*(1+$C$8)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K50",
+      "operator": "blank_formula",
+      "reference": "=($C$21*-K49)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K42",
+      "operator": "blank_formula",
+      "reference": "=J42*(1+$C$7)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N73",
+      "operator": "blank_formula",
+      "reference": "=M73"
+    },
+    {
+      "sheet": "Model",
+      "cell": "O72",
+      "operator": "blank_formula",
+      "reference": "=N76"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E72",
+      "operator": "blank_formula",
+      "reference": "=C24*C9"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L74",
+      "operator": "blank_formula",
+      "reference": "=$C$10*-L72"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H59",
+      "operator": "blank_formula",
+      "reference": "=G59*(1+$C$8)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "I56",
+      "operator": "blank_formula",
+      "reference": "=I42"
+    }
+  ]
+}

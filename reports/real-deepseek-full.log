@@ -1,0 +1,20 @@
+  10/10 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1:04:54 0:00:00
+SpreadsheetEval • terminus-2 • deepseek-chat
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│     10 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │    10 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 1h 4m 54s
+Results written to jobs/real-deepseek-full/result.json
+Inspect results by running `harbor view jobs`
+Share results by running `harbor upload jobs/real-deepseek-full`
+

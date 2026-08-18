@@ -1,0 +1,1 @@
+Audit and repair all incorrect formulas in the provided commercial-real-estate financial model. Change only defective cells; preserve every correct value, formula, formatting element, sheet name, and workbook structure. Save the repaired workbook as /workspace/output.xlsx.

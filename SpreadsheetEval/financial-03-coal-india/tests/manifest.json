@@ -1,0 +1,940 @@
+{
+  "task_id": "financial-03-coal-india",
+  "category": "financial",
+  "source": {
+    "slug": "coal-india",
+    "filename": "Coal India Limited Financial Model & Valuation.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "06_04",
+    "06_05"
+  ],
+  "weaknesses": [
+    "zero-target-coverage",
+    "incomplete-target-coverage"
+  ],
+  "source_case_weaknesses": {
+    "06_04": [
+      "incomplete-target-coverage"
+    ],
+    "06_05": [
+      "zero-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "Valuation!U42",
+    "Valuation!I20",
+    "Valuation!M35",
+    "Valuation!P39",
+    "Valuation!M54",
+    "Valuation!L53",
+    "Valuation!V54",
+    "Valuation!L19",
+    "Valuation!T37",
+    "Valuation!L24",
+    "Valuation!L41",
+    "Valuation!R40",
+    "Valuation!G14",
+    "Valuation!O16",
+    "Valuation!H19",
+    "Valuation!M11",
+    "Valuation!M20",
+    "Valuation!M47",
+    "Valuation!L43",
+    "Valuation!M14",
+    "Valuation!T40",
+    "CF!L14",
+    "CF!H26",
+    "CF!K15",
+    "CF!O42",
+    "CF!J7",
+    "CF!G7",
+    "CF!O10",
+    "CF!L32",
+    "CF!G12",
+    "CF!I21",
+    "CF!N16",
+    "CF!J24",
+    "CF!K10",
+    "CF!G4",
+    "CF!J21",
+    "CF!L26",
+    "CF!H13",
+    "CF!L13",
+    "CF!O32",
+    "CF!I14",
+    "CF!N42",
+    "P&L!L56",
+    "P&L!G22",
+    "P&L!I66",
+    "P&L!O28",
+    "P&L!K7",
+    "P&L!L52",
+    "P&L!L59",
+    "P&L!G56",
+    "P&L!I54",
+    "P&L!I42",
+    "P&L!J22",
+    "P&L!M63",
+    "P&L!J50",
+    "P&L!O33",
+    "P&L!M25",
+    "P&L!K66",
+    "P&L!O34",
+    "P&L!M30",
+    "P&L!I64",
+    "P&L!J66",
+    "P&L!L18",
+    "BS!O39",
+    "BS!J10",
+    "BS!K21",
+    "BS!M22",
+    "BS!M35",
+    "BS!K33",
+    "BS!K18",
+    "BS!O40",
+    "BS!L13",
+    "BS!J41",
+    "BS!F40",
+    "BS!O4",
+    "BS!L20",
+    "BS!J4",
+    "BS!H29",
+    "BS!J30",
+    "BS!J29",
+    "BS!N42",
+    "BS!H41",
+    "BS!L29",
+    "BS!F9",
+    "Assumptions!M60",
+    "Assumptions!O60",
+    "Assumptions!M63",
+    "Assumptions!J13",
+    "Assumptions!K69",
+    "Assumptions!O16",
+    "Assumptions!G10",
+    "Assumptions!J40",
+    "Assumptions!G22",
+    "Assumptions!N7",
+    "Assumptions!M51",
+    "Assumptions!I60",
+    "Assumptions!M4",
+    "Assumptions!H19",
+    "Assumptions!L66",
+    "Assumptions!I28",
+    "Assumptions!J31",
+    "Assumptions!J66",
+    "Assumptions!K37",
+    "Assumptions!J57",
+    "Assumptions!N4",
+    "Reserves!K9",
+    "Reserves!K16",
+    "Reserves!F13",
+    "Reserves!N13",
+    "Reserves!O19",
+    "Reserves!G10",
+    "Reserves!K11",
+    "Reserves!L4",
+    "Reserves!K10",
+    "Reserves!N4",
+    "Reserves!F4",
+    "Reserves!H15",
+    "Reserves!L19",
+    "Reserves!N11",
+    "Reserves!M9",
+    "Reserves!M19",
+    "Reserves!O13",
+    "Reserves!H19",
+    "Reserves!N12",
+    "Reserves!I10",
+    "Reserves!H4",
+    "Valuation!V34",
+    "Valuation!S44",
+    "Reserves!M16",
+    "CF!G33"
+  ],
+  "mutations": [
+    {
+      "sheet": "Valuation",
+      "cell": "U42",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L42,$F$5,U$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "I20",
+      "operator": "blank_formula",
+      "reference": "=BS!I23-BS!H23"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M35",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L35,$F$5,M$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "P39",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L39,$F$5,P$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M54",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L54,$F$5,M$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "L53",
+      "operator": "blank_formula",
+      "reference": "=L52+0.1%"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "V54",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L54,$F$5,V$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "L19",
+      "operator": "blank_formula",
+      "reference": "=BS!L21-BS!K21"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "T37",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L37,$F$5,T$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "L24",
+      "operator": "blank_formula",
+      "reference": "=L21-L22+L23"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "L41",
+      "operator": "blank_formula",
+      "reference": "=L40+0.1%"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "R40",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L40,$F$5,R$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "G14",
+      "operator": "blank_formula",
+      "reference": "='P&L'!G25"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "O16",
+      "operator": "blank_formula",
+      "reference": "='Asset Schedule'!O8-'Asset Schedule'!N8"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "H19",
+      "operator": "blank_formula",
+      "reference": "=BS!H21-BS!G21"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M11",
+      "operator": "blank_formula",
+      "reference": "='Asset Schedule'!M4"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M20",
+      "operator": "blank_formula",
+      "reference": "=BS!M23-BS!L23"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M47",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L47,$F$5,M$34)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "L43",
+      "operator": "blank_formula",
+      "reference": "=L42+0.1%"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M14",
+      "operator": "blank_formula",
+      "reference": "='P&L'!M25"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "T40",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L40,$F$5,T$34)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "L14",
+      "operator": "blank_formula",
+      "reference": "=BS!L23-BS!K23"
+    },
+    {
+      "sheet": "CF",
+      "cell": "H26",
+      "operator": "blank_formula",
+      "reference": "=-(BS!H17-BS!G17)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "K15",
+      "operator": "blank_formula",
+      "reference": "=BS!K31-BS!J31"
+    },
+    {
+      "sheet": "CF",
+      "cell": "O42",
+      "operator": "blank_formula",
+      "reference": "=N44"
+    },
+    {
+      "sheet": "CF",
+      "cell": "J7",
+      "operator": "blank_formula",
+      "reference": "='P&L'!J52"
+    },
+    {
+      "sheet": "CF",
+      "cell": "G7",
+      "operator": "blank_formula",
+      "reference": "='P&L'!G52"
+    },
+    {
+      "sheet": "CF",
+      "cell": "O10",
+      "operator": "blank_formula",
+      "reference": "=BS!O13-BS!N13"
+    },
+    {
+      "sheet": "CF",
+      "cell": "L32",
+      "operator": "blank_formula",
+      "reference": "=-'P&L'!L64"
+    },
+    {
+      "sheet": "CF",
+      "cell": "G12",
+      "operator": "blank_formula",
+      "reference": "=BS!G20-BS!F20"
+    },
+    {
+      "sheet": "CF",
+      "cell": "I21",
+      "operator": "blank_formula",
+      "reference": "=-(BS!I7-BS!H7)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "N16",
+      "operator": "blank_formula",
+      "reference": "=BS!N32-BS!M32"
+    },
+    {
+      "sheet": "CF",
+      "cell": "J24",
+      "operator": "blank_formula",
+      "reference": "=-(BS!J12-BS!I12)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "K10",
+      "operator": "blank_formula",
+      "reference": "=BS!K13-BS!J13"
+    },
+    {
+      "sheet": "CF",
+      "cell": "G4",
+      "operator": "blank_formula",
+      "reference": "=BS!G4"
+    },
+    {
+      "sheet": "CF",
+      "cell": "J21",
+      "operator": "blank_formula",
+      "reference": "=-(BS!J7-BS!I7)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "L26",
+      "operator": "blank_formula",
+      "reference": "=-(BS!L17-BS!K17)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "H13",
+      "operator": "blank_formula",
+      "reference": "=BS!H21-BS!G21"
+    },
+    {
+      "sheet": "CF",
+      "cell": "L13",
+      "operator": "blank_formula",
+      "reference": "=BS!L21-BS!K21"
+    },
+    {
+      "sheet": "CF",
+      "cell": "O32",
+      "operator": "blank_formula",
+      "reference": "=-'P&L'!O64"
+    },
+    {
+      "sheet": "CF",
+      "cell": "I14",
+      "operator": "blank_formula",
+      "reference": "=BS!I23-BS!H23"
+    },
+    {
+      "sheet": "CF",
+      "cell": "N42",
+      "operator": "blank_formula",
+      "reference": "=M44"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L56",
+      "operator": "blank_formula",
+      "reference": "=L52+L54+L55"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "G22",
+      "operator": "blank_formula",
+      "reference": "='Debt Schedule'!G20"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I66",
+      "operator": "blank_formula",
+      "reference": "=I56-I64"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "O28",
+      "operator": "blank_formula",
+      "reference": "=SUM(O14:O27)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "K7",
+      "operator": "blank_formula",
+      "reference": "=J7*(1+Assumptions!K7)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L52",
+      "operator": "blank_formula",
+      "reference": "=L42+L50"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L59",
+      "operator": "blank_formula",
+      "reference": "=K59"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "G56",
+      "operator": "blank_formula",
+      "reference": "=G52+G54+G55"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I54",
+      "operator": "blank_formula",
+      "reference": "=H66"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I42",
+      "operator": "blank_formula",
+      "reference": "=I40+I41"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "J22",
+      "operator": "blank_formula",
+      "reference": "='Debt Schedule'!J20"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "M63",
+      "operator": "blank_formula",
+      "reference": "=AVERAGE(L63/L62,K63/K62,J63/J62,I63/I62,H63/H62)*M62"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "J50",
+      "operator": "blank_formula",
+      "reference": "=SUM(J45:J49)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "O33",
+      "operator": "blank_formula",
+      "reference": "=O30+O31"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "M25",
+      "operator": "blank_formula",
+      "reference": "=L25/BS!L7*BS!M7"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "K66",
+      "operator": "blank_formula",
+      "reference": "=K56-K64"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "O34",
+      "operator": "blank_formula",
+      "reference": "=AVERAGE(J34/J33,K34/K33,L34/L33,M34/M33,N34/N33)*O33"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "M30",
+      "operator": "blank_formula",
+      "reference": "=M11-M28"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I64",
+      "operator": "blank_formula",
+      "reference": "=SUM(I59:I63)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "J66",
+      "operator": "blank_formula",
+      "reference": "=J56-J64"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L18",
+      "operator": "blank_formula",
+      "reference": "=Assumptions!L25*L7"
+    },
+    {
+      "sheet": "BS",
+      "cell": "O39",
+      "operator": "blank_formula",
+      "reference": "=Reserves!O6"
+    },
+    {
+      "sheet": "BS",
+      "cell": "J10",
+      "operator": "blank_formula",
+      "reference": "='Asset Schedule'!J15"
+    },
+    {
+      "sheet": "BS",
+      "cell": "K21",
+      "operator": "blank_formula",
+      "reference": "=Assumptions!K57*K7"
+    },
+    {
+      "sheet": "BS",
+      "cell": "M22",
+      "operator": "blank_formula",
+      "reference": "=CF!M39+L22"
+    },
+    {
+      "sheet": "BS",
+      "cell": "M35",
+      "operator": "blank_formula",
+      "reference": "=SUM(M29:M34)"
+    },
+    {
+      "sheet": "BS",
+      "cell": "K33",
+      "operator": "blank_formula",
+      "reference": "=Assumptions!K69*K7"
+    },
+    {
+      "sheet": "BS",
+      "cell": "K18",
+      "operator": "blank_formula",
+      "reference": "=J18"
+    },
+    {
+      "sheet": "BS",
+      "cell": "O40",
+      "operator": "blank_formula",
+      "reference": "=Reserves!O16"
+    },
+    {
+      "sheet": "BS",
+      "cell": "L13",
+      "operator": "blank_formula",
+      "reference": "=Assumptions!L54*L11"
+    },
+    {
+      "sheet": "BS",
+      "cell": "J41",
+      "operator": "blank_formula",
+      "reference": "=Reserves!J17"
+    },
+    {
+      "sheet": "BS",
+      "cell": "F40",
+      "operator": "blank_formula",
+      "reference": "=Reserves!F16"
+    },
+    {
+      "sheet": "BS",
+      "cell": "O4",
+      "operator": "blank_formula",
+      "reference": "='P&L'!O4"
+    },
+    {
+      "sheet": "BS",
+      "cell": "L20",
+      "operator": "blank_formula",
+      "reference": "=2*Assumptions!L60*('P&L'!L14+'P&L'!L15)/365-BS!K20"
+    },
+    {
+      "sheet": "BS",
+      "cell": "J4",
+      "operator": "blank_formula",
+      "reference": "='P&L'!J4"
+    },
+    {
+      "sheet": "BS",
+      "cell": "H29",
+      "operator": "blank_formula",
+      "reference": "='Debt Schedule'!H16"
+    },
+    {
+      "sheet": "BS",
+      "cell": "J30",
+      "operator": "blank_formula",
+      "reference": "='Debt Schedule'!J10"
+    },
+    {
+      "sheet": "BS",
+      "cell": "J29",
+      "operator": "blank_formula",
+      "reference": "='Debt Schedule'!J16"
+    },
+    {
+      "sheet": "BS",
+      "cell": "N42",
+      "operator": "blank_formula",
+      "reference": "=N39+N40-N41"
+    },
+    {
+      "sheet": "BS",
+      "cell": "H41",
+      "operator": "blank_formula",
+      "reference": "=Reserves!H17"
+    },
+    {
+      "sheet": "BS",
+      "cell": "L29",
+      "operator": "blank_formula",
+      "reference": "='Debt Schedule'!L16"
+    },
+    {
+      "sheet": "BS",
+      "cell": "F9",
+      "operator": "blank_formula",
+      "reference": "='Asset Schedule'!F14"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "M60",
+      "operator": "blank_formula",
+      "reference": "=IF($E60=\"CAGR\",AVERAGE(I60:L60),M59)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "O60",
+      "operator": "blank_formula",
+      "reference": "=IF($E60=\"CAGR\",AVERAGE(K60:N60),O59)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "M63",
+      "operator": "blank_formula",
+      "reference": "=IF($E63=\"CAGR\",AVERAGE(I63:L63),M62/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "J13",
+      "operator": "blank_formula",
+      "reference": "='P&L'!J14/'P&L'!I14-1"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "K69",
+      "operator": "blank_formula",
+      "reference": "=IF($E69=\"CAGR\",AVERAGE(G69:J69),K68/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "O16",
+      "operator": "blank_formula",
+      "reference": "=IF($E16=\"CAGR\",AVERAGE(K16:N16),O15/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "G10",
+      "operator": "blank_formula",
+      "reference": "='P&L'!G10/'P&L'!F10-1"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "J40",
+      "operator": "blank_formula",
+      "reference": "='P&L'!J24/'P&L'!I24-1"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "G22",
+      "operator": "blank_formula",
+      "reference": "='P&L'!G17/'P&L'!G7"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "N7",
+      "operator": "blank_formula",
+      "reference": "=IF($E7=\"CAGR\",AVERAGE(J7:M7),N6/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "M51",
+      "operator": "blank_formula",
+      "reference": "=IF($E51=\"CAGR\",AVERAGE(I51:L51),M50/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "I60",
+      "operator": "blank_formula",
+      "reference": "=AVERAGE(BS!H20:I20)/('P&L'!I14+'P&L'!I15)*365"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "M4",
+      "operator": "blank_formula",
+      "reference": "=CF!M4"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "H19",
+      "operator": "blank_formula",
+      "reference": "='P&L'!H16/'P&L'!G16-1"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "L66",
+      "operator": "blank_formula",
+      "reference": "=IF($E66=\"CAGR\",AVERAGE(H66:K66),L65/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "I28",
+      "operator": "blank_formula",
+      "reference": "='P&L'!I19/'P&L'!I7"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "J31",
+      "operator": "blank_formula",
+      "reference": "='P&L'!J20/'P&L'!J7"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "J66",
+      "operator": "blank_formula",
+      "reference": "=BS!J31/BS!J7"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "K37",
+      "operator": "blank_formula",
+      "reference": "=IF($E37=\"CAGR\",AVERAGE(G37:J37),K36/100)"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "J57",
+      "operator": "blank_formula",
+      "reference": "=BS!J21/BS!J7"
+    },
+    {
+      "sheet": "Assumptions",
+      "cell": "N4",
+      "operator": "blank_formula",
+      "reference": "=CF!N4"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "K9",
+      "operator": "blank_formula",
+      "reference": "=J9"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "K16",
+      "operator": "blank_formula",
+      "reference": "=K13+K15"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "F13",
+      "operator": "blank_formula",
+      "reference": "=SUM(F8:F12)"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "N13",
+      "operator": "blank_formula",
+      "reference": "=SUM(N8:N12)"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "O19",
+      "operator": "blank_formula",
+      "reference": "=O6+O16-O17"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "G10",
+      "operator": "blank_formula",
+      "reference": "=F10+'P&L'!G59"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "K11",
+      "operator": "blank_formula",
+      "reference": "=J11+'P&L'!K61"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "L4",
+      "operator": "blank_formula",
+      "reference": "=BS!L4"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "K10",
+      "operator": "blank_formula",
+      "reference": "=J10+'P&L'!K59"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "N4",
+      "operator": "blank_formula",
+      "reference": "=BS!N4"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "F4",
+      "operator": "blank_formula",
+      "reference": "=BS!F4"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "H15",
+      "operator": "blank_formula",
+      "reference": "='P&L'!H66"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "L19",
+      "operator": "blank_formula",
+      "reference": "=L6+L16-L17"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "N11",
+      "operator": "blank_formula",
+      "reference": "=M11+'P&L'!N61"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "M9",
+      "operator": "blank_formula",
+      "reference": "=L9"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "M19",
+      "operator": "blank_formula",
+      "reference": "=M6+M16-M17"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "O13",
+      "operator": "blank_formula",
+      "reference": "=SUM(O8:O12)"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "H19",
+      "operator": "blank_formula",
+      "reference": "=H6+H16-H17"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "N12",
+      "operator": "blank_formula",
+      "reference": "=M12+'P&L'!N60"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "I10",
+      "operator": "blank_formula",
+      "reference": "=H10+'P&L'!I59"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "H4",
+      "operator": "blank_formula",
+      "reference": "=BS!H4"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "V34",
+      "operator": "blank_formula",
+      "reference": "=U34+0.02"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "S44",
+      "operator": "blank_formula",
+      "reference": "=TABLE($L$34,$F$8,$L44,$F$5,S$34)"
+    },
+    {
+      "sheet": "Reserves",
+      "cell": "M16",
+      "operator": "blank_formula",
+      "reference": "=M13+M15"
+    },
+    {
+      "sheet": "CF",
+      "cell": "G33",
+      "operator": "blank_formula",
+      "reference": "=BS!G33-BS!F33"
+    }
+  ]
+}

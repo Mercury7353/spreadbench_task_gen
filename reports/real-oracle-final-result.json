@@ -1,0 +1,48 @@
+{
+    "id": "8d55588d-8923-45b6-af92-39a32058e9ae",
+    "started_at": "2026-08-18T10:46:57.071193",
+    "updated_at": "2026-08-18T10:49:56.978766",
+    "finished_at": "2026-08-18T10:49:56.978766",
+    "n_total_trials": 10,
+    "stats": {
+        "n_completed_trials": 10,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "oracle__SpreadsheetEval": {
+                "n_trials": 10,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "debugging-04-financial-projectio__JmjHsCh",
+                            "debugging-02-commercial-real-est__bKgWpG6",
+                            "debugging-03-coal-india__hvQjaFs",
+                            "debugging-05-project-finance__yucSQ6x",
+                            "financial-01-manufacturing-plan__TM8ef7V",
+                            "financial-03-coal-india__DVtqbnp",
+                            "debugging-01-manufacturing-plan__k6mGAbc",
+                            "financial-05-project-finance__g6PtD5b",
+                            "financial-02-commercial-real-est__6Zr8C34",
+                            "financial-04-financial-projectio__ExrvZ8X"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

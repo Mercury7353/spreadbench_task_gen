@@ -1,0 +1,32 @@
+{
+  "reason": "modified_set_mismatch",
+  "missing": [
+    "13. Cash Flow Statement (2)!Q28",
+    "15. Income Statement (3)!B10",
+    "15. Income Statement (3)!B52"
+  ],
+  "extra": [
+    "12. Income Statement (2)!Q70",
+    "12. Income Statement (2)!Q71",
+    "13. Cash Flow Statement (2)!Q37",
+    "13. Cash Flow Statement (2)!Q8",
+    "15. Income Statement (3)!Q70",
+    "15. Income Statement (3)!Q71",
+    "16. Cash Flow Statement (3)!Q33",
+    "16. Cash Flow Statement (3)!Q37",
+    "16. Cash Flow Statement (3)!Q40",
+    "16. Cash Flow Statement (3)!Q8",
+    "20. Amoritization Schedule!S17",
+    "20. Amoritization Schedule!S21",
+    "20. Amoritization Schedule!S25",
+    "20. Amoritization Schedule!S37",
+    "20. Amoritization Schedule!S41",
+    "20. Amoritization Schedule!S45",
+    "8. Income Statement!Q70",
+    "8. Income Statement!Q71",
+    "9. Cash Flow Statement!Q33",
+    "9. Cash Flow Statement!Q37",
+    "9. Cash Flow Statement!Q40",
+    "9. Cash Flow Statement!Q8"
+  ]
+}

@@ -1,0 +1,1009 @@
+{
+  "task_id": "financial-05-project-finance",
+  "category": "financial",
+  "source": {
+    "slug": "project-finance",
+    "filename": "Packt_Project_Finance.xlsx",
+    "origin": "PacktPublishing/Project-Finance-and-Excel---Build-Financial-Models-from-Scratch",
+    "license": "MIT"
+  },
+  "source_original_cases": [
+    "11_01",
+    "11_02"
+  ],
+  "weaknesses": [
+    "zero-target-coverage"
+  ],
+  "source_case_weaknesses": {
+    "11_01": [
+      "zero-target-coverage"
+    ],
+    "11_02": [
+      "zero-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "Construction!U35",
+    "Construction!M6",
+    "Construction!I13",
+    "Construction!U28",
+    "Construction!AG16",
+    "Construction!AG43",
+    "Construction!F28",
+    "Construction!AA39",
+    "Construction!AJ26",
+    "Construction!AE28",
+    "Construction!V27",
+    "Construction!W16",
+    "Construction!Z34",
+    "Construction!AC37",
+    "Construction!AD39",
+    "Construction!Z35",
+    "Construction!AK27",
+    "Construction!T37",
+    "Construction!J15",
+    "Construction!Q14",
+    "Construction!AL12",
+    "Construction!G14",
+    "Construction!AH12",
+    "Ratios!AG11",
+    "Ratios!AI27",
+    "Ratios!F16",
+    "Ratios!G12",
+    "Ratios!O16",
+    "Ratios!W25",
+    "Ratios!AD16",
+    "Ratios!P14",
+    "Ratios!P12",
+    "Ratios!N16",
+    "Ratios!L14",
+    "Ratios!H25",
+    "Ratios!T16",
+    "Ratios!I12",
+    "Ratios!AM12",
+    "Ratios!N25",
+    "Ratios!AD24",
+    "Ratios!N15",
+    "Ratios!AO27",
+    "Ratios!V8",
+    "Ratios!AG24",
+    "Ratios!Q9",
+    "Ratios!AI11",
+    "CFS!T12",
+    "CFS!AF19",
+    "CFS!G10",
+    "CFS!AB10",
+    "CFS!I10",
+    "CFS!AS25",
+    "CFS!AM12",
+    "CFS!K14",
+    "CFS!G17",
+    "CFS!AC23",
+    "CFS!P14",
+    "CFS!AO23",
+    "CFS!AN19",
+    "CFS!AP19",
+    "CFS!AG12",
+    "CFS!AA14",
+    "CFS!O14",
+    "CFS!J19",
+    "CFS!AH19",
+    "CFS!Z12",
+    "CFS!H14",
+    "CFS!AP14",
+    "CFS!S8",
+    "P&L!AQ15",
+    "P&L!Y15",
+    "P&L!P25",
+    "P&L!H23",
+    "P&L!Z21",
+    "P&L!AK11",
+    "P&L!AR13",
+    "P&L!G13",
+    "P&L!AJ15",
+    "P&L!Z23",
+    "P&L!I25",
+    "P&L!AC25",
+    "P&L!P9",
+    "P&L!R25",
+    "P&L!R15",
+    "P&L!L9",
+    "P&L!AH21",
+    "P&L!AS23",
+    "P&L!T25",
+    "P&L!L21",
+    "P&L!AJ19",
+    "P&L!G15",
+    "P&L!AM23",
+    "Operation!AD20",
+    "Operation!N21",
+    "Operation!G21",
+    "Operation!M21",
+    "Operation!K14",
+    "Operation!AG8",
+    "Operation!T8",
+    "Operation!AM10",
+    "Operation!X7",
+    "Operation!O20",
+    "Operation!P11",
+    "Operation!X14",
+    "Operation!G11",
+    "Operation!S14",
+    "Operation!AK12",
+    "Operation!AH21",
+    "Operation!L14",
+    "Operation!AG14",
+    "Operation!N14",
+    "Operation!W12",
+    "Operation!S8",
+    "Operation!AC20",
+    "Operation!AM21",
+    "Balance Sheet!Y14",
+    "Balance Sheet!T8",
+    "Balance Sheet!X10",
+    "Balance Sheet!Q16",
+    "Balance Sheet!AS9",
+    "Balance Sheet!F14",
+    "Balance Sheet!Y15",
+    "Balance Sheet!J14",
+    "Balance Sheet!AE16",
+    "Balance Sheet!N9",
+    "Balance Sheet!Y8",
+    "Balance Sheet!S15",
+    "Balance Sheet!Y13",
+    "Balance Sheet!O8",
+    "Balance Sheet!N8",
+    "Balance Sheet!AH15",
+    "Balance Sheet!M19",
+    "Balance Sheet!K9",
+    "Balance Sheet!AD9",
+    "Balance Sheet!AQ9",
+    "Balance Sheet!I19",
+    "Balance Sheet!AJ16",
+    "Balance Sheet!J10",
+    "Construction!AB38",
+    "Construction!L39"
+  ],
+  "mutations": [
+    {
+      "sheet": "Construction",
+      "cell": "U35",
+      "operator": "blank_formula",
+      "reference": "=SUM(U33:U34)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "M6",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$25/'Input Assumptions'!$D$9/1000*TBA!L8"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "I13",
+      "operator": "blank_formula",
+      "reference": "=I37"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "U28",
+      "operator": "blank_formula",
+      "reference": "=SUM(U26:U27)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AG16",
+      "operator": "blank_formula",
+      "reference": "=SUM(AG12:AG15)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AG43",
+      "operator": "blank_formula",
+      "reference": "=AG16-AG28<0.01"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "F28",
+      "operator": "blank_formula",
+      "reference": "=SUM(F26:F27)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AA39",
+      "operator": "blank_formula",
+      "reference": "=('Input Assumptions'!$D$35+'Input Assumptions'!$D$36)*AA33*TBA!Z14"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AJ26",
+      "operator": "blank_formula",
+      "reference": "=IF(MAX($C$22-SUM($D$26:AI26),0)>AJ19,AJ19,MAX($C$22-SUM($D$26:AI26),0))"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AE28",
+      "operator": "blank_formula",
+      "reference": "=SUM(AE26:AE27)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "V27",
+      "operator": "blank_formula",
+      "reference": "=IF(V19-V26>0,V19-V26,0)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "W16",
+      "operator": "blank_formula",
+      "reference": "=SUM(W12:W15)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "Z34",
+      "operator": "blank_formula",
+      "reference": "=Z27"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AC37",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$37*Construction!$C$34*TBA!AB13"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AD39",
+      "operator": "blank_formula",
+      "reference": "=('Input Assumptions'!$D$35+'Input Assumptions'!$D$36)*AD33*TBA!AC14"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "Z35",
+      "operator": "blank_formula",
+      "reference": "=SUM(Z33:Z34)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AK27",
+      "operator": "blank_formula",
+      "reference": "=IF(AK19-AK26>0,AK19-AK26,0)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "T37",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$37*Construction!$C$34*TBA!S13"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "J15",
+      "operator": "blank_formula",
+      "reference": "=J39"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "Q14",
+      "operator": "blank_formula",
+      "reference": "=Q38"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AL12",
+      "operator": "blank_formula",
+      "reference": "=AL8"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "G14",
+      "operator": "blank_formula",
+      "reference": "=G38"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AH12",
+      "operator": "blank_formula",
+      "reference": "=AH8"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AG11",
+      "operator": "blank_formula",
+      "reference": "=-Construction!AF15"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AI27",
+      "operator": "blank_formula",
+      "reference": "=SUM(AI24:AI26)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "F16",
+      "operator": "blank_formula",
+      "reference": "='P&L'!F23"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "G12",
+      "operator": "blank_formula",
+      "reference": "=SUM(G8:G11)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "O16",
+      "operator": "blank_formula",
+      "reference": "='P&L'!O23"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "W25",
+      "operator": "blank_formula",
+      "reference": "=-CFS!W21"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AD16",
+      "operator": "blank_formula",
+      "reference": "='P&L'!AD23"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "P14",
+      "operator": "blank_formula",
+      "reference": "=Operation!O14"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "P12",
+      "operator": "blank_formula",
+      "reference": "=SUM(P8:P11)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "N16",
+      "operator": "blank_formula",
+      "reference": "='P&L'!N23"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "L14",
+      "operator": "blank_formula",
+      "reference": "=Operation!K14"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "H25",
+      "operator": "blank_formula",
+      "reference": "=-CFS!H21"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "T16",
+      "operator": "blank_formula",
+      "reference": "='P&L'!T23"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "I12",
+      "operator": "blank_formula",
+      "reference": "=SUM(I8:I11)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AM12",
+      "operator": "blank_formula",
+      "reference": "=SUM(AM8:AM11)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "N25",
+      "operator": "blank_formula",
+      "reference": "=-CFS!N21"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AD24",
+      "operator": "blank_formula",
+      "reference": "=-Construction!AC26"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "N15",
+      "operator": "blank_formula",
+      "reference": "=-Operation!M21"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AO27",
+      "operator": "blank_formula",
+      "reference": "=SUM(AO24:AO26)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "V8",
+      "operator": "blank_formula",
+      "reference": "=-Construction!U12"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AG24",
+      "operator": "blank_formula",
+      "reference": "=-Construction!AF26"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "Q9",
+      "operator": "blank_formula",
+      "reference": "=-Construction!P13"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AI11",
+      "operator": "blank_formula",
+      "reference": "=-Construction!AH15"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "T12",
+      "operator": "blank_formula",
+      "reference": "='P&L'!T23"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AF19",
+      "operator": "blank_formula",
+      "reference": "=AF14+AF16+AF17"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "G10",
+      "operator": "blank_formula",
+      "reference": "=-Operation!F21"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AB10",
+      "operator": "blank_formula",
+      "reference": "=-Operation!AA21"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "I10",
+      "operator": "blank_formula",
+      "reference": "=-Operation!H21"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AS25",
+      "operator": "blank_formula",
+      "reference": "=AR25+AS23"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AM12",
+      "operator": "blank_formula",
+      "reference": "='P&L'!AM23"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "K14",
+      "operator": "blank_formula",
+      "reference": "=SUM(K8:K13)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "G17",
+      "operator": "blank_formula",
+      "reference": "=Debt!G10"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AC23",
+      "operator": "blank_formula",
+      "reference": "=AC19+AC21"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "P14",
+      "operator": "blank_formula",
+      "reference": "=SUM(P8:P13)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AO23",
+      "operator": "blank_formula",
+      "reference": "=AO19+AO21"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AN19",
+      "operator": "blank_formula",
+      "reference": "=AN14+AN16+AN17"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AP19",
+      "operator": "blank_formula",
+      "reference": "=AP14+AP16+AP17"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AG12",
+      "operator": "blank_formula",
+      "reference": "='P&L'!AG23"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AA14",
+      "operator": "blank_formula",
+      "reference": "=SUM(AA8:AA13)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "O14",
+      "operator": "blank_formula",
+      "reference": "=SUM(O8:O13)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "J19",
+      "operator": "blank_formula",
+      "reference": "=J14+J16+J17"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AH19",
+      "operator": "blank_formula",
+      "reference": "=AH14+AH16+AH17"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "Z12",
+      "operator": "blank_formula",
+      "reference": "='P&L'!Z23"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "H14",
+      "operator": "blank_formula",
+      "reference": "=SUM(H8:H13)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AP14",
+      "operator": "blank_formula",
+      "reference": "=SUM(AP8:AP13)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "S8",
+      "operator": "blank_formula",
+      "reference": "=Operation!R14"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AQ15",
+      "operator": "blank_formula",
+      "reference": "=Amortization!AP13"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "Y15",
+      "operator": "blank_formula",
+      "reference": "=Amortization!X13"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "P25",
+      "operator": "blank_formula",
+      "reference": "=SUM(P21:P24)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "H23",
+      "operator": "blank_formula",
+      "reference": "=IF(H21<0,0,-'Input Assumptions'!$D$44*'P&L'!H21)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "Z21",
+      "operator": "blank_formula",
+      "reference": "=SUM(Z17:Z20)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AK11",
+      "operator": "blank_formula",
+      "reference": "=-Operation!AJ21"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AR13",
+      "operator": "blank_formula",
+      "reference": "=SUM(AR9:AR12)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "G13",
+      "operator": "blank_formula",
+      "reference": "=SUM(G9:G12)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AJ15",
+      "operator": "blank_formula",
+      "reference": "=Amortization!AI13"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "Z23",
+      "operator": "blank_formula",
+      "reference": "=IF(Z21<0,0,-'Input Assumptions'!$D$44*'P&L'!Z21)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I25",
+      "operator": "blank_formula",
+      "reference": "=SUM(I21:I24)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AC25",
+      "operator": "blank_formula",
+      "reference": "=SUM(AC21:AC24)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "P9",
+      "operator": "blank_formula",
+      "reference": "=Operation!O14"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "R25",
+      "operator": "blank_formula",
+      "reference": "=SUM(R21:R24)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "R15",
+      "operator": "blank_formula",
+      "reference": "=Amortization!Q13"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L9",
+      "operator": "blank_formula",
+      "reference": "=Operation!K14"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AH21",
+      "operator": "blank_formula",
+      "reference": "=SUM(AH17:AH20)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AS23",
+      "operator": "blank_formula",
+      "reference": "=IF(AS21<0,0,-'Input Assumptions'!$D$44*'P&L'!AS21)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "T25",
+      "operator": "blank_formula",
+      "reference": "=SUM(T21:T24)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L21",
+      "operator": "blank_formula",
+      "reference": "=SUM(L17:L20)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AJ19",
+      "operator": "blank_formula",
+      "reference": "=Debt!AJ14"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "G15",
+      "operator": "blank_formula",
+      "reference": "=Amortization!F13"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AM23",
+      "operator": "blank_formula",
+      "reference": "=IF(AM21<0,0,-'Input Assumptions'!$D$44*'P&L'!AM21)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AD20",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$29/1000*(1+'Input Assumptions'!$D$31)^(AD2-$E$2)*TBA!AC10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "N21",
+      "operator": "blank_formula",
+      "reference": "=SUM(N19:N20)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "G21",
+      "operator": "blank_formula",
+      "reference": "=SUM(G19:G20)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "M21",
+      "operator": "blank_formula",
+      "reference": "=SUM(M19:M20)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "K14",
+      "operator": "blank_formula",
+      "reference": "=K12*(1+'Input Assumptions'!$D$18)^(K2-$E$2)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AG8",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$15*(1+'Input Assumptions'!$D$17)^(SUM(TBA!$D$10:'TBA'!AF10)-1)*TBA!AF10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "T8",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$15*(1+'Input Assumptions'!$D$17)^(SUM(TBA!$D$10:'TBA'!S10)-1)*TBA!S10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AM10",
+      "operator": "blank_formula",
+      "reference": "=AM7*'Input Assumptions'!$D$20/1000"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "X7",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$14*(1+'Input Assumptions'!$D$17)^(SUM(TBA!$D$10:'TBA'!W10)-1)*TBA!W10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "O20",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$29/1000*(1+'Input Assumptions'!$D$31)^(O2-$E$2)*TBA!N10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "P11",
+      "operator": "blank_formula",
+      "reference": "=P8*'Input Assumptions'!$D$21/1000"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "X14",
+      "operator": "blank_formula",
+      "reference": "=X12*(1+'Input Assumptions'!$D$18)^(X2-$E$2)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "G11",
+      "operator": "blank_formula",
+      "reference": "=G8*'Input Assumptions'!$D$21/1000"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "S14",
+      "operator": "blank_formula",
+      "reference": "=S12*(1+'Input Assumptions'!$D$18)^(S2-$E$2)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AK12",
+      "operator": "blank_formula",
+      "reference": "=SUM(AK10:AK11)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AH21",
+      "operator": "blank_formula",
+      "reference": "=SUM(AH19:AH20)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "L14",
+      "operator": "blank_formula",
+      "reference": "=L12*(1+'Input Assumptions'!$D$18)^(L2-$E$2)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AG14",
+      "operator": "blank_formula",
+      "reference": "=AG12*(1+'Input Assumptions'!$D$18)^(AG2-$E$2)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "N14",
+      "operator": "blank_formula",
+      "reference": "=N12*(1+'Input Assumptions'!$D$18)^(N2-$E$2)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "W12",
+      "operator": "blank_formula",
+      "reference": "=SUM(W10:W11)"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "S8",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$15*(1+'Input Assumptions'!$D$17)^(SUM(TBA!$D$10:'TBA'!R10)-1)*TBA!R10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AC20",
+      "operator": "blank_formula",
+      "reference": "='Input Assumptions'!$D$29/1000*(1+'Input Assumptions'!$D$31)^(AC2-$E$2)*TBA!AB10"
+    },
+    {
+      "sheet": "Operation",
+      "cell": "AM21",
+      "operator": "blank_formula",
+      "reference": "=SUM(AM19:AM20)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "Y14",
+      "operator": "blank_formula",
+      "reference": "='P&L'!Y25+CFS!Y21+'Balance Sheet'!X14"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "T8",
+      "operator": "blank_formula",
+      "reference": "=Amortization!S10"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "X10",
+      "operator": "blank_formula",
+      "reference": "=SUM(X8:X9)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "Q16",
+      "operator": "blank_formula",
+      "reference": "=SUM(Q13:Q15)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "AS9",
+      "operator": "blank_formula",
+      "reference": "=CFS!AS25"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F14",
+      "operator": "blank_formula",
+      "reference": "='P&L'!F25+CFS!F21+'Balance Sheet'!E14"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "Y15",
+      "operator": "blank_formula",
+      "reference": "=Debt!Y11"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "J14",
+      "operator": "blank_formula",
+      "reference": "='P&L'!J25+CFS!J21+'Balance Sheet'!I14"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "AE16",
+      "operator": "blank_formula",
+      "reference": "=SUM(AE13:AE15)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "N9",
+      "operator": "blank_formula",
+      "reference": "=CFS!N25"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "Y8",
+      "operator": "blank_formula",
+      "reference": "=Amortization!X10"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "S15",
+      "operator": "blank_formula",
+      "reference": "=Debt!S11"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "Y13",
+      "operator": "blank_formula",
+      "reference": "=SUM(Construction!$E$26:X26)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "O8",
+      "operator": "blank_formula",
+      "reference": "=Amortization!N10"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "N8",
+      "operator": "blank_formula",
+      "reference": "=Amortization!M10"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "AH15",
+      "operator": "blank_formula",
+      "reference": "=Debt!AH11"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "M19",
+      "operator": "blank_formula",
+      "reference": "=M10-M16<0.01"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "K9",
+      "operator": "blank_formula",
+      "reference": "=CFS!K25"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "AD9",
+      "operator": "blank_formula",
+      "reference": "=CFS!AD25"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "AQ9",
+      "operator": "blank_formula",
+      "reference": "=CFS!AQ25"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "I19",
+      "operator": "blank_formula",
+      "reference": "=I10-I16<0.01"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "AJ16",
+      "operator": "blank_formula",
+      "reference": "=SUM(AJ13:AJ15)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "J10",
+      "operator": "blank_formula",
+      "reference": "=SUM(J8:J9)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AB38",
+      "operator": "blank_formula",
+      "reference": "=($C$34-AB33)*TBA!AA14*'Input Assumptions'!$D$36*'Input Assumptions'!$D$38"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "L39",
+      "operator": "blank_formula",
+      "reference": "=('Input Assumptions'!$D$35+'Input Assumptions'!$D$36)*L33*TBA!K14"
+    }
+  ]
+}

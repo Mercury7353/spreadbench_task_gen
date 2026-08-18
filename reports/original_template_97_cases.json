@@ -1,0 +1,2139 @@
+[
+  {
+    "case_id": "01_01",
+    "instruction": "Complete the bond accounting schedule for Coastal Manufacturing Corp's 6-year, 4% coupon discount bond.",
+    "input": "spreadsheet/01_bond_accounting/01_01_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_01_golden.xlsx",
+    "exit_status": "exit_cost",
+    "api_calls": 51,
+    "tokens_sent": 732806,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "budget-exhaustion",
+      "context-bloat",
+      "no-deliverable",
+      "numerical-looping",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_cost",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_01/01_01.traj"
+  },
+  {
+    "case_id": "01_02",
+    "instruction": "Complete the OID bond amortization analysis for XYZ Corporation. Calculate amortization, IS and BS results for GAAP and tax. Tax: bond at face value; OID not deductible annually.",
+    "input": "spreadsheet/01_bond_accounting/01_02_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 33,
+    "tokens_sent": 413588,
+    "regression_accuracy": 0.9956,
+    "modification_accuracy": 0.7885,
+    "accuracy": 0.0,
+    "first_error": "Regression error at OID_Bond!C24: answer=0, output=630",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "numerical-looping",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.7885",
+      "Official regression accuracy is 0.9956",
+      "Regression error at OID_Bond!C24: answer=0, output=630"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_02/01_02.traj"
+  },
+  {
+    "case_id": "01_03",
+    "instruction": "Complete the zero-coupon bond accounting analysis by filling in all empty cells in the financial statements and balance sheet schedules.",
+    "input": "spreadsheet/01_bond_accounting/01_03_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_03_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 13,
+    "tokens_sent": 86612,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "numerical-looping",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_03/01_03.traj"
+  },
+  {
+    "case_id": "01_04",
+    "instruction": "Complete the OID bond amortization and deferred tax analysis for TechVenture Inc.'s 7-year zero-coupon bond.",
+    "input": "spreadsheet/01_bond_accounting/01_04_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 31,
+    "tokens_sent": 649909,
+    "regression_accuracy": 0.9625,
+    "modification_accuracy": 0.9158,
+    "accuracy": 0.0,
+    "first_error": "Regression error at OID_Bond!C29: answer=None, output=9420",
+    "weaknesses": [
+      "context-bloat",
+      "incomplete-target-coverage",
+      "numerical-looping",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.9158",
+      "Official regression accuracy is 0.9625",
+      "Regression error at OID_Bond!C29: answer=None, output=9420"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_04/01_04.traj"
+  },
+  {
+    "case_id": "01_05",
+    "instruction": "Complete the bond accounting model for ABC Corp's 4-year bond issuance. Fill in all empty cells.",
+    "input": "spreadsheet/01_bond_accounting/01_05_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_05_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 17,
+    "tokens_sent": 142950,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "numerical-looping",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_05/01_05.traj"
+  },
+  {
+    "case_id": "01_06",
+    "instruction": "Complete the bond accounting analysis. Fill in all empty cells. Use the effective interest method. For tax purposes, the bond is carried at cost (issue price); no premium amortization is tax-deductible.",
+    "input": "spreadsheet/01_bond_accounting/01_06_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_06_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 26,
+    "tokens_sent": 461512,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "numerical-looping",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_06/01_06.traj"
+  },
+  {
+    "case_id": "01_07",
+    "instruction": "Complete the bond accounting analysis using the effective interest method. Fill in all empty cells.",
+    "input": "spreadsheet/01_bond_accounting/01_07_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_07_golden.xlsx",
+    "exit_status": "exit_cost",
+    "api_calls": 51,
+    "tokens_sent": 556069,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "budget-exhaustion",
+      "context-bloat",
+      "no-deliverable",
+      "numerical-looping",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_cost",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_07/01_07.traj"
+  },
+  {
+    "case_id": "01_08",
+    "instruction": "Complete the bond accounting model. Calculate the implied discount rate (IRR of provided cash flows), amortization schedule, tax impacts, and early extinguishment gain/loss.",
+    "input": "spreadsheet/01_bond_accounting/01_08_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_08_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 41,
+    "tokens_sent": 864086,
+    "regression_accuracy": 0.9835,
+    "modification_accuracy": 0.4561,
+    "accuracy": 0.0,
+    "first_error": "Regression error at BondAccounting!C32: answer=0, output=-137.5",
+    "weaknesses": [
+      "context-bloat",
+      "incomplete-target-coverage",
+      "numerical-looping",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.4561",
+      "Official regression accuracy is 0.9835",
+      "Regression error at BondAccounting!C32: answer=0, output=-137.5"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_08/01_08.traj"
+  },
+  {
+    "case_id": "01_09",
+    "instruction": "Complete the bond accounting model for a 4-year premium bond with early extinguishment in year 4.",
+    "input": "spreadsheet/01_bond_accounting/01_09_input.xlsx",
+    "golden": "spreadsheet/01_bond_accounting/01_09_golden.xlsx",
+    "exit_status": "exit_cost",
+    "api_calls": 51,
+    "tokens_sent": 1116198,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "budget-exhaustion",
+      "context-bloat",
+      "no-deliverable",
+      "numerical-looping",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_cost",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/01_09/01_09.traj"
+  },
+  {
+    "case_id": "02_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/02_cash_sweep/02_01_input.xlsx",
+    "golden": "spreadsheet/02_cash_sweep/02_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 6,
+    "tokens_sent": 19903,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.875,
+    "accuracy": 0.0,
+    "first_error": "Modification error at Revenue_Analysis!D13: answer=0.31752, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.8750",
+      "Modification error at Revenue_Analysis!D13: answer=0.31752, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/02_01/02_01.traj"
+  },
+  {
+    "case_id": "02_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/02_cash_sweep/02_02_input.xlsx",
+    "golden": "spreadsheet/02_cash_sweep/02_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 18,
+    "tokens_sent": 213875,
+    "regression_accuracy": 0.9459,
+    "modification_accuracy": 0.5068,
+    "accuracy": 0.0,
+    "first_error": "Regression error at DebtWaterfall!B16: answer=0, output=18",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.5068",
+      "Official regression accuracy is 0.9459",
+      "Regression error at DebtWaterfall!B16: answer=0, output=18"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/02_02/02_02.traj"
+  },
+  {
+    "case_id": "02_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/02_cash_sweep/02_03_input.xlsx",
+    "golden": "spreadsheet/02_cash_sweep/02_03_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 6,
+    "tokens_sent": 17069,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/02_03/02_03.traj"
+  },
+  {
+    "case_id": "02_04",
+    "instruction": "Use the average balance method for interest expense.",
+    "input": "spreadsheet/02_cash_sweep/02_04_input.xlsx",
+    "golden": "spreadsheet/02_cash_sweep/02_04_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 6,
+    "tokens_sent": 25780,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/02_04/02_04.traj"
+  },
+  {
+    "case_id": "02_05",
+    "instruction": "Complete the debt waterfall model. The company retains exactly its operating cash requirement as the ending cash balance each period, with remaining cash swept to debt repayment in priority order. Express repayment amounts as negative values.",
+    "input": "spreadsheet/02_cash_sweep/02_05_input.xlsx",
+    "golden": "spreadsheet/02_cash_sweep/02_05_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 9,
+    "tokens_sent": 55273,
+    "regression_accuracy": 0.8483,
+    "modification_accuracy": 0.075,
+    "accuracy": 0.0,
+    "first_error": "Regression error at DebtWaterfall!B6: answer=Beginning cash, output=450",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0750",
+      "Official regression accuracy is 0.8483",
+      "Regression error at DebtWaterfall!B6: answer=Beginning cash, output=450"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/02_05/02_05.traj"
+  },
+  {
+    "case_id": "02_06",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/02_cash_sweep/02_06_input.xlsx",
+    "golden": "spreadsheet/02_cash_sweep/02_06_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 42,
+    "tokens_sent": 1325084,
+    "regression_accuracy": 0.9937,
+    "modification_accuracy": 0.6429,
+    "accuracy": 0.0,
+    "first_error": "Regression error at DebtWaterfall!B25: answer=0, output=-22.6",
+    "weaknesses": [
+      "context-bloat",
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.6429",
+      "Official regression accuracy is 0.9937",
+      "Regression error at DebtWaterfall!B25: answer=0, output=-22.6"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/02_06/02_06.traj"
+  },
+  {
+    "case_id": "03_01",
+    "instruction": "Complete the M&A consolidation analysis by filling all blank cells in the financial statements.",
+    "input": "spreadsheet/03_consolidation/03_01_input.xlsx",
+    "golden": "spreadsheet/03_consolidation/03_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 13,
+    "tokens_sent": 151573,
+    "regression_accuracy": 0.9777,
+    "modification_accuracy": 0.5116,
+    "accuracy": 0.0,
+    "first_error": "Regression error at M&A_Consolidation!C14: answer=None, output=3400",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.5116",
+      "Official regression accuracy is 0.9777",
+      "Regression error at M&A_Consolidation!C14: answer=None, output=3400"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/03_01/03_01.traj"
+  },
+  {
+    "case_id": "03_02",
+    "instruction": "Complete the M&A consolidation exercise. Fill in all empty cells. Assume US GAAP (ASC 805); measure NCI at fair value.",
+    "input": "spreadsheet/03_consolidation/03_02_input.xlsx",
+    "golden": "spreadsheet/03_consolidation/03_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 28,
+    "tokens_sent": 676783,
+    "regression_accuracy": 0.9412,
+    "modification_accuracy": 0.8636,
+    "accuracy": 0.0,
+    "first_error": "Regression error at M&A_Consolidation!C14: answer=None, output=3500",
+    "weaknesses": [
+      "context-bloat",
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.8636",
+      "Official regression accuracy is 0.9412",
+      "Regression error at M&A_Consolidation!C14: answer=None, output=3500"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/03_02/03_02.traj"
+  },
+  {
+    "case_id": "03_03",
+    "instruction": "Complete the M&A consolidation model. Calculate acquisition-date balance sheet (3/31/2019) and FY 2020 consolidated financial statements.",
+    "input": "spreadsheet/03_consolidation/03_03_input.xlsx",
+    "golden": "spreadsheet/03_consolidation/03_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 8,
+    "tokens_sent": 45477,
+    "regression_accuracy": 0.9801,
+    "modification_accuracy": 0.9787,
+    "accuracy": 0.0,
+    "first_error": "Regression error at Consolidation!C21: answer=0, output=2200",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.9787",
+      "Official regression accuracy is 0.9801",
+      "Regression error at Consolidation!C21: answer=0, output=2200"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/03_03/03_03.traj"
+  },
+  {
+    "case_id": "03_04",
+    "instruction": "Complete the M&A consolidation analysis by filling in the consolidation worksheet. Calculate the fair value adjustments, consolidated balance sheet amounts, goodwill, and non-controlling interest (NCI) allocations based on the acquisition details provided.",
+    "input": "spreadsheet/03_consolidation/03_04_input.xlsx",
+    "golden": "spreadsheet/03_consolidation/03_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 8,
+    "tokens_sent": 35054,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/03_04/03_04.traj"
+  },
+  {
+    "case_id": "04_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/04_dcf_valuation/04_03_input.xlsx",
+    "golden": "spreadsheet/04_dcf_valuation/04_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 16,
+    "tokens_sent": 188740,
+    "regression_accuracy": 0.9833,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at FCF_Calculation!C12: answer=None, output=0.24",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9833",
+      "Regression error at FCF_Calculation!C12: answer=None, output=0.24"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/04_03/04_03.traj"
+  },
+  {
+    "case_id": "04_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/04_dcf_valuation/04_04_input.xlsx",
+    "golden": "spreadsheet/04_dcf_valuation/04_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 13,
+    "tokens_sent": 105775,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at FCF_Calc!D13: answer=82, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at FCF_Calc!D13: answer=82, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/04_04/04_04.traj"
+  },
+  {
+    "case_id": "05_01",
+    "instruction": "Complete the deferred tax analysis by filling all empty cells in the Income Statement, Balance Sheet, Taxable Income Calculation, and Cash Flow Statement sections.",
+    "input": "spreadsheet/05_deferred_tax/05_01_input.xlsx",
+    "golden": "spreadsheet/05_deferred_tax/05_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 6,
+    "tokens_sent": 25007,
+    "regression_accuracy": 0.9942,
+    "modification_accuracy": 0.9649,
+    "accuracy": 0.0,
+    "first_error": "Regression error at DeferredTax!C23: answer=None, output=100",
+    "weaknesses": [
+      "exactness-near-miss",
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.9649",
+      "Official regression accuracy is 0.9942",
+      "Regression error at DeferredTax!C23: answer=None, output=100"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/05_01/05_01.traj"
+  },
+  {
+    "case_id": "05_02",
+    "instruction": "Complete the deferred tax analysis. Fill in all empty cells for Years 2-4. Leave Tax Accounting income statement rows and Year 1 cells unchanged.",
+    "input": "spreadsheet/05_deferred_tax/05_02_input.xlsx",
+    "golden": "spreadsheet/05_deferred_tax/05_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 13,
+    "tokens_sent": 78109,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.9545,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DeferredTax!D32: answer=-21, output=21",
+    "weaknesses": [
+      "exactness-near-miss",
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.9545",
+      "Modification error at DeferredTax!D32: answer=-21, output=21"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/05_02/05_02.traj"
+  },
+  {
+    "case_id": "06_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_01_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 13,
+    "tokens_sent": 100395,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at ProductRevenue!D16: answer=66240, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at ProductRevenue!D16: answer=66240, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_01/06_01.traj"
+  },
+  {
+    "case_id": "06_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_02_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 15,
+    "tokens_sent": 80292,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at WC_Forecast!C24: answer=1800, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at WC_Forecast!C24: answer=1800, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_02/06_02.traj"
+  },
+  {
+    "case_id": "06_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_03_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 8,
+    "tokens_sent": 41906,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at iPhone_Revenue_Build!C17: answer=49.5, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at iPhone_Revenue_Build!C17: answer=49.5, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_03/06_03.traj"
+  },
+  {
+    "case_id": "06_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_04_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 57775,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.6923,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DrugRevenue!D11: answer=891, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.6923",
+      "Modification error at DrugRevenue!D11: answer=891, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_04/06_04.traj"
+  },
+  {
+    "case_id": "06_05",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_05_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_05_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 7,
+    "tokens_sent": 17278,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at WorkingCapital!C11: answer=14697, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at WorkingCapital!C11: answer=14697, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_05/06_05.traj"
+  },
+  {
+    "case_id": "06_06",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_06_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_06_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 16,
+    "tokens_sent": 260662,
+    "regression_accuracy": 0.9135,
+    "modification_accuracy": 0.9836,
+    "accuracy": 0.0,
+    "first_error": "Regression error at Revenue_Forecast!G9: answer=None, output=0.3",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.9836",
+      "Official regression accuracy is 0.9135",
+      "Regression error at Revenue_Forecast!G9: answer=None, output=0.3"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_06/06_06.traj"
+  },
+  {
+    "case_id": "06_07",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_07_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_07_golden.xlsx",
+    "exit_status": "exit_cost",
+    "api_calls": 51,
+    "tokens_sent": 809308,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "budget-exhaustion",
+      "context-bloat",
+      "no-deliverable",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_cost",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_07/06_07.traj"
+  },
+  {
+    "case_id": "06_08",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_08_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_08_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 32,
+    "tokens_sent": 571062,
+    "regression_accuracy": 0.8976,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at WorkingCapital_Forecast!B17: answer=FN: Cash flow sign convention for WC changes, output=Accounts Payable",
+    "weaknesses": [
+      "context-bloat",
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.8976",
+      "Regression error at WorkingCapital_Forecast!B17: answer=FN: Cash flow sign convention for WC changes, output=Accounts Payable"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_08/06_08.traj"
+  },
+  {
+    "case_id": "06_09",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_09_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_09_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 10,
+    "tokens_sent": 58951,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at OpEx_Forecast!C11: answer=0.175038520801233, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at OpEx_Forecast!C11: answer=0.175038520801233, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_09/06_09.traj"
+  },
+  {
+    "case_id": "06_11",
+    "instruction": "Forecast Cash as prior period Cash plus Changes in Working Capital.",
+    "input": "spreadsheet/06_equity_forecast/06_11_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_11_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 17,
+    "tokens_sent": 178435,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.5417,
+    "accuracy": 0.0,
+    "first_error": "Modification error at WC_Forecast!F13: answer=3416.6475, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.5417",
+      "Modification error at WC_Forecast!F13: answer=3416.6475, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_11/06_11.traj"
+  },
+  {
+    "case_id": "06_12",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_12_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_12_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 6,
+    "tokens_sent": 39250,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.7333,
+    "accuracy": 0.0,
+    "first_error": "Modification error at CashFlow_Build!I12: answer=-570, output=-345",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.7333",
+      "Modification error at CashFlow_Build!I12: answer=-570, output=-345"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_12/06_12.traj"
+  },
+  {
+    "case_id": "06_13",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_13_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_13_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 21,
+    "tokens_sent": 265557,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at CashFlowBuild!B26: answer=CASH FLOW STATEMENT (To Complete), output=• Asset increases (AR, Inventory) reduce cash (subtract from cash flow)",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at CashFlowBuild!B26: answer=CASH FLOW STATEMENT (To Complete), output=• Asset increases (AR, Inventory) reduce cash (subtract from cash flow)"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_13/06_13.traj"
+  },
+  {
+    "case_id": "06_14",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_14_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_14_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 13,
+    "tokens_sent": 121034,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at SegmentRevenue!C11: answer=606.25, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at SegmentRevenue!C11: answer=606.25, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_14/06_14.traj"
+  },
+  {
+    "case_id": "06_15",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_15_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_15_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 13,
+    "tokens_sent": 61090,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at WorkingCapital!C17: answer=2893.33333333333, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at WorkingCapital!C17: answer=2893.33333333333, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_15/06_15.traj"
+  },
+  {
+    "case_id": "06_16",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_16_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_16_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 67930,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at QuarterlyPL_Forecast!C13: answer=0.59, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at QuarterlyPL_Forecast!C13: answer=0.59, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_16/06_16.traj"
+  },
+  {
+    "case_id": "06_17",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_17_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_17_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 15,
+    "tokens_sent": 104636,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0161,
+    "accuracy": 0.0,
+    "first_error": "Modification error at OpEx_Forecast!C25: answer=0.145, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0161",
+      "Modification error at OpEx_Forecast!C25: answer=0.145, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_17/06_17.traj"
+  },
+  {
+    "case_id": "06_18",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_18_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_18_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 8,
+    "tokens_sent": 21706,
+    "regression_accuracy": 0.9362,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at WorkingCapital_Forecast!B16: answer=4861.11111111111, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9362",
+      "Regression error at WorkingCapital_Forecast!B16: answer=4861.11111111111, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_18/06_18.traj"
+  },
+  {
+    "case_id": "06_19",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_19_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_19_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 31,
+    "tokens_sent": 726095,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at IncomeStatement!B10: answer=0.0761821366024519, output=None",
+    "weaknesses": [
+      "context-bloat",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at IncomeStatement!B10: answer=0.0761821366024519, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_19/06_19.traj"
+  },
+  {
+    "case_id": "06_20",
+    "instruction": "Complete the revenue forecast model. Project each segment using its historical CAGR from Year 1 to Year 3. Fill in all empty cells.",
+    "input": "spreadsheet/06_equity_forecast/06_20_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_20_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 24,
+    "tokens_sent": 486213,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.5625,
+    "accuracy": 0.0,
+    "first_error": "Modification error at RevenueBuild!C46: answer=155.898896061625, output=159.2507223269502",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.5625",
+      "Modification error at RevenueBuild!C46: answer=155.898896061625, output=159.2507223269502"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_20/06_20.traj"
+  },
+  {
+    "case_id": "06_21",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_21_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_21_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 79454,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at WorkingCapital!E19: answer=560.876712328767, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at WorkingCapital!E19: answer=560.876712328767, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_21/06_21.traj"
+  },
+  {
+    "case_id": "06_22",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_22_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_22_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 37,
+    "tokens_sent": 652741,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [
+      "context-bloat"
+    ],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_22/06_22.traj"
+  },
+  {
+    "case_id": "06_23",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_23_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_23_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 59451,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at WorkingCapital!C37: answer=None, output=Use cash flow convention: ΔAP - ΔAR - ΔInv (sources minus uses)",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at WorkingCapital!C37: answer=None, output=Use cash flow convention: ΔAP - ΔAR - ΔInv (sources minus uses)"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_23/06_23.traj"
+  },
+  {
+    "case_id": "06_24",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_24_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_24_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 48678,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at RevenueBuild!C14: answer=145, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at RevenueBuild!C14: answer=145, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_24/06_24.traj"
+  },
+  {
+    "case_id": "06_25",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/06_equity_forecast/06_25_input.xlsx",
+    "golden": "spreadsheet/06_equity_forecast/06_25_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 8,
+    "tokens_sent": 32255,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at RevenueDrivers!B31: answer=Same-Store Sales Growth (ex-Gas), output=Same-Store Sales Growth (ex-Gas) %",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at RevenueDrivers!B31: answer=Same-Store Sales Growth (ex-Gas), output=Same-Store Sales Growth (ex-Gas) %"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/06_25/06_25.traj"
+  },
+  {
+    "case_id": "07_01",
+    "instruction": "Complete the equity method accounting model. Fill in all empty cells. Account for deferred tax effects from the dividends received deduction (DRD).",
+    "input": "spreadsheet/07_equity_method/07_01_input.xlsx",
+    "golden": "spreadsheet/07_equity_method/07_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 84794,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at EquityDRD!C14: answer=1070, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at EquityDRD!C14: answer=1070, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/07_01/07_01.traj"
+  },
+  {
+    "case_id": "07_02",
+    "instruction": "Complete the equity method investment analysis by calculating the purchase price allocation, balance sheet impacts, income statement effects, and supporting tax calculations for the acquiring company's 25% acquisition of the target company. Assume all operating revenues and expenses are cash transactions with no working capital changes.",
+    "input": "spreadsheet/07_equity_method/07_02_input.xlsx",
+    "golden": "spreadsheet/07_equity_method/07_02_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 14,
+    "tokens_sent": 99728,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/07_02/07_02.traj"
+  },
+  {
+    "case_id": "07_03",
+    "instruction": "Complete the equity method accounting exercise. Acquisition closes 3/31/2016 (start of Q1). The Q1 End balance sheet reflects post-acquisition position only; operating results first appear in Q2.",
+    "input": "spreadsheet/07_equity_method/07_03_input.xlsx",
+    "golden": "spreadsheet/07_equity_method/07_03_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 5,
+    "tokens_sent": 16542,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/07_03/07_03.traj"
+  },
+  {
+    "case_id": "08_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/08_fin_model_basics/08_01_input.xlsx",
+    "golden": "spreadsheet/08_fin_model_basics/08_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 18,
+    "tokens_sent": 221894,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtSchedule!C7: answer=1370.93573264782, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DebtSchedule!C7: answer=1370.93573264782, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/08_01/08_01.traj"
+  },
+  {
+    "case_id": "08_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/08_fin_model_basics/08_02_input.xlsx",
+    "golden": "spreadsheet/08_fin_model_basics/08_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 23,
+    "tokens_sent": 512063,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0735,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtSchedule!C17: answer=1286.25, output=None",
+    "weaknesses": [
+      "context-bloat",
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0735",
+      "Modification error at DebtSchedule!C17: answer=1286.25, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/08_02/08_02.traj"
+  },
+  {
+    "case_id": "08_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/08_fin_model_basics/08_03_input.xlsx",
+    "golden": "spreadsheet/08_fin_model_basics/08_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 62737,
+    "regression_accuracy": 0.9925,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at IncomeProjection!C9: answer=-26757.5, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9925",
+      "Regression error at IncomeProjection!C9: answer=-26757.5, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/08_03/08_03.traj"
+  },
+  {
+    "case_id": "09_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/09_lbo_model/09_01_input.xlsx",
+    "golden": "spreadsheet/09_lbo_model/09_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 18,
+    "tokens_sent": 239417,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtSchedule!C8: answer=55, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DebtSchedule!C8: answer=55, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/09_01/09_01.traj"
+  },
+  {
+    "case_id": "09_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/09_lbo_model/09_02_input.xlsx",
+    "golden": "spreadsheet/09_lbo_model/09_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 19,
+    "tokens_sent": 232287,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtSchedule!C9: answer=55, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DebtSchedule!C9: answer=55, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/09_02/09_02.traj"
+  },
+  {
+    "case_id": "09_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/09_lbo_model/09_03_input.xlsx",
+    "golden": "spreadsheet/09_lbo_model/09_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 18,
+    "tokens_sent": 160234,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at Sheet!D10: answer=-11.7, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at Sheet!D10: answer=-11.7, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/09_03/09_03.traj"
+  },
+  {
+    "case_id": "09_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/09_lbo_model/09_04_input.xlsx",
+    "golden": "spreadsheet/09_lbo_model/09_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 15,
+    "tokens_sent": 99358,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtSchedule!C16: answer=1.8, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DebtSchedule!C16: answer=1.8, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/09_04/09_04.traj"
+  },
+  {
+    "case_id": "10_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/10_ma_analysis/10_01_input.xlsx",
+    "golden": "spreadsheet/10_ma_analysis/10_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 66845,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at EPS_Accretion!C15: answer=1350, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at EPS_Accretion!C15: answer=1350, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/10_01/10_01.traj"
+  },
+  {
+    "case_id": "10_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/10_ma_analysis/10_02_input.xlsx",
+    "golden": "spreadsheet/10_ma_analysis/10_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 79730,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at EPS_Accretion!C24: answer=0.899682251475261, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at EPS_Accretion!C24: answer=0.899682251475261, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/10_02/10_02.traj"
+  },
+  {
+    "case_id": "11_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/11_ma_model/11_01_input.xlsx",
+    "golden": "spreadsheet/11_ma_model/11_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 19,
+    "tokens_sent": 173870,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtSchedule!E7: answer=1200, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DebtSchedule!E7: answer=1200, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/11_01/11_01.traj"
+  },
+  {
+    "case_id": "11_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/11_ma_model/11_02_input.xlsx",
+    "golden": "spreadsheet/11_ma_model/11_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 77234,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at PPA!D13: answer=-147, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at PPA!D13: answer=-147, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/11_02/11_02.traj"
+  },
+  {
+    "case_id": "11_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/11_ma_model/11_03_input.xlsx",
+    "golden": "spreadsheet/11_ma_model/11_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 21,
+    "tokens_sent": 159507,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at MergerPremium!C6: answer=1200, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at MergerPremium!C6: answer=1200, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/11_03/11_03.traj"
+  },
+  {
+    "case_id": "11_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/11_ma_model/11_04_input.xlsx",
+    "golden": "spreadsheet/11_ma_model/11_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 79110,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at PPA!C18: answer=-131.6, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at PPA!C18: answer=-131.6, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/11_04/11_04.traj"
+  },
+  {
+    "case_id": "12_01",
+    "instruction": "Complete the NOL carryforward calculations for both scenarios. Fill in all empty cells. Key assumptions (tax rate, NOL utilization limit) are at the top of each sheet.",
+    "input": "spreadsheet/12_net_op_loss/12_01_input.xlsx",
+    "golden": "spreadsheet/12_net_op_loss/12_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 91298,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.9213,
+    "accuracy": 0.0,
+    "first_error": "Modification error at NOL_Carryforward!D9: answer=45, output=11.25",
+    "weaknesses": [
+      "exactness-near-miss",
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.9213",
+      "Modification error at NOL_Carryforward!D9: answer=45, output=11.25"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/12_01/12_01.traj"
+  },
+  {
+    "case_id": "13_01",
+    "instruction": "Normalize the operating performance data by removing nonrecurring items from the income statement, complete the financial calculations, and project Q1-Q4 2025 results based on the average metrics from 2024.",
+    "input": "spreadsheet/13_nonrecurring/13_01_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 14,
+    "tokens_sent": 151931,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_01/13_01.traj"
+  },
+  {
+    "case_id": "13_02",
+    "instruction": "Normalize the historical financial statements by removing non-recurring items specified in the adjustments section. Calculate all derived income statement line items and operating metrics for historical periods. Project financial results for 2025-2027 using historical average margins and growth rates.",
+    "input": "spreadsheet/13_nonrecurring/13_02_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 7,
+    "tokens_sent": 54800,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_02/13_02.traj"
+  },
+  {
+    "case_id": "13_03",
+    "instruction": "Complete the normalized income statement and key metrics for all quarters (Q1 2024 through Q2 2025). Adjust historical values for the nonrecurring items listed, then forecast Q1 2025 and Q2 2025 based on average metrics from the prior three quarters. Normalize tax expense by adjusting for the tax shield of each nonrecurring item at the 21% statutory rate.",
+    "input": "spreadsheet/13_nonrecurring/13_03_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 20,
+    "tokens_sent": 403386,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.8554,
+    "accuracy": 0.0,
+    "first_error": "Modification error at FinancialNormalization!D32: answer=17.75, output=28.25",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.8554",
+      "Modification error at FinancialNormalization!D32: answer=17.75, output=28.25"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_03/13_03.traj"
+  },
+  {
+    "case_id": "13_04",
+    "instruction": "Normalize earnings for non-recurring items, calculate financial metrics, and project 2023-2025 using the specified averaging methods.",
+    "input": "spreadsheet/13_nonrecurring/13_04_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 6,
+    "tokens_sent": 25458,
+    "regression_accuracy": 0.9952,
+    "modification_accuracy": 0.6761,
+    "accuracy": 0.0,
+    "first_error": "Regression error at Normalize_Adjustments!C20: answer=0, output=0.1054",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.6761",
+      "Official regression accuracy is 0.9952",
+      "Regression error at Normalize_Adjustments!C20: answer=0, output=0.1054"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_04/13_04.traj"
+  },
+  {
+    "case_id": "13_05",
+    "instruction": "Normalize the financial data for non-recurring items, calculate metrics, and project future quarters using the specified methodology.",
+    "input": "spreadsheet/13_nonrecurring/13_05_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_05_golden.xlsx",
+    "exit_status": "exit_format",
+    "api_calls": 11,
+    "tokens_sent": 56791,
+    "regression_accuracy": 0.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "output file not exist",
+    "weaknesses": [
+      "no-deliverable",
+      "tool-protocol",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "No output workbook; exit=exit_format",
+      "Official modification accuracy is 0.0",
+      "output file not exist"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_05/13_05.traj"
+  },
+  {
+    "case_id": "13_06",
+    "instruction": "Normalize the financial statements for non-recurring items, calculate historical metrics, and forecast 2023E-2025E using normalized assumptions. Enter 0% for 2020 revenue growth.",
+    "input": "spreadsheet/13_nonrecurring/13_06_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_06_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 20,
+    "tokens_sent": 368915,
+    "regression_accuracy": 0.9789,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at FinancialNormalization!D14: answer=210, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9789",
+      "Regression error at FinancialNormalization!D14: answer=210, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_06/13_06.traj"
+  },
+  {
+    "case_id": "13_07",
+    "instruction": "Normalize the 2020-2021 financial data, calculate historical metrics, and project 2022E-2025E using historical averages.",
+    "input": "spreadsheet/13_nonrecurring/13_07_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_07_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 24,
+    "tokens_sent": 419122,
+    "regression_accuracy": 0.9779,
+    "modification_accuracy": 0.6044,
+    "accuracy": 0.0,
+    "first_error": "Regression error at Normalization!I23: answer=None, output=0.09384278002699056",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.6044",
+      "Official regression accuracy is 0.9779",
+      "Regression error at Normalization!I23: answer=None, output=0.09384278002699056"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_07/13_07.traj"
+  },
+  {
+    "case_id": "13_08",
+    "instruction": "Normalize the financial statements, calculate operating metrics, and forecast 2022-2023 per specified averaging methods. Tax-affect adjustments at 35%.",
+    "input": "spreadsheet/13_nonrecurring/13_08_input.xlsx",
+    "golden": "spreadsheet/13_nonrecurring/13_08_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 6,
+    "tokens_sent": 25667,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/13_08/13_08.traj"
+  },
+  {
+    "case_id": "14_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_01_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 16,
+    "tokens_sent": 173762,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DCF_Analysis!C32: answer=2489018, output=None",
+    "weaknesses": [
+      "numerical-looping",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DCF_Analysis!C32: answer=2489018, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_01/14_01.traj"
+  },
+  {
+    "case_id": "14_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_02_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 15,
+    "tokens_sent": 164822,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at OpEx_Projection!D20: answer=876200, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at OpEx_Projection!D20: answer=876200, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_02/14_02.traj"
+  },
+  {
+    "case_id": "14_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_03_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 10,
+    "tokens_sent": 65121,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at NOI_Projection!C15: answer=-81765, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at NOI_Projection!C15: answer=-81765, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_03/14_03.traj"
+  },
+  {
+    "case_id": "14_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_04_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 21,
+    "tokens_sent": 247560,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_04/14_04.traj"
+  },
+  {
+    "case_id": "14_05",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_05_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_05_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 21,
+    "tokens_sent": 240284,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at NOI_Projection!C35: answer=4850000, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at NOI_Projection!C35: answer=4850000, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_05/14_05.traj"
+  },
+  {
+    "case_id": "14_06",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_06_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_06_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 16,
+    "tokens_sent": 123017,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at OpEx_Projection!C28: answer=1823000, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at OpEx_Projection!C28: answer=1823000, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_06/14_06.traj"
+  },
+  {
+    "case_id": "14_07",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_07_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_07_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 11,
+    "tokens_sent": 79157,
+    "regression_accuracy": 0.9875,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at RentRoll!B4: answer=2026-05-27 00:00:00, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9875",
+      "Regression error at RentRoll!B4: answer=2026-05-27 00:00:00, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_07/14_07.traj"
+  },
+  {
+    "case_id": "14_08",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/14_re_dcf/14_08_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_08_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 25,
+    "tokens_sent": 371545,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 1.0,
+    "accuracy": 1.0,
+    "first_error": "",
+    "weaknesses": [],
+    "evidence": [
+      ""
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_08/14_08.traj"
+  },
+  {
+    "case_id": "14_09",
+    "instruction": "Concessions are 0% in Years 3–5.",
+    "input": "spreadsheet/14_re_dcf/14_09_input.xlsx",
+    "golden": "spreadsheet/14_re_dcf/14_09_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 35,
+    "tokens_sent": 674707,
+    "regression_accuracy": 0.7835,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at Revenue_Projection!B15: answer=None, output=Year 3 Concessions (% of Market Rent)",
+    "weaknesses": [
+      "context-bloat",
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.7835",
+      "Regression error at Revenue_Projection!B15: answer=None, output=Year 3 Concessions (% of Market Rent)"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/14_09/14_09.traj"
+  },
+  {
+    "case_id": "15_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/15_re_debt/15_01_input.xlsx",
+    "golden": "spreadsheet/15_re_debt/15_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 22,
+    "tokens_sent": 213984,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DebtAnalysis!C27: answer=84000000, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DebtAnalysis!C27: answer=84000000, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/15_01/15_01.traj"
+  },
+  {
+    "case_id": "15_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/15_re_debt/15_02_input.xlsx",
+    "golden": "spreadsheet/15_re_debt/15_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 22,
+    "tokens_sent": 309677,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at LoanSizing!B11: answer=None, output=NOI Growth Rate (Annual)",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at LoanSizing!B11: answer=None, output=NOI Growth Rate (Annual)"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/15_02/15_02.traj"
+  },
+  {
+    "case_id": "15_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/15_re_debt/15_03_input.xlsx",
+    "golden": "spreadsheet/15_re_debt/15_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 12,
+    "tokens_sent": 80223,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at LoanSizing!C30: answer=5765000, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at LoanSizing!C30: answer=5765000, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/15_03/15_03.traj"
+  },
+  {
+    "case_id": "15_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/15_re_debt/15_04_input.xlsx",
+    "golden": "spreadsheet/15_re_debt/15_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 15,
+    "tokens_sent": 115139,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at LoanSizing!C26: answer=319574.470171649, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at LoanSizing!C26: answer=319574.470171649, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/15_04/15_04.traj"
+  },
+  {
+    "case_id": "16_01",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_01_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_01_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 14,
+    "tokens_sent": 127693,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DirectCap!C13: answer=3.25, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at DirectCap!C13: answer=3.25, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_01/16_01.traj"
+  },
+  {
+    "case_id": "16_02",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_02_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_02_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 36,
+    "tokens_sent": 555381,
+    "regression_accuracy": 0.9956,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at RentRoll!B4: answer=2026-05-27 00:00:00, output=None",
+    "weaknesses": [
+      "context-bloat",
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9956",
+      "Regression error at RentRoll!B4: answer=2026-05-27 00:00:00, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_02/16_02.traj"
+  },
+  {
+    "case_id": "16_03",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_03_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_03_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 10,
+    "tokens_sent": 47747,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at RentRoll!C13: answer=320, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at RentRoll!C13: answer=320, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_03/16_03.traj"
+  },
+  {
+    "case_id": "16_04",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_04_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_04_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 18,
+    "tokens_sent": 144650,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at RentRoll!C13: answer=425, output=None",
+    "weaknesses": [
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Modification error at RentRoll!C13: answer=425, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_04/16_04.traj"
+  },
+  {
+    "case_id": "16_05",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_05_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_05_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 20,
+    "tokens_sent": 228166,
+    "regression_accuracy": 0.9455,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at DirectCap!H11: answer=2.95635080645161, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9455",
+      "Modification error at DirectCap!H11: answer=2.95635080645161, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_05/16_05.traj"
+  },
+  {
+    "case_id": "16_06",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_06_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_06_golden.xlsx",
+    "exit_status": "exit_cost",
+    "api_calls": 51,
+    "tokens_sent": 1341670,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.4133,
+    "accuracy": 0.0,
+    "first_error": "Modification error at RentRoll!F13: answer=853.60824742268, output=2519.84536082474",
+    "weaknesses": [
+      "budget-exhaustion",
+      "context-bloat",
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.4133",
+      "Modification error at RentRoll!F13: answer=853.60824742268, output=2519.84536082474"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_06/16_06.traj"
+  },
+  {
+    "case_id": "16_07",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_07_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_07_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 30,
+    "tokens_sent": 380681,
+    "regression_accuracy": 0.9764,
+    "modification_accuracy": 0.0661,
+    "accuracy": 0.0,
+    "first_error": "Regression error at RentRoll!C10: answer=300, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0661",
+      "Official regression accuracy is 0.9764",
+      "Regression error at RentRoll!C10: answer=300, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_07/16_07.traj"
+  },
+  {
+    "case_id": "16_08",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_08_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_08_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 14,
+    "tokens_sent": 89050,
+    "regression_accuracy": 1.0,
+    "modification_accuracy": 0.127,
+    "accuracy": 0.0,
+    "first_error": "Modification error at NOI_Analysis!C8: answer=252510, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.1270",
+      "Modification error at NOI_Analysis!C8: answer=252510, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_08/16_08.traj"
+  },
+  {
+    "case_id": "16_09",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_09_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_09_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 27,
+    "tokens_sent": 402871,
+    "regression_accuracy": 0.9698,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Modification error at Valuation!H10: answer=3.21928460342146, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9698",
+      "Modification error at Valuation!H10: answer=3.21928460342146, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_09/16_09.traj"
+  },
+  {
+    "case_id": "16_10",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_10_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_10_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 19,
+    "tokens_sent": 176178,
+    "regression_accuracy": 0.9467,
+    "modification_accuracy": 0.3019,
+    "accuracy": 0.0,
+    "first_error": "Regression error at DCF!C14: answer=2727000, output=None",
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.3019",
+      "Official regression accuracy is 0.9467",
+      "Regression error at DCF!C14: answer=2727000, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_10/16_10.traj"
+  },
+  {
+    "case_id": "16_11",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_11_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_11_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 16,
+    "tokens_sent": 110780,
+    "regression_accuracy": 0.9377,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at RentRoll!C11: answer=320, output=None",
+    "weaknesses": [
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9377",
+      "Regression error at RentRoll!C11: answer=320, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_11/16_11.traj"
+  },
+  {
+    "case_id": "16_12",
+    "instruction": "Complete the financial model based on the provided assumptions. Ensure that all formulas, references, and calculations are correct.",
+    "input": "spreadsheet/16_re_direct_cap/16_12_input.xlsx",
+    "golden": "spreadsheet/16_re_direct_cap/16_12_golden.xlsx",
+    "exit_status": "submitted",
+    "api_calls": 28,
+    "tokens_sent": 252212,
+    "regression_accuracy": 0.9368,
+    "modification_accuracy": 0.0,
+    "accuracy": 0.0,
+    "first_error": "Regression error at RentRoll!C14: answer=280, output=None",
+    "weaknesses": [
+      "numerical-looping",
+      "over-editing",
+      "zero-target-coverage"
+    ],
+    "evidence": [
+      "Official modification accuracy is 0.0",
+      "Official regression accuracy is 0.9368",
+      "Regression error at RentRoll!C14: answer=280, output=None"
+    ],
+    "trajectory": "trajectories/deepseek-chat/full-20260816T032000Z/Template/16_12/16_12.traj"
+  }
+]

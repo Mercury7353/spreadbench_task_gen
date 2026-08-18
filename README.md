@@ -1,162 +1,157 @@
-<div align="center">
-  <h1>SpreadsheetBench 2: Evaluating Agents on End-to-End Business Spreadsheet Workflows</h1>
-  <p>
-    <a href="https://spreadsheetbench.github.io/">💻 <strong>Website</strong></a> |
-    <a href="https://arxiv.org/abs/2606.29955">📄 <strong>Paper (arXiv)</strong></a> |
-    <a href="https://huggingface.co/datasets/KAKA22/SpreadsheetBench-v2">📦 <strong>Dataset</strong></a> |
-  </p>
-</div>
+# SpreadsheetEval: real-workbook, weakness-grounded Harbor benchmark
 
-<p align="center">
-  <img src="images/overview.png" alt="SpreadsheetBench 2 overview" width="90%">
-</p>
+This submission contains ten strict OJ spreadsheet-agent tasks: five Financial
+Modeling and five Debugging. Every task starts from an existing, human-authored
+financial workbook. Code does **not** fabricate base Excel models; it downloads
+pinned, permissively licensed sources, normalizes legacy files, and applies
+deterministic, cell-audited mutations derived from original SpreadsheetBench V2
+failure trajectories.
 
-SpreadsheetBench 2 is a benchmark for evaluating agents on end-to-end business spreadsheet workflows. Unlike existing benchmarks that focus on isolated manipulations, SpreadsheetBench 2 requires agents to (1) complete workflow-level goals through multi-step coordinated operations, (2) perform cross-sheet reasoning within complex multi-sheet workbooks, (3) produce deliverable-level outcomes including structured models, repaired spreadsheets, and accurate visualizations.
+## Result at a glance
 
-## 📢 News
+| Evaluation | Tasks | Pass@1 | Exceptions |
+|---|---:|---:|---:|
+| Harbor Oracle | 10 | **1.000** | 0 |
+| DeepSeek `deepseek-chat` + Terminus-2 | 10 | **0.000** | 0 |
 
-- **2026-6**: 🔥Released the SpreadsheetBench 2 dataset, paper, and code.
+The required difficulty threshold is Overall Pass@1 <= 0.200; the measured
+result is 0/10. The requested endpoint was `deepseek-chat`; each saved ATIF
+model step reports the routed model name `deepseek-v4-flash`. The run completed
+without infrastructure exceptions or retries.
 
-## 📦 Dataset Introduction
+## Evidence chain
 
-Place the dataset under the `data/` directory. SpreadsheetBench 2 contains four categories:
+The construction order is deliberate:
 
-| Category            | Description                              |
-| ------------------- | ---------------------------------------- |
-| `Debugging`       | Formula debugging and error correction.  |
-| `Financial_Model` | Financial modeling and calculation.      |
-| `Template`        | Template-based spreadsheet operations.   |
-| `Visualization`   | Chart generation and data visualization. |
+1. Evaluate the original SpreadsheetBench V2 cases.
+2. Read every completed Template trajectory and join it to official regression
+   and modification scores.
+3. Extract observed weaknesses such as zero/partial target coverage,
+   over-editing, exactness near-misses, context bloat, numerical looping, and
+   missing deliverables.
+4. Select five complex, licensed Excel models written by humans.
+5. Apply only weakness-targeted mutations to their genuine formula graphs.
+6. Require exact modified-cell sets and recalculated values in Harbor.
+7. Run Oracle and DeepSeek; retain complete per-trial evidence.
 
-Each category folder should contain a `dataset.json` file and the corresponding spreadsheet files under `spreadsheet/`.
+The frozen 97-case source analysis is in
+[`reports/original_template_97_cases.md`](reports/original_template_97_cases.md),
+with a machine-readable companion JSON containing the score, exit status,
+token usage, first evaluator error, weakness labels, and trajectory path for
+every case. Task manifests embed the exact source case IDs and weakness labels;
+the test suite rejects stale or ungrounded provenance.
 
-Expected layout:
+The accompanying Chinese Swiss-style HTML briefing is
+[`reports/spreadsheetbench-v2-overview.html`](reports/spreadsheetbench-v2-overview.html).
+Manual review of every constructed trajectory is in
+[`reports/model-trajectory-findings.md`](reports/model-trajectory-findings.md).
 
-* `id`: The unique id of the data point.
-* `instruction`: The question about spreadsheet manipulation.
-* `spreadsheet_path`: The folder path that stores the input file.
-* `golden_response_path`: The folder path that stores the answer file.
+## Dataset
 
-## 🚀 Running Code
+| Human-authored mother workbook | Sheets | Formulas | Financial edits | Debugging edits |
+|---|---:|---:|---:|---:|
+| Five-year manufacturing plan | 5 | 1,875 | 140 | 26 |
+| Commercial real-estate valuation | 2 | 321 | 60 | 24 |
+| Coal India financial model | 11 | 1,562 | 130 | 24 |
+| Financial projection model | 22 | 3,865 | 140 | 32 |
+| Packt project-finance model | 10 | 2,973 | 140 | 32 |
 
-### 1. ⚙️ Install Dependencies
+Four workbooks are Apache-2.0 files from `IanMadlenya/finance-excel`; the Packt
+workbook is MIT licensed. Repositories are pinned to commits. Exact download
+URLs, converted-file SHA-256 hashes, license copies, and rejected-workbook audit
+reasons are in
+[`third_party/real_workbooks/SOURCES.md`](third_party/real_workbooks/SOURCES.md).
 
-Create and activate the Conda environment:
+There are no Visualization tasks, subjective judges, or manually graded
+criteria.
+
+## Operators and scaling
+
+[`spreadsheet_eval/mutation_operators.py`](spreadsheet_eval/mutation_operators.py)
+contains the reusable operators:
+
+- `blank_formula`: remove genuine formulas across up to six formula-rich sheets
+  to trigger zero/partial coverage and long-horizon execution failures;
+- `sign_flip`: retain local syntax while reversing financial semantics;
+- `offset`: wrap a correct formula in a plausible `1 + (...)` corruption;
+- `reference_drift`: move one real cell reference by one row;
+- deterministic cross-sheet target selection, seeded per source workbook.
+
+The mutation budget scales with the workbook's real formula count. Financial
+tasks require 60-140 exact formula restorations; debugging tasks contain 24-32
+sparse, heterogeneous faults. Each `tests/manifest.json` stores the complete
+cell-level before/injected/reference audit log. The generator never calls a
+model or asks a human to choose cells.
+
+## Strict verifier
+
+Each task reward is exactly 0 or 1. The verifier:
+
+1. rejects a missing `/workspace/output.xlsx`;
+2. requires sheet names/order/state, dimensions, merged ranges, and freeze
+   panes to remain unchanged;
+3. computes the raw changed-cell set and requires exact equality with ground
+   truth - one missing or extra cell is reward 0;
+4. recalculates the candidate and reference with LibreOffice;
+5. normalizes dates and compares numeric values rounded to two decimals;
+6. provides no partial credit.
+
+Both an unchanged input and an Oracle workbook with one extra edit were tested
+and score 0. The unmodified Oracle copies `reference.xlsx` to `output.xlsx` and
+scores 1 on all ten tasks.
+
+## Reproduce
+
+Requirements: Python 3.11, Docker, LibreOffice-capable Harbor, and `curl`.
 
 ```bash
-conda create -n ssb-v2 python==3.11 -y
-conda activate ssb-v2
+python3.11 -m venv .venv311
+.venv311/bin/python -m pip install -e '.[test]'
+
+docker build -f SWE-agent/spreadsheet.Dockerfile \
+  -t spreadsheetbench-v2 SWE-agent/docker-context
+
+bash scripts/fetch_real_workbooks.sh
+.venv311/bin/python scripts/generate_real_spreadsheet_eval.py
+.venv311/bin/python -m pytest -q tests
 ```
 
-Install SWE-agent:
+Run the official Oracle:
 
 ```bash
-cd SWE-agent
-pip install --upgrade pip
-pip install --editable .
+harbor run -p SpreadsheetEval -a oracle --n-concurrent 1 \
+  --job-name real-oracle -o jobs -y
 ```
 
-### 2. 🐳 Build Docker Image
-
-Run this command from the repository root:
+Run and monitor DeepSeek. `DEEPSEEK_API_KEY` may be exported, or on macOS it
+may be stored in Keychain under service `spreadsheetbench-v2-deepseek`.
 
 ```bash
-docker build -f spreadsheet.Dockerfile -t spreadsheetbench-v2 .
+bash scripts/run_construction_eval.sh real-deepseek-full
+bash scripts/monitor_construction_eval.sh real-deepseek-full 60
+python scripts/analyze_harbor_results.py real-deepseek-full
+python scripts/export_evaluation_artifacts.py real-deepseek-full
+python scripts/replay_final_verifier.py real-deepseek-full
 ```
 
-### 3. ▶️ Run Experiments
+The exporter refuses partial or errored runs. Committed evaluation artifacts
+contain each complete ATIF trajectory JSON, terminal recording, terminal pane,
+trial metadata, candidate `output.xlsx`, verifier evidence, monitor history,
+and aggregate result. No API key is written to the repository.
 
-Run SWE-agent from the `SWE-agent/` directory. A complete runnable example is provided in `SWE-agent/scripts/example.sh`.
-
-```bash
-conda activate ssb-v2
-cd SWE-agent
-
-sweagent run \
-  --config config/spreadsheet.yaml \
-  --env.deployment.image spreadsheetbench-v2 \
-  --agent.model.name='openrouter/z-ai/glm-5' \
-  --agent.model.api_key='<your_api_key>' \
-  --agent.model.completion_kwargs='{"extra_body": {"reasoning": {"enabled": true}}}' \
-  --num_workers 4 \
-  --dataset_path ../data/spreadsheetbench-v2/<Category>
-```
-
-`--num_workers` controls the maximum number of tasks running concurrently and defaults to `1`.
-Each worker starts an independent Docker environment. For every task, only the file selected by
-its `spreadsheet_path` is mounted into that container (read-only); its output directory is also
-private and is copied into the shared results directory after the container stops. Choose the
-worker count according to available Docker resources and the model API's concurrency/rate limits.
-
-Replace `<Category>` with one of:
+## Repository map
 
 ```text
-Debugging
-Financial_Model
-Template
-Visualization
+SpreadsheetEval/                 10 runnable Harbor tasks
+spreadsheet_eval/                real-workbook generator, operators, verifier
+scripts/                         fetch, generate, run, monitor, analyze, export
+reports/                         original and constructed case analyses
+evaluation_artifacts/            complete 10-task model trajectories
+third_party/real_workbooks/      provenance and license texts
+tests/                           invariants, provenance, operator tests
 ```
 
-For `Visualization` tasks, use `config/visualisation.yaml`:
-
-```bash
-sweagent run \
-  --config config/visualisation.yaml \
-  --env.deployment.image spreadsheetbench-v2 \
-  --agent.model.name='openrouter/z-ai/glm-5' \
-  --agent.model.api_key='<your_api_key>' \
-  --agent.model.completion_kwargs='{"extra_body": {"reasoning": {"enabled": true}}}' \
-  --num_workers 4 \
-  --dataset_path ../data/spreadsheetbench-v2/Visualization
-```
-
-### 4. 📈 Evaluate Outputs
-
-After obtaining model outputs, return to the repository root and refresh cached spreadsheet values with LibreOffice:
-
-```bash
-python evaluation/open_spreadsheet.py \
-  --dir_path <path_to_output_excel>
-```
-
-For `Debugging`, `Financial_Model`, and `Template` tasks:
-
-```bash
-python evaluation/evaluation.py \
-  --model <model_name> \
-  --dataset <Category> \
-  --outputs-dir <path_to_output_excel> \
-  --workers <N>
-```
-
-`--num_workers` is used during agent execution, while evaluation uses its existing `--workers` option.
-
-Results are written to `results/<Category>/`.
-
-For `Visualization` tasks, use the VLM checklist evaluator with `glm-4.6v`.
-This step should be run on Windows because the evaluator exports chart images
-from `.xlsx` files through the Excel/WPS COM interface:
-
-```bash
-python evaluation/run_visual_vlm_checklist_eval.py \
-  --tasks-json data/spreadsheetbench-v2/Visualization/dataset.json \
-  --output-dir <path_to_output_excel> \
-  --api-key <your_bigmodel_api_key> \
-  --model glm-4.6v
-```
-
-You can also provide the VLM API key through the environment:
-
-```bash
-export VLM_API_KEY=<your_bigmodel_api_key>
-python evaluation/run_visual_vlm_checklist_eval.py \
-  --tasks-json data/spreadsheetbench-v2/Visualization/dataset.json \
-  --output-dir <path_to_output_excel> \
-  --model glm-4.6v
-```
-
-The visualization evaluator saves a JSON report next to the output directory by default, named `evaluation_report_<output-dir-name>.json`.
-
-## 🙏 Acknowledgements
-
- We thank the [SWE-agent](https://github.com/SWE-agent/SWE-agent) for their open-source infrastructure.
+Detailed design notes are in
+[`README_CONSTRUCTION.md`](README_CONSTRUCTION.md). The original upstream
+SpreadsheetBench V2 instructions are preserved in
+[`README_UPSTREAM.md`](README_UPSTREAM.md).

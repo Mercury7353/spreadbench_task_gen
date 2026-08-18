@@ -1,0 +1,245 @@
+{
+  "task_id": "debugging-01-manufacturing-plan",
+  "category": "debugging",
+  "source": {
+    "slug": "manufacturing-plan",
+    "filename": "5 Year Financial Plan for Manufacturing Company.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "01_02",
+    "01_04"
+  ],
+  "weaknesses": [
+    "incomplete-target-coverage",
+    "over-editing",
+    "numerical-looping",
+    "context-bloat"
+  ],
+  "source_case_weaknesses": {
+    "01_02": [
+      "incomplete-target-coverage",
+      "numerical-looping",
+      "over-editing"
+    ],
+    "01_04": [
+      "context-bloat",
+      "incomplete-target-coverage",
+      "numerical-looping",
+      "over-editing"
+    ]
+  },
+  "required_cells": [
+    "Loan Payment Calculator!E191",
+    "Loan Payment Calculator!D318",
+    "Loan Payment Calculator!F282",
+    "Loan Payment Calculator!F78",
+    "Loan Payment Calculator!F90",
+    "Loan Payment Calculator!E86",
+    "Loan Payment Calculator!G111",
+    "Loan Payment Calculator!G310",
+    "Balance Sheet!F8",
+    "Balance Sheet!G50",
+    "Balance Sheet!I45",
+    "Balance Sheet!I17",
+    "Balance Sheet!F18",
+    "Balance Sheet!G47",
+    "Balance Sheet!G52",
+    "Balance Sheet!E34",
+    "Cash Flow!E26",
+    "Cash Flow!G36",
+    "Cash Flow!G27",
+    "Cash Flow!G14",
+    "Cash Flow!I11",
+    "Cash Flow!H10",
+    "Cash Flow!G11",
+    "Cash Flow!E21",
+    "Profit and Loss!I16",
+    "Profit and Loss!H32"
+  ],
+  "mutations": [
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "E191",
+      "operator": "sign_flip",
+      "reference": "=G191-F191",
+      "injected": "=-1*(G191-F191)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "D318",
+      "operator": "offset",
+      "reference": "=D317+E317",
+      "injected": "=1+(D317+E317)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F282",
+      "operator": "reference_drift",
+      "reference": "=-$C$6*D282",
+      "injected": "=-$C$7*D282"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F78",
+      "operator": "sign_flip",
+      "reference": "=-$C$6*D78",
+      "injected": "=-1*(-$C$6*D78)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "F90",
+      "operator": "offset",
+      "reference": "=-$C$6*D90",
+      "injected": "=1+(-$C$6*D90)"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "E86",
+      "operator": "reference_drift",
+      "reference": "=G86-F86",
+      "injected": "=G87-F86"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G111",
+      "operator": "sign_flip",
+      "reference": "=IF(C111>$C$8,0,$C$9)",
+      "injected": "=-1*(IF(C111>$C$8,0,$C$9))"
+    },
+    {
+      "sheet": "Loan Payment Calculator",
+      "cell": "G310",
+      "operator": "offset",
+      "reference": "=IF(C310>$C$8,0,$C$9)",
+      "injected": "=1+(IF(C310>$C$8,0,$C$9))"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F8",
+      "operator": "reference_drift",
+      "reference": "=E8",
+      "injected": "=E9"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G50",
+      "operator": "sign_flip",
+      "reference": "=SUM(G46:G49)",
+      "injected": "=-1*(SUM(G46:G49))"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "I45",
+      "operator": "offset",
+      "reference": "=I6",
+      "injected": "=1+(I6)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "I17",
+      "operator": "reference_drift",
+      "reference": "=+H17",
+      "injected": "=+H18"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F18",
+      "operator": "sign_flip",
+      "reference": "=E18",
+      "injected": "=-1*(E18)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G47",
+      "operator": "offset",
+      "reference": "=F47",
+      "injected": "=1+(F47)"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "G52",
+      "operator": "reference_drift",
+      "reference": "=G50+G43",
+      "injected": "=G51+G43"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E34",
+      "operator": "sign_flip",
+      "reference": "=+D34",
+      "injected": "=-1*(+D34)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E26",
+      "operator": "offset",
+      "reference": "='Balance Sheet'!F37+'Balance Sheet'!F38-('Balance Sheet'!E37+'Balance Sheet'!E38)",
+      "injected": "=1+('Balance Sheet'!F37+'Balance Sheet'!F38-('Balance Sheet'!E37+'Balance Sheet'!E38))"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G36",
+      "operator": "reference_drift",
+      "reference": "=G35+G33",
+      "injected": "=G36+G33"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G27",
+      "operator": "sign_flip",
+      "reference": "=F27",
+      "injected": "=-1*(F27)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G14",
+      "operator": "offset",
+      "reference": "=F14",
+      "injected": "=1+(F14)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "I11",
+      "operator": "reference_drift",
+      "reference": "=SUM(D11:H11)",
+      "injected": "=SUM(D12:H11)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "H10",
+      "operator": "sign_flip",
+      "reference": "=+'Balance Sheet'!H8-'Balance Sheet'!I8",
+      "injected": "=-1*(+'Balance Sheet'!H8-'Balance Sheet'!I8)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "G11",
+      "operator": "offset",
+      "reference": "=+'Balance Sheet'!G9-'Balance Sheet'!H9",
+      "injected": "=1+(+'Balance Sheet'!G9-'Balance Sheet'!H9)"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E21",
+      "operator": "reference_drift",
+      "reference": "=(-1*MIN(0,SUM('Balance Sheet'!F15:F18)-SUM('Balance Sheet'!E15:E18))-'Profit and Loss'!F41)",
+      "injected": "=(-1*MIN(0,SUM('Balance Sheet'!F16:F18)-SUM('Balance Sheet'!E15:E18))-'Profit and Loss'!F41)"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "I16",
+      "operator": "sign_flip",
+      "reference": "=+H16*(1+I9)",
+      "injected": "=-1*(+H16*(1+I9))"
+    },
+    {
+      "sheet": "Profit and Loss",
+      "cell": "H32",
+      "operator": "offset",
+      "reference": "=+G32*(1+H$9)",
+      "injected": "=1+(+G32*(1+H$9))"
+    }
+  ]
+}

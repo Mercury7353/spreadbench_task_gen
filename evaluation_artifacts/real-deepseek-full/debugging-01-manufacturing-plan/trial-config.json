@@ -1,0 +1,24 @@
+{
+    "task": {
+        "path": "SpreadsheetEval/debugging-01-manufacturing-plan",
+        "source": "SpreadsheetEval"
+    },
+    "trial_name": "debugging-01-manufacturing-plan__f3jNM2H",
+    "trials_dir": "jobs/real-deepseek-full",
+    "agent": {
+        "name": "terminus-2",
+        "model_name": "deepseek/deepseek-chat",
+        "include_logs": [
+            "**/*"
+        ]
+    },
+    "environment": {
+        "type": "docker",
+        "cpu_enforcement_policy": "ignore",
+        "memory_enforcement_policy": "ignore"
+    },
+    "artifacts": [
+        "/workspace/output.xlsx"
+    ],
+    "job_id": "043f8cb9-081a-4821-8878-91b84424d29a"
+}

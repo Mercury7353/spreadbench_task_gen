@@ -1,0 +1,1013 @@
+{
+  "task_id": "financial-04-financial-projection",
+  "category": "financial",
+  "source": {
+    "slug": "financial-projection",
+    "filename": "Financial Projection Model.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "07_01",
+    "07_02"
+  ],
+  "weaknesses": [
+    "zero-target-coverage",
+    "no-deliverable",
+    "tool-protocol"
+  ],
+  "source_case_weaknesses": {
+    "07_01": [
+      "zero-target-coverage"
+    ],
+    "07_02": [
+      "no-deliverable",
+      "tool-protocol",
+      "zero-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "8. Income Statement!K66",
+    "8. Income Statement!H9",
+    "8. Income Statement!I34",
+    "8. Income Statement!E30",
+    "8. Income Statement!N54",
+    "8. Income Statement!F39",
+    "8. Income Statement!E28",
+    "8. Income Statement!E16",
+    "8. Income Statement!G54",
+    "8. Income Statement!N48",
+    "8. Income Statement!F40",
+    "8. Income Statement!N27",
+    "8. Income Statement!P12",
+    "8. Income Statement!Q46",
+    "8. Income Statement!I18",
+    "8. Income Statement!N16",
+    "8. Income Statement!O40",
+    "8. Income Statement!H49",
+    "8. Income Statement!N36",
+    "8. Income Statement!I40",
+    "8. Income Statement!K45",
+    "8. Income Statement!F70",
+    "8. Income Statement!O70",
+    "12. Income Statement (2)!O66",
+    "12. Income Statement (2)!F62",
+    "12. Income Statement (2)!F22",
+    "12. Income Statement (2)!J20",
+    "12. Income Statement (2)!K45",
+    "12. Income Statement (2)!O11",
+    "12. Income Statement (2)!G12",
+    "12. Income Statement (2)!I20",
+    "12. Income Statement (2)!L38",
+    "12. Income Statement (2)!H11",
+    "12. Income Statement (2)!P44",
+    "12. Income Statement (2)!E70",
+    "12. Income Statement (2)!F25",
+    "12. Income Statement (2)!G53",
+    "12. Income Statement (2)!P36",
+    "12. Income Statement (2)!O29",
+    "12. Income Statement (2)!J62",
+    "12. Income Statement (2)!Q25",
+    "12. Income Statement (2)!P25",
+    "12. Income Statement (2)!H54",
+    "12. Income Statement (2)!E66",
+    "12. Income Statement (2)!K22",
+    "12. Income Statement (2)!K66",
+    "15. Income Statement (3)!P54",
+    "15. Income Statement (3)!M28",
+    "15. Income Statement (3)!N46",
+    "15. Income Statement (3)!M38",
+    "15. Income Statement (3)!L37",
+    "15. Income Statement (3)!J9",
+    "15. Income Statement (3)!H70",
+    "15. Income Statement (3)!L30",
+    "15. Income Statement (3)!E43",
+    "15. Income Statement (3)!B10",
+    "15. Income Statement (3)!B52",
+    "15. Income Statement (3)!Q25",
+    "15. Income Statement (3)!O50",
+    "15. Income Statement (3)!L60",
+    "15. Income Statement (3)!G40",
+    "15. Income Statement (3)!K12",
+    "15. Income Statement (3)!Q20",
+    "15. Income Statement (3)!K62",
+    "15. Income Statement (3)!J44",
+    "15. Income Statement (3)!G20",
+    "15. Income Statement (3)!L20",
+    "15. Income Statement (3)!N31",
+    "15. Income Statement (3)!Q27",
+    "20. Amoritization Schedule!P16",
+    "20. Amoritization Schedule!R24",
+    "20. Amoritization Schedule!K41",
+    "20. Amoritization Schedule!R21",
+    "20. Amoritization Schedule!N39",
+    "20. Amoritization Schedule!I37",
+    "20. Amoritization Schedule!P21",
+    "20. Amoritization Schedule!H19",
+    "20. Amoritization Schedule!L24",
+    "20. Amoritization Schedule!S43",
+    "20. Amoritization Schedule!G36",
+    "20. Amoritization Schedule!G6",
+    "20. Amoritization Schedule!I19",
+    "20. Amoritization Schedule!O21",
+    "20. Amoritization Schedule!G37",
+    "20. Amoritization Schedule!J37",
+    "20. Amoritization Schedule!S36",
+    "20. Amoritization Schedule!K23",
+    "20. Amoritization Schedule!J24",
+    "20. Amoritization Schedule!P19",
+    "20. Amoritization Schedule!P43",
+    "20. Amoritization Schedule!H24",
+    "20. Amoritization Schedule!G16",
+    "13. Cash Flow Statement (2)!J21",
+    "13. Cash Flow Statement (2)!H19",
+    "13. Cash Flow Statement (2)!J13",
+    "13. Cash Flow Statement (2)!L35",
+    "13. Cash Flow Statement (2)!E29",
+    "13. Cash Flow Statement (2)!I26",
+    "13. Cash Flow Statement (2)!K35",
+    "13. Cash Flow Statement (2)!M13",
+    "13. Cash Flow Statement (2)!F29",
+    "13. Cash Flow Statement (2)!I33",
+    "13. Cash Flow Statement (2)!H8",
+    "13. Cash Flow Statement (2)!K40",
+    "13. Cash Flow Statement (2)!G22",
+    "13. Cash Flow Statement (2)!F12",
+    "13. Cash Flow Statement (2)!N12",
+    "13. Cash Flow Statement (2)!E13",
+    "13. Cash Flow Statement (2)!O33",
+    "13. Cash Flow Statement (2)!Q28",
+    "13. Cash Flow Statement (2)!F19",
+    "13. Cash Flow Statement (2)!I25",
+    "13. Cash Flow Statement (2)!P33",
+    "13. Cash Flow Statement (2)!L26",
+    "13. Cash Flow Statement (2)!O26",
+    "16. Cash Flow Statement (3)!F29",
+    "16. Cash Flow Statement (3)!F40",
+    "16. Cash Flow Statement (3)!G37",
+    "16. Cash Flow Statement (3)!H19",
+    "16. Cash Flow Statement (3)!J33",
+    "16. Cash Flow Statement (3)!N26",
+    "16. Cash Flow Statement (3)!K26",
+    "16. Cash Flow Statement (3)!H6",
+    "16. Cash Flow Statement (3)!N25",
+    "16. Cash Flow Statement (3)!L8",
+    "16. Cash Flow Statement (3)!P35",
+    "16. Cash Flow Statement (3)!O6",
+    "16. Cash Flow Statement (3)!L22",
+    "16. Cash Flow Statement (3)!E22",
+    "16. Cash Flow Statement (3)!F37",
+    "16. Cash Flow Statement (3)!J29",
+    "16. Cash Flow Statement (3)!H37",
+    "16. Cash Flow Statement (3)!H13",
+    "16. Cash Flow Statement (3)!Q12",
+    "16. Cash Flow Statement (3)!E12",
+    "16. Cash Flow Statement (3)!L29",
+    "16. Cash Flow Statement (3)!L25",
+    "16. Cash Flow Statement (3)!G11",
+    "12. Income Statement (2)!H37",
+    "12. Income Statement (2)!Q63"
+  ],
+  "mutations": [
+    {
+      "sheet": "8. Income Statement",
+      "cell": "K66",
+      "operator": "blank_formula",
+      "reference": "=K22-K31-K54-K64"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "H9",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!$E$9*'4. Projected Sales Forecast'!K14"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "I34",
+      "operator": "blank_formula",
+      "reference": "=H34"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "E30",
+      "operator": "blank_formula",
+      "reference": "='2. Salaries and Wages'!K32"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "N54",
+      "operator": "blank_formula",
+      "reference": "=SUM(N34:N53)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "F39",
+      "operator": "blank_formula",
+      "reference": "=E39"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "E28",
+      "operator": "blank_formula",
+      "reference": "='2. Salaries and Wages'!K17"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "E16",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!$E$10*'4. Projected Sales Forecast'!H14"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "G54",
+      "operator": "blank_formula",
+      "reference": "=SUM(G34:G53)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "N48",
+      "operator": "blank_formula",
+      "reference": "=M48"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "F40",
+      "operator": "blank_formula",
+      "reference": "=E40"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "N27",
+      "operator": "blank_formula",
+      "reference": "=M27"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "P12",
+      "operator": "blank_formula",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$31>0,'5. Projected Sales Forecast (2)'!$E$31*'5. Projected Sales Forecast (2)'!S36,\"\")"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "Q46",
+      "operator": "blank_formula",
+      "reference": "=SUM(E46:P46)"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "I18",
+      "operator": "blank_formula",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$10>0,'5. Projected Sales Forecast (2)'!$E$10*'5. Projected Sales Forecast (2)'!L14,\"\")"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "N16",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!$E$10*'4. Projected Sales Forecast'!Q14"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "O40",
+      "operator": "blank_formula",
+      "reference": "=N40"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "H49",
+      "operator": "blank_formula",
+      "reference": "=G49"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "N36",
+      "operator": "blank_formula",
+      "reference": "=M36"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "I40",
+      "operator": "blank_formula",
+      "reference": "=H40"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "K45",
+      "operator": "blank_formula",
+      "reference": "=J45"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "F70",
+      "operator": "blank_formula",
+      "reference": "=F22-F31-F54-F58-F60-F61-F62"
+    },
+    {
+      "sheet": "8. Income Statement",
+      "cell": "O70",
+      "operator": "blank_formula",
+      "reference": "=O22-O31-O54-O58-O60-O61-O62"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "O66",
+      "operator": "blank_formula",
+      "reference": "=O22-O31-O54-O64"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "F62",
+      "operator": "blank_formula",
+      "reference": "='13. Cash Flow Statement (2)'!F26"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "F22",
+      "operator": "blank_formula",
+      "reference": "=F13-F20"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "J20",
+      "operator": "blank_formula",
+      "reference": "=SUM(J16:J19)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "K45",
+      "operator": "blank_formula",
+      "reference": "=J45"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "O11",
+      "operator": "blank_formula",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$9>0,'5. Projected Sales Forecast (2)'!$E$9*'5. Projected Sales Forecast (2)'!R15,\"\")"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "G12",
+      "operator": "blank_formula",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$31>0,'5. Projected Sales Forecast (2)'!$E$31*'5. Projected Sales Forecast (2)'!J37,\"\")"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "I20",
+      "operator": "blank_formula",
+      "reference": "=SUM(I16:I19)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "L38",
+      "operator": "blank_formula",
+      "reference": "=K38"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "H11",
+      "operator": "blank_formula",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$9>0,'5. Projected Sales Forecast (2)'!$E$9*'5. Projected Sales Forecast (2)'!K15,\"\")"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "P44",
+      "operator": "blank_formula",
+      "reference": "=O44"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "E70",
+      "operator": "blank_formula",
+      "reference": "=E22-E31-E54-E58-E60-E61-E62"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "F25",
+      "operator": "blank_formula",
+      "reference": "=E25"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "G53",
+      "operator": "blank_formula",
+      "reference": "=F53"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "P36",
+      "operator": "blank_formula",
+      "reference": "=O36"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "O29",
+      "operator": "blank_formula",
+      "reference": "=N29"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "J62",
+      "operator": "blank_formula",
+      "reference": "='13. Cash Flow Statement (2)'!J26"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "Q25",
+      "operator": "blank_formula",
+      "reference": "=SUM(E25:P25)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "P25",
+      "operator": "blank_formula",
+      "reference": "=O25"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "H54",
+      "operator": "blank_formula",
+      "reference": "=SUM(H34:H53)"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "E66",
+      "operator": "blank_formula",
+      "reference": "=E22-E31-E54-E64"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "K22",
+      "operator": "blank_formula",
+      "reference": "=K13-K20"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "K66",
+      "operator": "blank_formula",
+      "reference": "=K22-K31-K54-K64"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "P54",
+      "operator": "blank_formula",
+      "reference": "=SUM(P34:P53)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "M28",
+      "operator": "blank_formula",
+      "reference": "=L28"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "N46",
+      "operator": "blank_formula",
+      "reference": "=M46"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "M38",
+      "operator": "blank_formula",
+      "reference": "=L38"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "L37",
+      "operator": "blank_formula",
+      "reference": "=K37"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "J9",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!$E$9*'4. Projected Sales Forecast'!M16"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "H70",
+      "operator": "blank_formula",
+      "reference": "=H22-H31-H54-H58-H60-H61-H62"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "L30",
+      "operator": "blank_formula",
+      "reference": "=K30"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "E43",
+      "operator": "blank_formula",
+      "reference": "='3. Fixed Operating Expenses'!K20/12"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "B10",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!A30"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "B52",
+      "operator": "blank_formula",
+      "reference": "='3. Fixed Operating Expenses'!B29"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "Q25",
+      "operator": "blank_formula",
+      "reference": "=SUM(E25:P25)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "O50",
+      "operator": "blank_formula",
+      "reference": "=N50"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "L60",
+      "operator": "blank_formula",
+      "reference": "='20. Amoritization Schedule'!N23"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "G40",
+      "operator": "blank_formula",
+      "reference": "=F40"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "K12",
+      "operator": "blank_formula",
+      "reference": "=IF('5. Projected Sales Forecast (2)'!$E$31>0,'5. Projected Sales Forecast (2)'!$E$31*'5. Projected Sales Forecast (2)'!N38,\"\")"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "Q20",
+      "operator": "blank_formula",
+      "reference": "=SUM(Q16:Q19)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "K62",
+      "operator": "blank_formula",
+      "reference": "='16. Cash Flow Statement (3)'!K26"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "J44",
+      "operator": "blank_formula",
+      "reference": "=I44"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "G20",
+      "operator": "blank_formula",
+      "reference": "=SUM(G16:G19)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "L20",
+      "operator": "blank_formula",
+      "reference": "=SUM(L16:L19)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "N31",
+      "operator": "blank_formula",
+      "reference": "=SUM(N25:N30)"
+    },
+    {
+      "sheet": "15. Income Statement (3)",
+      "cell": "Q27",
+      "operator": "blank_formula",
+      "reference": "=SUM(E27:P27)"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "P16",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$10/12,10,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "R24",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$10/12,36,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "K41",
+      "operator": "blank_formula",
+      "reference": "=J41-K40"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "R21",
+      "operator": "blank_formula",
+      "reference": "=Q21-R20"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "N39",
+      "operator": "blank_formula",
+      "reference": "=ABS(IPMT($E$30/12,20,$E$31,$E$29))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "I37",
+      "operator": "blank_formula",
+      "reference": "=H37-I36"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "P21",
+      "operator": "blank_formula",
+      "reference": "=O21-P20"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "H19",
+      "operator": "blank_formula",
+      "reference": "=ABS(IPMT($E$10/12,14,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "L24",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$10/12,30,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "S43",
+      "operator": "blank_formula",
+      "reference": "=SUM(G43:R43)"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "G36",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$30/12,1,$E$31,$E$29))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "G6",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!H6"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "I19",
+      "operator": "blank_formula",
+      "reference": "=ABS(IPMT($E$10/12,15,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "O21",
+      "operator": "blank_formula",
+      "reference": "=N21-O20"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "G37",
+      "operator": "blank_formula",
+      "reference": "=E29-G36"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "J37",
+      "operator": "blank_formula",
+      "reference": "=I37-J36"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "S36",
+      "operator": "blank_formula",
+      "reference": "=SUM(G36:R36)"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "K23",
+      "operator": "blank_formula",
+      "reference": "=ABS(IPMT($E$10/12,29,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "J24",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$10/12,28,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "P19",
+      "operator": "blank_formula",
+      "reference": "=ABS(IPMT($E$10/12,22,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "P43",
+      "operator": "blank_formula",
+      "reference": "=ABS(IPMT($E$30/12,34,$E$31,$E$29))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "H24",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$10/12,26,$E$11,$E$9))"
+    },
+    {
+      "sheet": "20. Amoritization Schedule",
+      "cell": "G16",
+      "operator": "blank_formula",
+      "reference": "=ABS(PPMT($E$10/12,1,$E$11,$E$9))"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "J21",
+      "operator": "blank_formula",
+      "reference": "='12. Income Statement (2)'!J31"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "H19",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$15*'12. Income Statement (2)'!H20)+('6. Cash Receipts-Disbursements'!$G$16*'12. Income Statement (2)'!G20)+('6. Cash Receipts-Disbursements'!$G$17*'12. Income Statement (2)'!F20)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "J13",
+      "operator": "blank_formula",
+      "reference": "=SUM(J11:J12)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "L35",
+      "operator": "blank_formula",
+      "reference": "=IF((L33-'6. Cash Receipts-Disbursements'!$G$21)<0,'6. Cash Receipts-Disbursements'!$G$21-'13. Cash Flow Statement (2)'!L33,0)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "E29",
+      "operator": "blank_formula",
+      "reference": "=SUM(E17:E28)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "I26",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$22/12)*H40"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "K35",
+      "operator": "blank_formula",
+      "reference": "=IF((K33-'6. Cash Receipts-Disbursements'!$G$21)<0,'6. Cash Receipts-Disbursements'!$G$21-'13. Cash Flow Statement (2)'!K33,0)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "M13",
+      "operator": "blank_formula",
+      "reference": "=SUM(M11:M12)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "F29",
+      "operator": "blank_formula",
+      "reference": "=SUM(F17:F28)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "I33",
+      "operator": "blank_formula",
+      "reference": "=I8+I31"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "H8",
+      "operator": "blank_formula",
+      "reference": "=G37"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "K40",
+      "operator": "blank_formula",
+      "reference": "=J40+K35-K27"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "G22",
+      "operator": "blank_formula",
+      "reference": "='12. Income Statement (2)'!G54"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "F12",
+      "operator": "blank_formula",
+      "reference": "=('8. Income Statement'!P13*'6. Cash Receipts-Disbursements'!G10)+('12. Income Statement (2)'!E13*'6. Cash Receipts-Disbursements'!G9)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "N12",
+      "operator": "blank_formula",
+      "reference": "=('12. Income Statement (2)'!L13*'6. Cash Receipts-Disbursements'!$G$10)+('12. Income Statement (2)'!M13*'6. Cash Receipts-Disbursements'!$G$9)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "E13",
+      "operator": "blank_formula",
+      "reference": "=SUM(E11:E12)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "O33",
+      "operator": "blank_formula",
+      "reference": "=O8+O31"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "Q28",
+      "operator": "blank_formula",
+      "reference": "=SUM(E28:P28)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "F19",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!G15*'12. Income Statement (2)'!F20)+('6. Cash Receipts-Disbursements'!G16*'12. Income Statement (2)'!E20)+('6. Cash Receipts-Disbursements'!G17*'8. Income Statement'!P20)"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "I25",
+      "operator": "blank_formula",
+      "reference": "=H25"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "P33",
+      "operator": "blank_formula",
+      "reference": "=P8+P31"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "L26",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$22/12)*K40"
+    },
+    {
+      "sheet": "13. Cash Flow Statement (2)",
+      "cell": "O26",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$22/12)*N40"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "F29",
+      "operator": "blank_formula",
+      "reference": "=SUM(F17:F28)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "F40",
+      "operator": "blank_formula",
+      "reference": "=E40+F35-F27"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "G37",
+      "operator": "blank_formula",
+      "reference": "=G33+G35"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "H19",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$15*'15. Income Statement (3)'!H20)+('6. Cash Receipts-Disbursements'!$G$16*'15. Income Statement (3)'!G20)+('6. Cash Receipts-Disbursements'!$G$17*'15. Income Statement (3)'!F20)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "J33",
+      "operator": "blank_formula",
+      "reference": "=J8+J31"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "N26",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$22/12)*M40"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "K26",
+      "operator": "blank_formula",
+      "reference": "=('6. Cash Receipts-Disbursements'!$G$22/12)*J40"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "H6",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!K6"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "N25",
+      "operator": "blank_formula",
+      "reference": "=M25"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "L8",
+      "operator": "blank_formula",
+      "reference": "=K37"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "P35",
+      "operator": "blank_formula",
+      "reference": "=IF((P33-'6. Cash Receipts-Disbursements'!$G$21)<0,'6. Cash Receipts-Disbursements'!$G$21-'16. Cash Flow Statement (3)'!P33,0)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "O6",
+      "operator": "blank_formula",
+      "reference": "='4. Projected Sales Forecast'!R6"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "L22",
+      "operator": "blank_formula",
+      "reference": "='15. Income Statement (3)'!L54"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "E22",
+      "operator": "blank_formula",
+      "reference": "='15. Income Statement (3)'!E54"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "F37",
+      "operator": "blank_formula",
+      "reference": "=F33+F35"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "J29",
+      "operator": "blank_formula",
+      "reference": "=SUM(J17:J28)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "H37",
+      "operator": "blank_formula",
+      "reference": "=H33+H35"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "H13",
+      "operator": "blank_formula",
+      "reference": "=SUM(H11:H12)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "Q12",
+      "operator": "blank_formula",
+      "reference": "=SUM(E12:P12)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "E12",
+      "operator": "blank_formula",
+      "reference": "=('12. Income Statement (2)'!O13*'6. Cash Receipts-Disbursements'!G10)+('12. Income Statement (2)'!P13*'6. Cash Receipts-Disbursements'!G9)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "L29",
+      "operator": "blank_formula",
+      "reference": "=SUM(L17:L28)"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "L25",
+      "operator": "blank_formula",
+      "reference": "=K25"
+    },
+    {
+      "sheet": "16. Cash Flow Statement (3)",
+      "cell": "G11",
+      "operator": "blank_formula",
+      "reference": "='15. Income Statement (3)'!G13*'6. Cash Receipts-Disbursements'!$G$8"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "H37",
+      "operator": "blank_formula",
+      "reference": "=G37"
+    },
+    {
+      "sheet": "12. Income Statement (2)",
+      "cell": "Q63",
+      "operator": "blank_formula",
+      "reference": "=SUM(E63:P63)"
+    }
+  ]
+}

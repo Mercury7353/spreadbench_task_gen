@@ -1,0 +1,204 @@
+[
+  {
+    "task_id": "financial-01-manufacturing-plan",
+    "category": "financial",
+    "source": {
+      "slug": "manufacturing-plan",
+      "filename": "5 Year Financial Plan for Manufacturing Company.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 1875,
+    "required_edits": 140,
+    "source_original_cases": [
+      "04_04",
+      "06_01"
+    ],
+    "weaknesses": [
+      "zero-target-coverage"
+    ]
+  },
+  {
+    "task_id": "debugging-01-manufacturing-plan",
+    "category": "debugging",
+    "source": {
+      "slug": "manufacturing-plan",
+      "filename": "5 Year Financial Plan for Manufacturing Company.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 1875,
+    "required_edits": 26,
+    "source_original_cases": [
+      "01_02",
+      "01_04"
+    ],
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing",
+      "numerical-looping",
+      "context-bloat"
+    ]
+  },
+  {
+    "task_id": "financial-02-commercial-real-estate",
+    "category": "financial",
+    "source": {
+      "slug": "commercial-real-estate",
+      "filename": "Commercial Real Estate Valuation Model.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 321,
+    "required_edits": 60,
+    "source_original_cases": [
+      "06_02",
+      "06_03"
+    ],
+    "weaknesses": [
+      "zero-target-coverage"
+    ]
+  },
+  {
+    "task_id": "debugging-02-commercial-real-estate",
+    "category": "debugging",
+    "source": {
+      "slug": "commercial-real-estate",
+      "filename": "Commercial Real Estate Valuation Model.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 321,
+    "required_edits": 24,
+    "source_original_cases": [
+      "02_02",
+      "02_05"
+    ],
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ]
+  },
+  {
+    "task_id": "financial-03-coal-india",
+    "category": "financial",
+    "source": {
+      "slug": "coal-india",
+      "filename": "Coal India Limited Financial Model & Valuation.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 1562,
+    "required_edits": 130,
+    "source_original_cases": [
+      "06_04",
+      "06_05"
+    ],
+    "weaknesses": [
+      "zero-target-coverage",
+      "incomplete-target-coverage"
+    ]
+  },
+  {
+    "task_id": "debugging-03-coal-india",
+    "category": "debugging",
+    "source": {
+      "slug": "coal-india",
+      "filename": "Coal India Limited Financial Model & Valuation.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 1562,
+    "required_edits": 24,
+    "source_original_cases": [
+      "03_01",
+      "03_03"
+    ],
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ]
+  },
+  {
+    "task_id": "financial-04-financial-projection",
+    "category": "financial",
+    "source": {
+      "slug": "financial-projection",
+      "filename": "Financial Projection Model.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 3865,
+    "required_edits": 140,
+    "source_original_cases": [
+      "07_01",
+      "07_02"
+    ],
+    "weaknesses": [
+      "zero-target-coverage",
+      "no-deliverable",
+      "tool-protocol"
+    ]
+  },
+  {
+    "task_id": "debugging-04-financial-projection",
+    "category": "debugging",
+    "source": {
+      "slug": "financial-projection",
+      "filename": "Financial Projection Model.xlsx",
+      "origin": "IanMadlenya/finance-excel",
+      "license": "Apache-2.0"
+    },
+    "formula_count": 3865,
+    "required_edits": 32,
+    "source_original_cases": [
+      "05_01",
+      "05_02"
+    ],
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing",
+      "exactness-near-miss"
+    ]
+  },
+  {
+    "task_id": "financial-05-project-finance",
+    "category": "financial",
+    "source": {
+      "slug": "project-finance",
+      "filename": "Packt_Project_Finance.xlsx",
+      "origin": "PacktPublishing/Project-Finance-and-Excel---Build-Financial-Models-from-Scratch",
+      "license": "MIT"
+    },
+    "formula_count": 2973,
+    "required_edits": 140,
+    "source_original_cases": [
+      "11_01",
+      "11_02"
+    ],
+    "weaknesses": [
+      "zero-target-coverage"
+    ]
+  },
+  {
+    "task_id": "debugging-05-project-finance",
+    "category": "debugging",
+    "source": {
+      "slug": "project-finance",
+      "filename": "Packt_Project_Finance.xlsx",
+      "origin": "PacktPublishing/Project-Finance-and-Excel---Build-Financial-Models-from-Scratch",
+      "license": "MIT"
+    },
+    "formula_count": 2973,
+    "required_edits": 32,
+    "source_original_cases": [
+      "06_06",
+      "06_08"
+    ],
+    "weaknesses": [
+      "incomplete-target-coverage",
+      "over-editing",
+      "context-bloat"
+    ]
+  }
+]

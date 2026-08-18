@@ -1,0 +1,290 @@
+{
+  "task_id": "debugging-05-project-finance",
+  "category": "debugging",
+  "source": {
+    "slug": "project-finance",
+    "filename": "Packt_Project_Finance.xlsx",
+    "origin": "PacktPublishing/Project-Finance-and-Excel---Build-Financial-Models-from-Scratch",
+    "license": "MIT"
+  },
+  "source_original_cases": [
+    "06_06",
+    "06_08"
+  ],
+  "weaknesses": [
+    "incomplete-target-coverage",
+    "over-editing",
+    "context-bloat"
+  ],
+  "source_case_weaknesses": {
+    "06_06": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "06_08": [
+      "context-bloat",
+      "over-editing",
+      "zero-target-coverage"
+    ]
+  },
+  "required_cells": [
+    "Construction!S33",
+    "Construction!Q39",
+    "Construction!AN39",
+    "Construction!X34",
+    "Construction!L33",
+    "Construction!AB16",
+    "Construction!AA28",
+    "Construction!AC43",
+    "Ratios!AC12",
+    "Ratios!AD10",
+    "Ratios!AO24",
+    "Ratios!AI10",
+    "Ratios!AE11",
+    "Ratios!U8",
+    "Ratios!Y15",
+    "Ratios!H27",
+    "CFS!Y14",
+    "CFS!AJ12",
+    "CFS!AP12",
+    "CFS!P19",
+    "CFS!L23",
+    "CFS!X12",
+    "CFS!S19",
+    "CFS!R14",
+    "P&L!W15",
+    "P&L!AJ15",
+    "P&L!AP11",
+    "P&L!M21",
+    "P&L!AH13",
+    "P&L!I11",
+    "P&L!G11",
+    "P&L!AO15"
+  ],
+  "mutations": [
+    {
+      "sheet": "Construction",
+      "cell": "S33",
+      "operator": "sign_flip",
+      "reference": "=R35",
+      "injected": "=-1*(R35)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "Q39",
+      "operator": "offset",
+      "reference": "=('Input Assumptions'!$D$35+'Input Assumptions'!$D$36)*Q33*TBA!P14",
+      "injected": "=1+(('Input Assumptions'!$D$35+'Input Assumptions'!$D$36)*Q33*TBA!P14)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AN39",
+      "operator": "reference_drift",
+      "reference": "=('Input Assumptions'!$D$35+'Input Assumptions'!$D$36)*AN33*TBA!AM14",
+      "injected": "=('Input Assumptions'!$D$36+'Input Assumptions'!$D$36)*AN33*TBA!AM14"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "X34",
+      "operator": "sign_flip",
+      "reference": "=X27",
+      "injected": "=-1*(X27)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "L33",
+      "operator": "offset",
+      "reference": "=K35",
+      "injected": "=1+(K35)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AB16",
+      "operator": "reference_drift",
+      "reference": "=SUM(AB12:AB15)",
+      "injected": "=SUM(AB13:AB15)"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AA28",
+      "operator": "sign_flip",
+      "reference": "=SUM(AA26:AA27)",
+      "injected": "=-1*(SUM(AA26:AA27))"
+    },
+    {
+      "sheet": "Construction",
+      "cell": "AC43",
+      "operator": "offset",
+      "reference": "=AC16-AC28<0.01",
+      "injected": "=1+(AC16-AC28<0.01)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AC12",
+      "operator": "reference_drift",
+      "reference": "=SUM(AC8:AC11)",
+      "injected": "=SUM(AC9:AC11)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AD10",
+      "operator": "sign_flip",
+      "reference": "=-Construction!AC14",
+      "injected": "=-1*(-Construction!AC14)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AO24",
+      "operator": "offset",
+      "reference": "=-Construction!AN26",
+      "injected": "=1+(-Construction!AN26)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AI10",
+      "operator": "reference_drift",
+      "reference": "=-Construction!AH14",
+      "injected": "=-Construction!AH15"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "AE11",
+      "operator": "sign_flip",
+      "reference": "=-Construction!AD15",
+      "injected": "=-1*(-Construction!AD15)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "U8",
+      "operator": "offset",
+      "reference": "=-Construction!T12",
+      "injected": "=1+(-Construction!T12)"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "Y15",
+      "operator": "reference_drift",
+      "reference": "=-Operation!X21",
+      "injected": "=-Operation!X22"
+    },
+    {
+      "sheet": "Ratios",
+      "cell": "H27",
+      "operator": "sign_flip",
+      "reference": "=SUM(H24:H26)",
+      "injected": "=-1*(SUM(H24:H26))"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "Y14",
+      "operator": "offset",
+      "reference": "=SUM(Y8:Y13)",
+      "injected": "=1+(SUM(Y8:Y13))"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AJ12",
+      "operator": "reference_drift",
+      "reference": "='P&L'!AJ23",
+      "injected": "='P&L'!AJ24"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "AP12",
+      "operator": "sign_flip",
+      "reference": "='P&L'!AP23",
+      "injected": "=-1*('P&L'!AP23)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "P19",
+      "operator": "offset",
+      "reference": "=P14+P16+P17",
+      "injected": "=1+(P14+P16+P17)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "L23",
+      "operator": "reference_drift",
+      "reference": "=L19+L21",
+      "injected": "=L20+L21"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "X12",
+      "operator": "sign_flip",
+      "reference": "='P&L'!X23",
+      "injected": "=-1*('P&L'!X23)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "S19",
+      "operator": "offset",
+      "reference": "=S14+S16+S17",
+      "injected": "=1+(S14+S16+S17)"
+    },
+    {
+      "sheet": "CFS",
+      "cell": "R14",
+      "operator": "reference_drift",
+      "reference": "=SUM(R8:R13)",
+      "injected": "=SUM(R9:R13)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "W15",
+      "operator": "sign_flip",
+      "reference": "=Amortization!V13",
+      "injected": "=-1*(Amortization!V13)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AJ15",
+      "operator": "offset",
+      "reference": "=Amortization!AI13",
+      "injected": "=1+(Amortization!AI13)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AP11",
+      "operator": "reference_drift",
+      "reference": "=-Operation!AO21",
+      "injected": "=-Operation!AO22"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "M21",
+      "operator": "sign_flip",
+      "reference": "=SUM(M17:M20)",
+      "injected": "=-1*(SUM(M17:M20))"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AH13",
+      "operator": "offset",
+      "reference": "=SUM(AH9:AH12)",
+      "injected": "=1+(SUM(AH9:AH12))"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I11",
+      "operator": "reference_drift",
+      "reference": "=-Operation!H21",
+      "injected": "=-Operation!H22"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "G11",
+      "operator": "sign_flip",
+      "reference": "=-Operation!F21",
+      "injected": "=-1*(-Operation!F21)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "AO15",
+      "operator": "offset",
+      "reference": "=Amortization!AN13",
+      "injected": "=1+(Amortization!AN13)"
+    }
+  ]
+}

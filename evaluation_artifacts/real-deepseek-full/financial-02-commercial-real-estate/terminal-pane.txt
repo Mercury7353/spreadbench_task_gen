@@ -1,0 +1,2037 @@
+[?2004hroot@e1ef3fd93ef4:/workspace# asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004hroot@e1ef3fd93ef4:/workspace# clear
+[?2004l[H[J[?2004hroot@e1ef3fd93ef4:/workspace# ls -la
+[?2004ltotal 40
+drwxr-xr-x 1 root root  4096 Aug 18 01:37 .
+drwxr-xr-x 1 root root  4096 Aug 18 02:32 ..
+-rw-r--r-- 1 root root 29939 Aug 18 01:33 input.xlsx
+[?2004hroot@e1ef3fd93ef4:/workspace# find /workspace -maxdepth 2 -type f -printf '%p\n'
+[?2004l/workspace/input.xlsx
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p, data_only=False)
+[?2004l[?2004h> print('sheets', wb.sheetnames)
+[?2004l[?2004h> for ws in wb.worksheets:
+[?2004l[?2004h>     print('\nSHEET', ws.title, 'dims', ws.dimensions, 'maxr', ws.max_row, 'maxc', ws.max_column)
+[?2004l[?2004h>     for row in ws.iter_rows():
+[?2004l[?2004h>         for c in row:
+[?2004l[?2004h>             if c.value is not None:
+[?2004l[?2004h>                 print(c.coordinate, repr(c.value), 'data_type', c.data_type)
+[?2004l[?2004h> PY
+[?2004lsheets ['Description', 'Model']
+
+SHEET Description dims A1:A1 maxr 1 maxc 1
+
+SHEET Model dims A1:AE401 maxr 401 maxc 31
+B1 'Commercial Real Estate Valuation and Financial Feasibility' data_type s
+B3 'ASSUMPTIONS' data_type s
+B4 'Annual Gross Rent, first year' data_type s
+C4 182400 data_type n
+B5 'Vacancy and Collection factor' data_type s
+C5 0.05 data_type n
+B6 'Operating Expenses, first year' data_type s
+C6 55540 data_type n
+B7 'Annual % change in rent' data_type s
+C7 0.03 data_type n
+B8 'Annual % change in expenses' data_type s
+C8 0.03 data_type n
+B9 'Loan to Value ratio' data_type s
+C9 0.75 data_type n
+B10 'Stated Annual Interest rate' data_type s
+C10 0.06 data_type n
+B11 'Loan Term (years)' data_type s
+C11 25 data_type n
+B12 'Percent of price in improvements' data_type s
+C12 0.85 data_type n
+B13 'CPI Annual Increase' data_type s
+C13 0.03 data_type n
+B14 'After tax, Real Discount rate' data_type s
+C14 0.08 data_type n
+B15 'Cap Rate assumed at date of sale' data_type s
+C15 0.08 data_type n
+B16 'Transaction costs as % of sales price' data_type s
+C16 0.09 data_type n
+B17 'Cap Rate at Purchase' data_type s
+C17 0.0906 data_type n
+B19 'DEFINED VARIABLES' data_type s
+D19 'Source' data_type s
+B20 'Recovery period (years)' data_type s
+C20 39 data_type n
+D20 'Omnibus Budget Reconciliation Act of 1993' data_type s
+B21 'Income tax rate (Corporate)' data_type s
+C21 '=IF(E49<50000,15%,IF(E49<75000,25%,IF(E49<100000,34%,IF(E49<335000,39%,IF(E49<10000000,34%,IF(E49<15000000,35%,IF(E49<18333333,38%,35%)))))))' data_type f
+D21 'IRS - Varies based on taxable income' data_type s
+B22 'Capital Gains tax rate' data_type s
+C22 '=IF(C21=15%,5%,15%)' data_type f
+D22 'IRS - Varies based on income tax bracket' data_type s
+B24 'Property Valuation:' data_type s
+B26 'ECONOMIC VALUES, CALCULATED BY MODEL' data_type s
+B27 'Loan Amount' data_type s
+C27 '=C9*C24' data_type f
+B28 'Equity Required' data_type s
+B29 'Mortgage Loan Constant' data_type s
+C29 '=((C10)/((1-(1/(1+C10)^C11))))' data_type f
+B32 'DECISION ANALYSIS FACTORS' data_type s
+C33 'year' data_type s
+D33 0 data_type n
+E33 1 data_type n
+F33 2 data_type n
+G33 3 data_type n
+H33 4 data_type n
+I33 5 data_type n
+J33 6 data_type n
+K33 7 data_type n
+L33 8 data_type n
+M33 9 data_type n
+N33 10 data_type n
+O33 11 data_type n
+B34 'Real Cash Flow to Owner' data_type s
+D34 '=D67' data_type f
+E34 '=E67' data_type f
+F34 '=F67' data_type f
+G34 '=G67' data_type f
+I34 '=I67' data_type f
+J34 '=J67' data_type f
+K34 '=K67' data_type f
+L34 '=L67' data_type f
+M34 '=M67' data_type f
+N34 '=N67' data_type f
+O34 0 data_type n
+B35 'Present Value of Real Cash Flow' data_type s
+D35 '=D34/((1+$C$14)^D33)' data_type f
+E35 '=E34/((1+$C$14)^E33)' data_type f
+F35 '=F34/((1+$C$14)^F33)' data_type f
+G35 '=G34/((1+$C$14)^G33)' data_type f
+H35 '=H34/((1+$C$14)^H33)' data_type f
+I35 '=I34/((1+$C$14)^I33)' data_type f
+K35 '=K34/((1+$C$14)^K33)' data_type f
+L35 '=L34/((1+$C$14)^L33)' data_type f
+N35 '=N34/((1+$C$14)^N33)' data_type f
+O35 '=O34/((1+$C$14)^O33)' data_type f
+B37 'NPV of Real Cash Flow:' data_type s
+C37 '=SUM(D35:N35)' data_type f
+B38 'After Tax Real Internal Rate of Return:' data_type s
+C38 '=IRR(D34:N34,C10)' data_type f
+B40 'PROFORMA INCOME STATEMENT' data_type s
+C41 'year' data_type s
+D41 0 data_type n
+E41 1 data_type n
+F41 2 data_type n
+G41 3 data_type n
+H41 4 data_type n
+I41 5 data_type n
+J41 6 data_type n
+K41 7 data_type n
+L41 8 data_type n
+M41 9 data_type n
+N41 10 data_type n
+O41 11 data_type n
+B42 'Annual Gross Rental Income' data_type s
+D42 'na' data_type s
+F42 '=E42*(1+$C$7)' data_type f
+G42 '=F42*(1+$C$7)' data_type f
+H42 '=G42*(1+$C$7)' data_type f
+I42 '=H42*(1+$C$7)' data_type f
+J42 '=I42*(1+$C$7)' data_type f
+L42 '=K42*(1+$C$7)' data_type f
+M42 '=L42*(1+$C$7)' data_type f
+N42 '=M42*(1+$C$7)' data_type f
+O42 '=N42*(1+$C$7)' data_type f
+B43 'Vacancy and Collection Losses' data_type s
+D43 'na' data_type s
+E43 '=-(E42*$C$5)' data_type f
+F43 '=-(F42*$C$5)' data_type f
+G43 '=-(G42*$C$5)' data_type f
+I43 '=-(I42*$C$5)' data_type f
+K43 '=-(K42*$C$5)' data_type f
+M43 '=-(M42*$C$5)' data_type f
+N43 '=-(N42*$C$5)' data_type f
+O43 '=-(O42*$C$5)' data_type f
+B44 'Effective Rental' data_type s
+D44 'na' data_type s
+E44 '=E42+E43' data_type f
+F44 '=F42+F43' data_type f
+G44 '=G42+G43' data_type f
+H44 '=H42+H43' data_type f
+I44 '=I42+I43' data_type f
+J44 '=J42+J43' data_type f
+K44 '=K42+K43' data_type f
+L44 '=L42+L43' data_type f
+M44 '=M42+M43' data_type f
+N44 '=N42+N43' data_type f
+O44 '=O42+O43' data_type f
+B45 'Operating Expenses' data_type s
+D45 'na' data_type s
+E45 -55540 data_type n
+F45 '=E45*(1+$C$8)' data_type f
+H45 '=G45*(1+$C$8)' data_type f
+I45 '=H45*(1+$C$8)' data_type f
+K45 '=J45*(1+$C$8)' data_type f
+L45 '=K45*(1+$C$8)' data_type f
+N45 '=M45*(1+$C$8)' data_type f
+O45 '=N45*(1+$C$8)' data_type f
+B46 'Net Operating Income' data_type s
+D46 'na' data_type s
+E46 '=SUM(E44:E45)' data_type f
+F46 '=SUM(F44:F45)' data_type f
+H46 '=SUM(H44:H45)' data_type f
+I46 '=SUM(I44:I45)' data_type f
+J46 '=SUM(J44:J45)' data_type f
+L46 '=SUM(L44:L45)' data_type f
+M46 '=SUM(M44:M45)' data_type f
+N46 '=SUM(N44:N45)' data_type f
+B47 'Interest Expense' data_type s
+D47 'na' data_type s
+E47 '=E74' data_type f
+F47 '=F74' data_type f
+H47 '=H74' data_type f
+I47 '=I74' data_type f
+K47 '=K74' data_type f
+L47 '=L74' data_type f
+M47 '=M74' data_type f
+N47 '=N74' data_type f
+O47 '=O74' data_type f
+B48 'Depreciation (cost recovery)' data_type s
+D48 'na' data_type s
+E48 '=(C24*C12)/-C20' data_type f
+F48 '=E48' data_type f
+H48 '=G48' data_type f
+I48 '=H48' data_type f
+J48 '=I48' data_type f
+K48 '=J48' data_type f
+L48 '=K48' data_type f
+M48 '=L48' data_type f
+N48 '=M48' data_type f
+O48 '=N48' data_type f
+B49 'Taxable Income' data_type s
+D49 'na' data_type s
+E49 '=E46+E47+E48' data_type f
+F49 '=F46+F47+F48' data_type f
+G49 '=G46+G47+G48' data_type f
+I49 '=I46+I47+I48' data_type f
+J49 '=J46+J47+J48' data_type f
+K49 '=K46+K47+K48' data_type f
+L49 '=L46+L47+L48' data_type f
+N49 '=N46+N47+N48' data_type f
+O49 '=O46+O47+O48' data_type f
+B50 'Income Tax Liability' data_type s
+D50 'na' data_type s
+E50 '=($C$21*-E49)' data_type f
+F50 '=($C$21*-F49)' data_type f
+G50 '=($C$21*-G49)' data_type f
+H50 '=($C$21*-H49)' data_type f
+I50 '=($C$21*-I49)' data_type f
+J50 '=($C$21*-J49)' data_type f
+L50 '=($C$21*-L49)' data_type f
+M50 '=($C$21*-M49)' data_type f
+N50 '=($C$21*-N49)' data_type f
+O50 '=($C$21*-O49)' data_type f
+B51 'Net Income After Tax' data_type s
+D51 'na' data_type s
+E51 '=E49+E50' data_type f
+H51 '=H49+H50' data_type f
+I51 '=I49+I50' data_type f
+J51 '=J49+J50' data_type f
+K51 '=K49+K50' data_type f
+L51 '=L49+L50' data_type f
+N51 '=N49+N50' data_type f
+O51 '=O49+O50' data_type f
+B54 'PROFORMA CASH FLOW STATEMENT' data_type s
+C55 'year' data_type s
+D55 0 data_type n
+E55 1 data_type n
+F55 2 data_type n
+G55 3 data_type n
+H55 4 data_type n
+I55 5 data_type n
+J55 6 data_type n
+K55 7 data_type n
+L55 8 data_type n
+M55 9 data_type n
+N55 10 data_type n
+O55 11 data_type n
+B56 'Annual Gross Rental Income' data_type s
+D56 'na' data_type s
+E56 '=E42' data_type f
+J56 '=J42' data_type f
+L56 '=L42' data_type f
+M56 '=M42' data_type f
+N56 '=N42' data_type f
+O56 '=O42' data_type f
+B57 'Vacancy and Collection Loses' data_type s
+D57 'na' data_type s
+E57 '=E43' data_type f
+F57 '=F43' data_type f
+G57 '=G43' data_type f
+H57 '=H43' data_type f
+I57 '=I43' data_type f
+J57 '=J43' data_type f
+K57 '=K43' data_type f
+M57 '=M43' data_type f
+N57 '=N43' data_type f
+O57 '=O43' data_type f
+B58 'Effective Rental' data_type s
+D58 'na' data_type s
+E58 '=E44' data_type f
+F58 '=F44' data_type f
+H58 '=H44' data_type f
+I58 '=I44' data_type f
+J58 '=J44' data_type f
+L58 '=L44' data_type f
+M58 '=M44' data_type f
+N58 '=N44' data_type f
+B59 'Operating Expenses' data_type s
+D59 'na' data_type s
+E59 -55540 data_type n
+F59 '=E59*(1+$C$8)' data_type f
+G59 '=F59*(1+$C$8)' data_type f
+I59 '=H59*(1+$C$8)' data_type f
+J59 '=I59*(1+$C$8)' data_type f
+K59 '=J59*(1+$C$8)' data_type f
+L59 '=K59*(1+$C$8)' data_type f
+M59 '=L59*(1+$C$8)' data_type f
+O59 '=N59*(1+$C$8)' data_type f
+B60 'Net Operating Income' data_type s
+D60 'na' data_type s
+F60 127443.6224642 data_type n
+G60 '=SUM(G58:G59)' data_type f
+H60 '=SUM(H58:H59)' data_type f
+I60 '=SUM(I58:I59)' data_type f
+J60 '=SUM(J58:J59)' data_type f
+K60 '=SUM(K58:K59)' data_type f
+L60 '=SUM(L58:L59)' data_type f
+M60 '=SUM(M58:M59)' data_type f
+N60 '=SUM(N58:N59)' data_type f
+O60 '=SUM(O58:O59)' data_type f
+B61 'Debt Service' data_type s
+D61 'na' data_type s
+E61 '=(-E73)' data_type f
+F61 94731.8503068155 data_type n
+G61 '=F61' data_type f
+H61 '=G61' data_type f
+J61 '=I61' data_type f
+K61 '=J61' data_type f
+M61 '=L61' data_type f
+N61 '=M61' data_type f
+O61 'na' data_type s
+B62 'Income Tax Liability' data_type s
+D62 'na' data_type s
+E62 '=E50' data_type f
+F62 '=F50' data_type f
+G62 '=G50' data_type f
+H62 '=H50' data_type f
+I62 '=I50' data_type f
+J62 '=J50' data_type f
+L62 '=L50' data_type f
+M62 '=M50' data_type f
+N62 '=N50' data_type f
+O62 'na' data_type s
+B63 'Equity Dividend (cash to owner)' data_type s
+D63 'na' data_type s
+E63 '=E60+E61+E62' data_type f
+F63 '=F60+F61+F62' data_type f
+G63 '=G60+G61+G62' data_type f
+H63 '=H60+H61+H62' data_type f
+I63 '=I60+I61+I62' data_type f
+J63 '=J60+J61+J62' data_type f
+K63 '=K60+K61+K62' data_type f
+L63 '=L60+L61+L62' data_type f
+M63 '=M60+M61+M62' data_type f
+N63 '=N60+N61+N62' data_type f
+O63 'na' data_type s
+B64 'Down Payment/Reversion' data_type s
+D64 '=-C28' data_type f
+E64 'na' data_type s
+F64 'na' data_type s
+G64 'na' data_type s
+H64 'na' data_type s
+I64 'na' data_type s
+J64 'na' data_type s
+K64 'na' data_type s
+L64 'na' data_type s
+M64 'na' data_type s
+N64 '=E89' data_type f
+O64 'na' data_type s
+B65 'Total Cash Flow to Owner' data_type s
+D65 '=D64' data_type f
+E65 '=SUM(E63:E64)' data_type f
+F65 '=SUM(F63:F64)' data_type f
+G65 '=SUM(G63:G64)' data_type f
+H65 '=SUM(H63:H64)' data_type f
+K65 '=SUM(K63:K64)' data_type f
+L65 '=SUM(L63:L64)' data_type f
+M65 '=SUM(M63:M64)' data_type f
+N65 '=SUM(N63:N64)' data_type f
+O65 'na' data_type s
+B66 'Purchasing Power Adjustment' data_type s
+D66 'na' data_type s
+F66 '=(1+$C$13)^F55' data_type f
+H66 '=(1+$C$13)^H55' data_type f
+I66 '=(1+$C$13)^I55' data_type f
+J66 '=(1+$C$13)^J55' data_type f
+K66 '=(1+$C$13)^K55' data_type f
+L66 '=(1+$C$13)^L55' data_type f
+M66 '=(1+$C$13)^M55' data_type f
+N66 '=(1+$C$13)^N55' data_type f
+O66 'na' data_type s
+B67 'Real Cash Flow to Owner' data_type s
+D67 '=D65' data_type f
+E67 '=E65/E66' data_type f
+F67 '=F65/F66' data_type f
+G67 '=G65/G66' data_type f
+H67 '=H65/H66' data_type f
+I67 '=I65/I66' data_type f
+J67 '=J65/J66' data_type f
+K67 '=K65/K66' data_type f
+L67 '=L65/L66' data_type f
+N67 '=N65/N66' data_type f
+O67 'na' data_type s
+B70 'MORTGAGE LOAN AMORTIZATION SCHEDULE' data_type s
+C71 'year' data_type s
+D71 0 data_type n
+E71 1 data_type n
+F71 2 data_type n
+G71 3 data_type n
+H71 4 data_type n
+I71 5 data_type n
+J71 6 data_type n
+K71 7 data_type n
+L71 8 data_type n
+M71 9 data_type n
+N71 10 data_type n
+O71 11 data_type n
+B72 'Balance Owed, beginning of year' data_type s
+F72 '=E76' data_type f
+G72 '=F76' data_type f
+H72 '=G76' data_type f
+I72 '=H76' data_type f
+J72 '=I76' data_type f
+K72 '=J76' data_type f
+L72 '=K76' data_type f
+M72 '=L76' data_type f
+B73 'Annual Mortgage Payment' data_type s
+E73 '=E72*C29' data_type f
+F73 '=E73' data_type f
+G73 '=F73' data_type f
+H73 '=G73' data_type f
+I73 '=H73' data_type f
+J73 '=I73' data_type f
+K73 '=J73' data_type f
+L73 '=K73' data_type f
+M73 '=L73' data_type f
+B74 'Interest Portion of Payment' data_type s
+E74 '=$C$10*-E72' data_type f
+F74 '=$C$10*-F72' data_type f
+G74 '=$C$10*-G72' data_type f
+H74 '=$C$10*-H72' data_type f
+J74 '=$C$10*-J72' data_type f
+M74 '=$C$10*-M72' data_type f
+N74 '=$C$10*-N72' data_type f
+O74 '=$C$10*-O72' data_type f
+B75 'Amortization of principal' data_type s
+E75 '=E73+E74' data_type f
+F75 '=F73+F74' data_type f
+I75 '=I73+I74' data_type f
+J75 '=J73+J74' data_type f
+M75 '=M73+M74' data_type f
+N75 '=N73+N74' data_type f
+O75 '=O73+O74' data_type f
+B76 'Balance Owed, end of year' data_type s
+E76 '=E72-E75' data_type f
+F76 '=F72-F75' data_type f
+G76 '=G72-G75' data_type f
+H76 '=H72-H75' data_type f
+I76 '=I72-I75' data_type f
+J76 '=J72-J75' data_type f
+K76 '=K72-K75' data_type f
+L76 '=L72-L75' data_type f
+M76 '=M72-M75' data_type f
+N76 '=N72-N75' data_type f
+O76 '=O72-O75' data_type f
+B79 'ANALYSIS OF REVERSION ON SALE' data_type s
+B80 'Net Operating Income Projected, Year After Sale (Year 11)' data_type s
+E80 '=O46' data_type f
+B81 'Cap Rate At Sale Date' data_type s
+E81 '=C15' data_type f
+B82 'Capitalized Value (Sale Price)' data_type s
+B83 'Transaction Cost' data_type s
+E83 '=E82*-C16' data_type f
+B84 'Net Sales Price' data_type s
+E84 '=E82+E83' data_type f
+B85 'Book Value At Sales Date (cost-dep)' data_type s
+B86 'Capital Gain ( Net Price - BV)' data_type s
+E86 '=E84+E85' data_type f
+B87 'Capital Gains Tax' data_type s
+B88 'Mortgage Balance Owed' data_type s
+E88 '=N76' data_type f
+B89 'Reversion in nominal dollars to owner at sales date' data_type s
+E89 '=E84-E87-E88' data_type f
+D175 42956.2020613061 data_type n
+D176 74533.8230528649 data_type n
+D177 47966.5830425155 data_type n
+D191 0.0126958560236334 data_type n
+D266 867.655817556173 data_type n
+D272 253913.00350383 data_type n
+D284 0.732726865319919 data_type n
+D375 0.0182400377596519 data_type n
+D376 0.0158017386016346 data_type n
+D382 0.043247577041948 data_type n
+D387 0.0302375901495449 data_type n
+D388 0.0925816938058171 data_type n
+D395 0.0233330216259292 data_type n
+D397 0.018333918242578 data_type n
+D401 0.00923521344705081 data_type n
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p, data_only=False)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> print('Merged', list(ws.merged_cells.ranges))
+[?2004l[?2004h> print('Defined names', list(wb.defined_names))
+[?2004l[?2004h> print('Charts', len(ws._charts))
+[?2004l[?2004h> print('Images', len(ws._images))
+[?2004l[?2004h> print('Tables', list(ws.tables.keys()))
+[?2004l[?2004h> print('Freeze', ws.freeze_panes, 'auto_filter', ws.auto_filter.ref, 'sheetview', ws.sheet_view.showGridLines)
+[?2004l[?2004h> print('\nNonempty cells (all):')
+[?2004l[?2004h> for row in ws.iter_rows(min_row=1, max_row=ws.max_row):
+[?2004l[?2004h>     for c in row:
+[?2004l[?2004h>         if c.value is not None:
+[?2004l[?2004h>             print(f'{c.coordinate}\t{c.data_type}\t{repr(c.value)}')
+[?2004l[?2004h> print('\nBlank cells for rows 24-90:')
+[?2004l','H65','I65','J65','D70','C82','E82','E85','E87']:
+    print(coord, ws[coord].value)
+PY
+[?2004h> for coord in ['C24','C25','E72','N72','O72','I74','K74','L74','H75','K75','L75','D72','E42','I42','K42','E43','H43','J43','L43','E46','F46','G46','H46','I46','J46','K46','L46','M46','N46','O46','E91','D35','J35','M35','D42','D45','E63','K66','O66','M67','E61','F61','G61','H61','I61','J61','K61','L61','M61','N61','H34','O34','D65','E65','F65','G65','H65','I65','J65','D70','C82','E82','E85','E87']:
+[?2004l[?2004h>     print(coord, ws[coord].value)
+[?2004l[?2004h> PY
+[?2004lMerged []
+Defined names []
+Charts 0
+Images 0
+Tables []
+Freeze None auto_filter None sheetview True
+
+Nonempty cells (all):
+B1	s	'Commercial Real Estate Valuation and Financial Feasibility'
+B3	s	'ASSUMPTIONS'
+B4	s	'Annual Gross Rent, first year'
+C4	n	182400
+B5	s	'Vacancy and Collection factor'
+C5	n	0.05
+B6	s	'Operating Expenses, first year'
+C6	n	55540
+B7	s	'Annual % change in rent'
+C7	n	0.03
+B8	s	'Annual % change in expenses'
+C8	n	0.03
+B9	s	'Loan to Value ratio'
+C9	n	0.75
+B10	s	'Stated Annual Interest rate'
+C10	n	0.06
+B11	s	'Loan Term (years)'
+C11	n	25
+B12	s	'Percent of price in improvements'
+C12	n	0.85
+B13	s	'CPI Annual Increase'
+C13	n	0.03
+B14	s	'After tax, Real Discount rate'
+C14	n	0.08
+B15	s	'Cap Rate assumed at date of sale'
+C15	n	0.08
+B16	s	'Transaction costs as % of sales price'
+C16	n	0.09
+B17	s	'Cap Rate at Purchase'
+C17	n	0.0906
+B19	s	'DEFINED VARIABLES'
+D19	s	'Source'
+B20	s	'Recovery period (years)'
+C20	n	39
+D20	s	'Omnibus Budget Reconciliation Act of 1993'
+B21	s	'Income tax rate (Corporate)'
+C21	f	'=IF(E49<50000,15%,IF(E49<75000,25%,IF(E49<100000,34%,IF(E49<335000,39%,IF(E49<10000000,34%,IF(E49<15000000,35%,IF(E49<18333333,38%,35%)))))))'
+D21	s	'IRS - Varies based on taxable income'
+B22	s	'Capital Gains tax rate'
+C22	f	'=IF(C21=15%,5%,15%)'
+D22	s	'IRS - Varies based on income tax bracket'
+B24	s	'Property Valuation:'
+B26	s	'ECONOMIC VALUES, CALCULATED BY MODEL'
+B27	s	'Loan Amount'
+C27	f	'=C9*C24'
+B28	s	'Equity Required'
+B29	s	'Mortgage Loan Constant'
+C29	f	'=((C10)/((1-(1/(1+C10)^C11))))'
+B32	s	'DECISION ANALYSIS FACTORS'
+C33	s	'year'
+D33	n	0
+E33	n	1
+F33	n	2
+G33	n	3
+H33	n	4
+I33	n	5
+J33	n	6
+K33	n	7
+L33	n	8
+M33	n	9
+N33	n	10
+O33	n	11
+B34	s	'Real Cash Flow to Owner'
+D34	f	'=D67'
+E34	f	'=E67'
+F34	f	'=F67'
+G34	f	'=G67'
+I34	f	'=I67'
+J34	f	'=J67'
+K34	f	'=K67'
+L34	f	'=L67'
+M34	f	'=M67'
+N34	f	'=N67'
+O34	n	0
+B35	s	'Present Value of Real Cash Flow'
+D35	f	'=D34/((1+$C$14)^D33)'
+E35	f	'=E34/((1+$C$14)^E33)'
+F35	f	'=F34/((1+$C$14)^F33)'
+G35	f	'=G34/((1+$C$14)^G33)'
+H35	f	'=H34/((1+$C$14)^H33)'
+I35	f	'=I34/((1+$C$14)^I33)'
+K35	f	'=K34/((1+$C$14)^K33)'
+L35	f	'=L34/((1+$C$14)^L33)'
+N35	f	'=N34/((1+$C$14)^N33)'
+O35	f	'=O34/((1+$C$14)^O33)'
+B37	s	'NPV of Real Cash Flow:'
+C37	f	'=SUM(D35:N35)'
+B38	s	'After Tax Real Internal Rate of Return:'
+C38	f	'=IRR(D34:N34,C10)'
+B40	s	'PROFORMA INCOME STATEMENT'
+C41	s	'year'
+D41	n	0
+E41	n	1
+F41	n	2
+G41	n	3
+H41	n	4
+I41	n	5
+J41	n	6
+K41	n	7
+L41	n	8
+M41	n	9
+N41	n	10
+O41	n	11
+B42	s	'Annual Gross Rental Income'
+D42	s	'na'
+F42	f	'=E42*(1+$C$7)'
+G42	f	'=F42*(1+$C$7)'
+H42	f	'=G42*(1+$C$7)'
+I42	f	'=H42*(1+$C$7)'
+J42	f	'=I42*(1+$C$7)'
+L42	f	'=K42*(1+$C$7)'
+M42	f	'=L42*(1+$C$7)'
+N42	f	'=M42*(1+$C$7)'
+O42	f	'=N42*(1+$C$7)'
+B43	s	'Vacancy and Collection Losses'
+D43	s	'na'
+E43	f	'=-(E42*$C$5)'
+F43	f	'=-(F42*$C$5)'
+G43	f	'=-(G42*$C$5)'
+I43	f	'=-(I42*$C$5)'
+K43	f	'=-(K42*$C$5)'
+M43	f	'=-(M42*$C$5)'
+N43	f	'=-(N42*$C$5)'
+O43	f	'=-(O42*$C$5)'
+B44	s	'Effective Rental'
+D44	s	'na'
+E44	f	'=E42+E43'
+F44	f	'=F42+F43'
+G44	f	'=G42+G43'
+H44	f	'=H42+H43'
+I44	f	'=I42+I43'
+J44	f	'=J42+J43'
+K44	f	'=K42+K43'
+L44	f	'=L42+L43'
+M44	f	'=M42+M43'
+N44	f	'=N42+N43'
+O44	f	'=O42+O43'
+B45	s	'Operating Expenses'
+D45	s	'na'
+E45	n	-55540
+F45	f	'=E45*(1+$C$8)'
+H45	f	'=G45*(1+$C$8)'
+I45	f	'=H45*(1+$C$8)'
+K45	f	'=J45*(1+$C$8)'
+L45	f	'=K45*(1+$C$8)'
+N45	f	'=M45*(1+$C$8)'
+O45	f	'=N45*(1+$C$8)'
+B46	s	'Net Operating Income'
+D46	s	'na'
+E46	f	'=SUM(E44:E45)'
+F46	f	'=SUM(F44:F45)'
+H46	f	'=SUM(H44:H45)'
+I46	f	'=SUM(I44:I45)'
+J46	f	'=SUM(J44:J45)'
+L46	f	'=SUM(L44:L45)'
+M46	f	'=SUM(M44:M45)'
+N46	f	'=SUM(N44:N45)'
+B47	s	'Interest Expense'
+D47	s	'na'
+E47	f	'=E74'
+F47	f	'=F74'
+H47	f	'=H74'
+I47	f	'=I74'
+K47	f	'=K74'
+L47	f	'=L74'
+M47	f	'=M74'
+N47	f	'=N74'
+O47	f	'=O74'
+B48	s	'Depreciation (cost recovery)'
+D48	s	'na'
+E48	f	'=(C24*C12)/-C20'
+F48	f	'=E48'
+H48	f	'=G48'
+I48	f	'=H48'
+J48	f	'=I48'
+K48	f	'=J48'
+L48	f	'=K48'
+M48	f	'=L48'
+N48	f	'=M48'
+O48	f	'=N48'
+B49	s	'Taxable Income'
+D49	s	'na'
+E49	f	'=E46+E47+E48'
+F49	f	'=F46+F47+F48'
+G49	f	'=G46+G47+G48'
+I49	f	'=I46+I47+I48'
+J49	f	'=J46+J47+J48'
+K49	f	'=K46+K47+K48'
+L49	f	'=L46+L47+L48'
+N49	f	'=N46+N47+N48'
+O49	f	'=O46+O47+O48'
+B50	s	'Income Tax Liability'
+D50	s	'na'
+E50	f	'=($C$21*-E49)'
+F50	f	'=($C$21*-F49)'
+G50	f	'=($C$21*-G49)'
+H50	f	'=($C$21*-H49)'
+I50	f	'=($C$21*-I49)'
+J50	f	'=($C$21*-J49)'
+L50	f	'=($C$21*-L49)'
+M50	f	'=($C$21*-M49)'
+N50	f	'=($C$21*-N49)'
+O50	f	'=($C$21*-O49)'
+B51	s	'Net Income After Tax'
+D51	s	'na'
+E51	f	'=E49+E50'
+H51	f	'=H49+H50'
+I51	f	'=I49+I50'
+J51	f	'=J49+J50'
+K51	f	'=K49+K50'
+L51	f	'=L49+L50'
+N51	f	'=N49+N50'
+O51	f	'=O49+O50'
+B54	s	'PROFORMA CASH FLOW STATEMENT'
+C55	s	'year'
+D55	n	0
+E55	n	1
+F55	n	2
+G55	n	3
+H55	n	4
+I55	n	5
+J55	n	6
+K55	n	7
+L55	n	8
+M55	n	9
+N55	n	10
+O55	n	11
+B56	s	'Annual Gross Rental Income'
+D56	s	'na'
+E56	f	'=E42'
+J56	f	'=J42'
+L56	f	'=L42'
+M56	f	'=M42'
+N56	f	'=N42'
+O56	f	'=O42'
+B57	s	'Vacancy and Collection Loses'
+D57	s	'na'
+E57	f	'=E43'
+F57	f	'=F43'
+G57	f	'=G43'
+H57	f	'=H43'
+I57	f	'=I43'
+J57	f	'=J43'
+K57	f	'=K43'
+M57	f	'=M43'
+N57	f	'=N43'
+O57	f	'=O43'
+B58	s	'Effective Rental'
+D58	s	'na'
+E58	f	'=E44'
+F58	f	'=F44'
+H58	f	'=H44'
+I58	f	'=I44'
+J58	f	'=J44'
+L58	f	'=L44'
+M58	f	'=M44'
+N58	f	'=N44'
+B59	s	'Operating Expenses'
+D59	s	'na'
+E59	n	-55540
+F59	f	'=E59*(1+$C$8)'
+G59	f	'=F59*(1+$C$8)'
+I59	f	'=H59*(1+$C$8)'
+J59	f	'=I59*(1+$C$8)'
+K59	f	'=J59*(1+$C$8)'
+L59	f	'=K59*(1+$C$8)'
+M59	f	'=L59*(1+$C$8)'
+O59	f	'=N59*(1+$C$8)'
+B60	s	'Net Operating Income'
+D60	s	'na'
+F60	n	127443.6224642
+G60	f	'=SUM(G58:G59)'
+H60	f	'=SUM(H58:H59)'
+I60	f	'=SUM(I58:I59)'
+J60	f	'=SUM(J58:J59)'
+K60	f	'=SUM(K58:K59)'
+L60	f	'=SUM(L58:L59)'
+M60	f	'=SUM(M58:M59)'
+N60	f	'=SUM(N58:N59)'
+O60	f	'=SUM(O58:O59)'
+B61	s	'Debt Service'
+D61	s	'na'
+E61	f	'=(-E73)'
+F61	n	94731.8503068155
+G61	f	'=F61'
+H61	f	'=G61'
+J61	f	'=I61'
+K61	f	'=J61'
+M61	f	'=L61'
+N61	f	'=M61'
+O61	s	'na'
+B62	s	'Income Tax Liability'
+D62	s	'na'
+E62	f	'=E50'
+F62	f	'=F50'
+G62	f	'=G50'
+H62	f	'=H50'
+I62	f	'=I50'
+J62	f	'=J50'
+L62	f	'=L50'
+M62	f	'=M50'
+N62	f	'=N50'
+O62	s	'na'
+B63	s	'Equity Dividend (cash to owner)'
+D63	s	'na'
+E63	f	'=E60+E61+E62'
+F63	f	'=F60+F61+F62'
+G63	f	'=G60+G61+G62'
+H63	f	'=H60+H61+H62'
+I63	f	'=I60+I61+I62'
+J63	f	'=J60+J61+J62'
+K63	f	'=K60+K61+K62'
+L63	f	'=L60+L61+L62'
+M63	f	'=M60+M61+M62'
+N63	f	'=N60+N61+N62'
+O63	s	'na'
+B64	s	'Down Payment/Reversion'
+D64	f	'=-C28'
+E64	s	'na'
+F64	s	'na'
+G64	s	'na'
+H64	s	'na'
+I64	s	'na'
+J64	s	'na'
+K64	s	'na'
+L64	s	'na'
+M64	s	'na'
+N64	f	'=E89'
+O64	s	'na'
+B65	s	'Total Cash Flow to Owner'
+D65	f	'=D64'
+E65	f	'=SUM(E63:E64)'
+F65	f	'=SUM(F63:F64)'
+G65	f	'=SUM(G63:G64)'
+H65	f	'=SUM(H63:H64)'
+K65	f	'=SUM(K63:K64)'
+L65	f	'=SUM(L63:L64)'
+M65	f	'=SUM(M63:M64)'
+N65	f	'=SUM(N63:N64)'
+O65	s	'na'
+B66	s	'Purchasing Power Adjustment'
+D66	s	'na'
+F66	f	'=(1+$C$13)^F55'
+H66	f	'=(1+$C$13)^H55'
+I66	f	'=(1+$C$13)^I55'
+J66	f	'=(1+$C$13)^J55'
+K66	f	'=(1+$C$13)^K55'
+L66	f	'=(1+$C$13)^L55'
+M66	f	'=(1+$C$13)^M55'
+N66	f	'=(1+$C$13)^N55'
+O66	s	'na'
+B67	s	'Real Cash Flow to Owner'
+D67	f	'=D65'
+E67	f	'=E65/E66'
+F67	f	'=F65/F66'
+G67	f	'=G65/G66'
+H67	f	'=H65/H66'
+I67	f	'=I65/I66'
+J67	f	'=J65/J66'
+K67	f	'=K65/K66'
+L67	f	'=L65/L66'
+N67	f	'=N65/N66'
+O67	s	'na'
+B70	s	'MORTGAGE LOAN AMORTIZATION SCHEDULE'
+C71	s	'year'
+D71	n	0
+E71	n	1
+F71	n	2
+G71	n	3
+H71	n	4
+I71	n	5
+J71	n	6
+K71	n	7
+L71	n	8
+M71	n	9
+N71	n	10
+O71	n	11
+B72	s	'Balance Owed, beginning of year'
+F72	f	'=E76'
+G72	f	'=F76'
+H72	f	'=G76'
+I72	f	'=H76'
+J72	f	'=I76'
+K72	f	'=J76'
+L72	f	'=K76'
+M72	f	'=L76'
+B73	s	'Annual Mortgage Payment'
+E73	f	'=E72*C29'
+F73	f	'=E73'
+G73	f	'=F73'
+H73	f	'=G73'
+I73	f	'=H73'
+J73	f	'=I73'
+K73	f	'=J73'
+L73	f	'=K73'
+M73	f	'=L73'
+B74	s	'Interest Portion of Payment'
+E74	f	'=$C$10*-E72'
+F74	f	'=$C$10*-F72'
+G74	f	'=$C$10*-G72'
+H74	f	'=$C$10*-H72'
+J74	f	'=$C$10*-J72'
+M74	f	'=$C$10*-M72'
+N74	f	'=$C$10*-N72'
+O74	f	'=$C$10*-O72'
+B75	s	'Amortization of principal'
+E75	f	'=E73+E74'
+F75	f	'=F73+F74'
+I75	f	'=I73+I74'
+J75	f	'=J73+J74'
+M75	f	'=M73+M74'
+N75	f	'=N73+N74'
+O75	f	'=O73+O74'
+B76	s	'Balance Owed, end of year'
+E76	f	'=E72-E75'
+F76	f	'=F72-F75'
+G76	f	'=G72-G75'
+H76	f	'=H72-H75'
+I76	f	'=I72-I75'
+J76	f	'=J72-J75'
+K76	f	'=K72-K75'
+L76	f	'=L72-L75'
+M76	f	'=M72-M75'
+N76	f	'=N72-N75'
+O76	f	'=O72-O75'
+B79	s	'ANALYSIS OF REVERSION ON SALE'
+B80	s	'Net Operating Income Projected, Year After Sale (Year 11)'
+E80	f	'=O46'
+B81	s	'Cap Rate At Sale Date'
+E81	f	'=C15'
+B82	s	'Capitalized Value (Sale Price)'
+B83	s	'Transaction Cost'
+E83	f	'=E82*-C16'
+B84	s	'Net Sales Price'
+E84	f	'=E82+E83'
+B85	s	'Book Value At Sales Date (cost-dep)'
+B86	s	'Capital Gain ( Net Price - BV)'
+E86	f	'=E84+E85'
+B87	s	'Capital Gains Tax'
+B88	s	'Mortgage Balance Owed'
+E88	f	'=N76'
+B89	s	'Reversion in nominal dollars to owner at sales date'
+E89	f	'=E84-E87-E88'
+D175	n	42956.2020613061
+D176	n	74533.8230528649
+D177	n	47966.5830425155
+D191	n	0.0126958560236334
+D266	n	867.655817556173
+D272	n	253913.00350383
+D284	n	0.732726865319919
+D375	n	0.0182400377596519
+D376	n	0.0158017386016346
+D382	n	0.043247577041948
+D387	n	0.0302375901495449
+D388	n	0.0925816938058171
+D395	n	0.0233330216259292
+D397	n	0.018333918242578
+D401	n	0.00923521344705081
+
+Blank cells for rows 24-90:
+C24 None
+C25 None
+E72 None
+N72 None
+O72 None
+I74 None
+K74 None
+L74 None
+H75 None
+K75 None
+L75 None
+D72 None
+E42 None
+I42 =H42*(1+$C$7)
+K42 None
+E43 =-(E42*$C$5)
+H43 None
+J43 None
+L43 None
+E46 =SUM(E44:E45)
+F46 =SUM(F44:F45)
+G46 None
+H46 =SUM(H44:H45)
+I46 =SUM(I44:I45)
+J46 =SUM(J44:J45)
+K46 None
+L46 =SUM(L44:L45)
+M46 =SUM(M44:M45)
+N46 =SUM(N44:N45)
+O46 None
+E91 None
+D35 =D34/((1+$C$14)^D33)
+J35 None
+M35 None
+D42 na
+D45 na
+E63 =E60+E61+E62
+K66 =(1+$C$13)^K55
+O66 na
+M67 None
+E61 =(-E73)
+F61 94731.8503068155
+G61 =F61
+H61 =G61
+I61 None
+J61 =I61
+K61 =J61
+L61 None
+M61 =L61
+N61 =M61
+H34 None
+O34 0
+D65 =D64
+E65 =SUM(E63:E64)
+F65 =SUM(F63:F64)
+G65 =SUM(G63:G64)
+H65 =SUM(H63:H64)
+I65 None
+J65 None
+D70 None
+C82 None
+E82 None
+E85 None
+E87 None
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p, data_only=False)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> with open('/workspace/dump.txt','w') as f:
+[?2004l[?2004h>     for row in ws.iter_rows(min_row=1, max_row=ws.max_row):
+[?2004l[?2004h>         vals=[]
+[?2004l[?2004h>         for c in row:
+[?2004l[?2004h>             if c.value is not None:
+[?2004l[?2004h>                 vals.append(f'{c.coordinate}:{c.data_type}:{c.value}')
+[?2004l[?2004h>         if vals:
+[?2004l[?2004h>             f.write(f'{row[0].row}: {" | ".join(vals)}\n')
+[?2004l[?2004h> PY
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# sed -n '20,90p' /workspace/dump.txt
+[?2004l22: B22:s:Capital Gains tax rate | C22:f:=IF(C21=15%,5%,15%) | D22:s:IRS - Varies based on income tax bracket
+24: B24:s:Property Valuation:
+26: B26:s:ECONOMIC VALUES, CALCULATED BY MODEL
+27: B27:s:Loan Amount | C27:f:=C9*C24
+28: B28:s:Equity Required
+29: B29:s:Mortgage Loan Constant | C29:f:=((C10)/((1-(1/(1+C10)^C11))))
+32: B32:s:DECISION ANALYSIS FACTORS
+33: C33:s:year | D33:n:0 | E33:n:1 | F33:n:2 | G33:n:3 | H33:n:4 | I33:n:5 | J33:n:6 | K33:n:7 | L33:n:8 | M33:n:9 | N33:n:10 | O33:n:11
+34: B34:s:Real Cash Flow to Owner | D34:f:=D67 | E34:f:=E67 | F34:f:=F67 | G34:f:=G67 | I34:f:=I67 | J34:f:=J67 | K34:f:=K67 | L34:f:=L67 | M34:f:=M67 | N34:f:=N67 | O34:n:0
+35: B35:s:Present Value of Real Cash Flow | D35:f:=D34/((1+$C$14)^D33) | E35:f:=E34/((1+$C$14)^E33) | F35:f:=F34/((1+$C$14)^F33) | G35:f:=G34/((1+$C$14)^G33) | H35:f:=H34/((1+$C$14)^H33) | I35:f:=I34/((1+$C$14)^I33) | K35:f:=K34/((1+$C$14)^K33) | L35:f:=L34/((1+$C$14)^L33) | N35:f:=N34/((1+$C$14)^N33) | O35:f:=O34/((1+$C$14)^O33)
+37: B37:s:NPV of Real Cash Flow: | C37:f:=SUM(D35:N35)
+38: B38:s:After Tax Real Internal Rate of Return: | C38:f:=IRR(D34:N34,C10)
+40: B40:s:PROFORMA INCOME STATEMENT
+41: C41:s:year | D41:n:0 | E41:n:1 | F41:n:2 | G41:n:3 | H41:n:4 | I41:n:5 | J41:n:6 | K41:n:7 | L41:n:8 | M41:n:9 | N41:n:10 | O41:n:11
+42: B42:s:Annual Gross Rental Income | D42:s:na | F42:f:=E42*(1+$C$7) | G42:f:=F42*(1+$C$7) | H42:f:=G42*(1+$C$7) | I42:f:=H42*(1+$C$7) | J42:f:=I42*(1+$C$7) | L42:f:=K42*(1+$C$7) | M42:f:=L42*(1+$C$7) | N42:f:=M42*(1+$C$7) | O42:f:=N42*(1+$C$7)
+43: B43:s:Vacancy and Collection Losses | D43:s:na | E43:f:=-(E42*$C$5) | F43:f:=-(F42*$C$5) | G43:f:=-(G42*$C$5) | I43:f:=-(I42*$C$5) | K43:f:=-(K42*$C$5) | M43:f:=-(M42*$C$5) | N43:f:=-(N42*$C$5) | O43:f:=-(O42*$C$5)
+44: B44:s:Effective Rental | D44:s:na | E44:f:=E42+E43 | F44:f:=F42+F43 | G44:f:=G42+G43 | H44:f:=H42+H43 | I44:f:=I42+I43 | J44:f:=J42+J43 | K44:f:=K42+K43 | L44:f:=L42+L43 | M44:f:=M42+M43 | N44:f:=N42+N43 | O44:f:=O42+O43
+45: B45:s:Operating Expenses | D45:s:na | E45:n:-55540 | F45:f:=E45*(1+$C$8) | H45:f:=G45*(1+$C$8) | I45:f:=H45*(1+$C$8) | K45:f:=J45*(1+$C$8) | L45:f:=K45*(1+$C$8) | N45:f:=M45*(1+$C$8) | O45:f:=N45*(1+$C$8)
+46: B46:s:Net Operating Income | D46:s:na | E46:f:=SUM(E44:E45) | F46:f:=SUM(F44:F45) | H46:f:=SUM(H44:H45) | I46:f:=SUM(I44:I45) | J46:f:=SUM(J44:J45) | L46:f:=SUM(L44:L45) | M46:f:=SUM(M44:M45) | N46:f:=SUM(N44:N45)
+47: B47:s:Interest Expense | D47:s:na | E47:f:=E74 | F47:f:=F74 | H47:f:=H74 | I47:f:=I74 | K47:f:=K74 | L47:f:=L74 | M47:f:=M74 | N47:f:=N74 | O47:f:=O74
+48: B48:s:Depreciation (cost recovery) | D48:s:na | E48:f:=(C24*C12)/-C20 | F48:f:=E48 | H48:f:=G48 | I48:f:=H48 | J48:f:=I48 | K48:f:=J48 | L48:f:=K48 | M48:f:=L48 | N48:f:=M48 | O48:f:=N48
+49: B49:s:Taxable Income | D49:s:na | E49:f:=E46+E47+E48 | F49:f:=F46+F47+F48 | G49:f:=G46+G47+G48 | I49:f:=I46+I47+I48 | J49:f:=J46+J47+J48 | K49:f:=K46+K47+K48 | L49:f:=L46+L47+L48 | N49:f:=N46+N47+N48 | O49:f:=O46+O47+O48
+50: B50:s:Income Tax Liability | D50:s:na | E50:f:=($C$21*-E49) | F50:f:=($C$21*-F49) | G50:f:=($C$21*-G49) | H50:f:=($C$21*-H49) | I50:f:=($C$21*-I49) | J50:f:=($C$21*-J49) | L50:f:=($C$21*-L49) | M50:f:=($C$21*-M49) | N50:f:=($C$21*-N49) | O50:f:=($C$21*-O49)
+51: B51:s:Net Income After Tax | D51:s:na | E51:f:=E49+E50 | H51:f:=H49+H50 | I51:f:=I49+I50 | J51:f:=J49+J50 | K51:f:=K49+K50 | L51:f:=L49+L50 | N51:f:=N49+N50 | O51:f:=O49+O50
+54: B54:s:PROFORMA CASH FLOW STATEMENT
+55: C55:s:year | D55:n:0 | E55:n:1 | F55:n:2 | G55:n:3 | H55:n:4 | I55:n:5 | J55:n:6 | K55:n:7 | L55:n:8 | M55:n:9 | N55:n:10 | O55:n:11
+56: B56:s:Annual Gross Rental Income | D56:s:na | E56:f:=E42 | J56:f:=J42 | L56:f:=L42 | M56:f:=M42 | N56:f:=N42 | O56:f:=O42
+57: B57:s:Vacancy and Collection Loses | D57:s:na | E57:f:=E43 | F57:f:=F43 | G57:f:=G43 | H57:f:=H43 | I57:f:=I43 | J57:f:=J43 | K57:f:=K43 | M57:f:=M43 | N57:f:=N43 | O57:f:=O43
+58: B58:s:Effective Rental | D58:s:na | E58:f:=E44 | F58:f:=F44 | H58:f:=H44 | I58:f:=I44 | J58:f:=J44 | L58:f:=L44 | M58:f:=M44 | N58:f:=N44
+59: B59:s:Operating Expenses | D59:s:na | E59:n:-55540 | F59:f:=E59*(1+$C$8) | G59:f:=F59*(1+$C$8) | I59:f:=H59*(1+$C$8) | J59:f:=I59*(1+$C$8) | K59:f:=J59*(1+$C$8) | L59:f:=K59*(1+$C$8) | M59:f:=L59*(1+$C$8) | O59:f:=N59*(1+$C$8)
+60: B60:s:Net Operating Income | D60:s:na | F60:n:127443.6224642 | G60:f:=SUM(G58:G59) | H60:f:=SUM(H58:H59) | I60:f:=SUM(I58:I59) | J60:f:=SUM(J58:J59) | K60:f:=SUM(K58:K59) | L60:f:=SUM(L58:L59) | M60:f:=SUM(M58:M59) | N60:f:=SUM(N58:N59) | O60:f:=SUM(O58:O59)
+61: B61:s:Debt Service | D61:s:na | E61:f:=(-E73) | F61:n:94731.8503068155 | G61:f:=F61 | H61:f:=G61 | J61:f:=I61 | K61:f:=J61 | M61:f:=L61 | N61:f:=M61 | O61:s:na
+62: B62:s:Income Tax Liability | D62:s:na | E62:f:=E50 | F62:f:=F50 | G62:f:=G50 | H62:f:=H50 | I62:f:=I50 | J62:f:=J50 | L62:f:=L50 | M62:f:=M50 | N62:f:=N50 | O62:s:na
+63: B63:s:Equity Dividend (cash to owner) | D63:s:na | E63:f:=E60+E61+E62 | F63:f:=F60+F61+F62 | G63:f:=G60+G61+G62 | H63:f:=H60+H61+H62 | I63:f:=I60+I61+I62 | J63:f:=J60+J61+J62 | K63:f:=K60+K61+K62 | L63:f:=L60+L61+L62 | M63:f:=M60+M61+M62 | N63:f:=N60+N61+N62 | O63:s:na
+64: B64:s:Down Payment/Reversion | D64:f:=-C28 | E64:s:na | F64:s:na | G64:s:na | H64:s:na | I64:s:na | J64:s:na | K64:s:na | L64:s:na | M64:s:na | N64:f:=E89 | O64:s:na
+65: B65:s:Total Cash Flow to Owner | D65:f:=D64 | E65:f:=SUM(E63:E64) | F65:f:=SUM(F63:F64) | G65:f:=SUM(G63:G64) | H65:f:=SUM(H63:H64) | K65:f:=SUM(K63:K64) | L65:f:=SUM(L63:L64) | M65:f:=SUM(M63:M64) | N65:f:=SUM(N63:N64) | O65:s:na
+66: B66:s:Purchasing Power Adjustment | D66:s:na | F66:f:=(1+$C$13)^F55 | H66:f:=(1+$C$13)^H55 | I66:f:=(1+$C$13)^I55 | J66:f:=(1+$C$13)^J55 | K66:f:=(1+$C$13)^K55 | L66:f:=(1+$C$13)^L55 | M66:f:=(1+$C$13)^M55 | N66:f:=(1+$C$13)^N55 | O66:s:na
+67: B67:s:Real Cash Flow to Owner | D67:f:=D65 | E67:f:=E65/E66 | F67:f:=F65/F66 | G67:f:=G65/G66 | H67:f:=H65/H66 | I67:f:=I65/I66 | J67:f:=J65/J66 | K67:f:=K65/K66 | L67:f:=L65/L66 | N67:f:=N65/N66 | O67:s:na
+70: B70:s:MORTGAGE LOAN AMORTIZATION SCHEDULE
+71: C71:s:year | D71:n:0 | E71:n:1 | F71:n:2 | G71:n:3 | H71:n:4 | I71:n:5 | J71:n:6 | K71:n:7 | L71:n:8 | M71:n:9 | N71:n:10 | O71:n:11
+72: B72:s:Balance Owed, beginning of year | F72:f:=E76 | G72:f:=F76 | H72:f:=G76 | I72:f:=H76 | J72:f:=I76 | K72:f:=J76 | L72:f:=K76 | M72:f:=L76
+73: B73:s:Annual Mortgage Payment | E73:f:=E72*C29 | F73:f:=E73 | G73:f:=F73 | H73:f:=G73 | I73:f:=H73 | J73:f:=I73 | K73:f:=J73 | L73:f:=K73 | M73:f:=L73
+74: B74:s:Interest Portion of Payment | E74:f:=$C$10*-E72 | F74:f:=$C$10*-F72 | G74:f:=$C$10*-G72 | H74:f:=$C$10*-H72 | J74:f:=$C$10*-J72 | M74:f:=$C$10*-M72 | N74:f:=$C$10*-N72 | O74:f:=$C$10*-O72
+75: B75:s:Amortization of principal | E75:f:=E73+E74 | F75:f:=F73+F74 | I75:f:=I73+I74 | J75:f:=J73+J74 | M75:f:=M73+M74 | N75:f:=N73+N74 | O75:f:=O73+O74
+76: B76:s:Balance Owed, end of year | E76:f:=E72-E75 | F76:f:=F72-F75 | G76:f:=G72-G75 | H76:f:=H72-H75 | I76:f:=I72-I75 | J76:f:=J72-J75 | K76:f:=K72-K75 | L76:f:=L72-L75 | M76:f:=M72-M75 | N76:f:=N72-N75 | O76:f:=O72-O75
+79: B79:s:ANALYSIS OF REVERSION ON SALE
+80: B80:s:Net Operating Income Projected, Year After Sale (Year 11) | E80:f:=O46
+81: B81:s:Cap Rate At Sale Date | E81:f:=C15
+82: B82:s:Capitalized Value (Sale Price)
+83: B83:s:Transaction Cost | E83:f:=E82*-C16
+84: B84:s:Net Sales Price | E84:f:=E82+E83
+85: B85:s:Book Value At Sales Date (cost-dep)
+86: B86:s:Capital Gain ( Net Price - BV) | E86:f:=E84+E85
+87: B87:s:Capital Gains Tax
+88: B88:s:Mortgage Balance Owed | E88:f:=N76
+89: B89:s:Reversion in nominal dollars to owner at sales date | E89:f:=E84-E87-E88
+175: D175:n:42956.2020613061
+176: D176:n:74533.8230528649
+177: D177:n:47966.5830425155
+191: D191:n:0.0126958560236334
+266: D266:n:867.655817556173
+272: D272:n:253913.00350383
+284: D284:n:0.732726865319919
+375: D375:n:0.0182400377596519
+376: D376:n:0.0158017386016346
+382: D382:n:0.043247577041948
+387: D387:n:0.0302375901495449
+388: D388:n:0.0925816938058171
+395: D395:n:0.0233330216259292
+397: D397:n:0.018333918242578
+401: D401:n:0.00923521344705081
+[?2004hroot@e1ef3fd93ef4:/workspace# which libreoffice soffice localc python3
+[?2004l/usr/bin/libreoffice
+/usr/bin/soffice
+/usr/bin/localc
+/usr/local/bin/python3
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> print('selected cells format/value/style:')
+[?2004l[?2004h> for c in ['C4','E42','E45','F45','E46','F60','E61','D64','E82','E83','E84','E85','E86','E87','E88','E89','D175','D266']:
+[?2004l[?2004h>     x=ws[c]
+[?2004l[?2004h>     print(c, repr(x.value), x.number_format, x.data_type, x.alignment.horizontal, x.border.left.style, x.fill.fgColor.rgb if x.fill and x.fill.patternType else None)
+[?2004l[?2004h> print('row heights/col widths first few')
+[?2004l[?2004h> for r in [1,20,33,80,82,174]: print('row',r, ws.row_dimensions[r].height, 'hidden', ws.row_dimensions[r].hidden)
+[?2004l[?2004h> for col in ['B','C','D','E','N','O']: print('col',col, ws.column_dimensions[col].width, 'hidden', ws.column_dimensions[col].hidden)
+[?2004l[?2004h> PY
+[?2004lselected cells format/value/style:
+C4 182400 [$-409]#,##0_);\(#,##0\) n general medium FF00FF00
+E42 None [$-409]#,##0_);\(#,##0\) n general None FFFFFFFF
+E45 -55540 [$-409]#,##0_);\(#,##0\) n general None FFFFFFFF
+F45 '=E45*(1+$C$8)' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+E46 '=SUM(E44:E45)' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+F60 127443.6224642 [$-409]#,##0_);\(#,##0\) n general None FFFFFFFF
+E61 '=(-E73)' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+D64 '=-C28' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+E82 None [$-409]#,##0_);\(#,##0\) n general None FFFFFFFF
+E83 '=E82*-C16' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+E84 '=E82+E83' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+E85 None [$-409]#,##0_);\(#,##0\) n general None FFFFFFFF
+E86 '=E84+E85' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+E87 None [$-409]#,##0_);\(#,##0\) n general None FFFFFFFF
+E88 '=N76' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+E89 '=E84-E87-E88' [$-409]#,##0_);\(#,##0\) f general None FFFFFFFF
+D175 42956.2020613061 General n general None FFFFFFFF
+D266 867.655817556173 General n general None None
+row heights/col widths first few
+row 1 20.25 hidden False
+row 20 12.75 hidden False
+row 33 12.75 hidden False
+row 80 12.75 hidden False
+row 82 12.75 hidden False
+row 174 12.75 hidden False
+col B 46.09 hidden False
+col C 19.54 hidden False
+col D 9.27 hidden False
+col E 10.12 hidden False
+col N 13.0 hidden False
+col O 13.0 hidden False
+[?2004hroot@e1ef3fd93ef4:/workspace# cat > /workspace/patch.py <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> out='/workspace/output.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p)
+[?2004l')
+# Total cash flow missing I65/J65
+setf('I65', '=SUM(I63:I64)')
+setf('J65', '=SUM(J63:J64)')
+# Purchasing power adjustment missing E66,G66
+setf('E66', '=(1+$C$13)^E55')
+setf('G66', '=(1+$C$13)^G55')
+# Real cash flow missing M67
+setf('M67', '=M65/M66')
+# Mortgage schedule
+setf('D72', '=C27')
+setf('E72', '=D76')
+setf('N72', '=M76')
+setf('O72', '=N76')
+setf('I74', '=$C$10*-I72')
+setf('K74', '=$C$10*-K72')
+setf('L74', '=$C$10*-L72')
+setf('H75', '=H73+H74')
+setf('K75', '=K73+K74')
+setf('L75', '=L73+L74')
+# Reversion on sale
+setf('E82', '=E80/E81')
+setf('E85', '=C24-((C24*C12)/C20)*10')
+setf('E87', '=-C22*E86')
+
+wb.save(out)
+print('saved', out)
+PY
+python3 /workspace/patch.py
+[?2004h> ws=wb['Model']
+[?2004l[?2004h> 
+[?2004l[?2004h> def setf(coord, formula):
+[?2004l[?2004h>     c=ws[coord]
+[?2004l[?2004h>     # We'll only patch blank to preserve values; but allow C25 etc blank.
+[?2004l[?2004h>     if c.value is None:
+[?2004l[?2004h>         c.value=formula
+[?2004l[?2004h>     else:
+[?2004l[?2004h>         print('skip existing', coord, repr(c.value))
+[?2004l[?2004h> 
+[?2004l[?2004h> # Economic values
+[?2004l[?2004h> setf('C24', '=(C4/C17)')
+[?2004l[?2004h> setf('C25', '=C24/1.5')
+[?2004l[?2004h> setf('C28', '=C24-C27')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Decision analysis: row 34 missing H34 (year4 real CF)
+[?2004l[?2004h> setf('H34', '=H67')
+[?2004l[?2004h> setf('J35', '=J34/((1+$C$14)^J33)')
+[?2004l[?2004h> setf('M35', '=M34/((1+$C$14)^M33)')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Income statement
+[?2004l[?2004h> setf('E42', '=C4')
+[?2004l[?2004h> setf('K42', '=J42*(1+$C$7)')
+[?2004l[?2004h> setf('H43', '=-(H42*$C$5)')
+[?2004l[?2004h> setf('J43', '=-(J42*$C$5)')
+[?2004l[?2004h> setf('L43', '=-(L42*$C$5)')
+[?2004l[?2004h> # E45 is existing value, leave. G45/J45/M45 blank expenses links by formula if following pattern
+[?2004l[?2004h> setf('G45', '=F45*(1+$C$8)')
+[?2004l[?2004h> setf('J45', '=I45*(1+$C$8)')
+[?2004l[?2004h> setf('M45', '=L45*(1+$C$8)')
+[?2004l[?2004h> setf('G46', '=SUM(G44:G45)')
+[?2004l[?2004h> setf('K46', '=SUM(K44:K45)')
+[?2004l[?2004h> setf('O46', '=SUM(O44:O45)')
+[?2004l[?2004h> # Taxable Income/liability/net income missing H? G? check row49-51
+[?2004l[?2004h> setf('G49', '=G46+G47+G48')
+[?2004l[?2004h> setf('H49', '=H46+H47+H48')
+[?2004l[?2004h> setf('M49', '=M46+M47+M48')
+[?2004l[?2004h> setf('K50', '=($C$21*-K49)')
+[?2004l[?2004h> setf('N50', '=($C$21*-N49)')
+[?2004l[?2004h> # Net income missing G,F? M? H/J/A? actually E/F not, G? H? I? J? K? L? M?
+[?2004l[?2004h> setf('G51', '=G49+G50')
+[?2004l[?2004h> setf('H51', '=H49+H50')
+[?2004l[?2004h> setf('K51', '=K49+K50')
+[?2004l[?2004h> setf('L51', '=L49+L50')
+[?2004l[?2004h> setf('M51', '=M49+M50')
+[?2004l[?2004h> # Cash flow statements missing links
+[?2004l[?2004h> setf('F56', '=F42')
+[?2004l[?2004h> setf('G56', '=G42')
+[?2004l[?2004h> setf('H56', '=H42')
+[?2004l[?2004h> setf('I56', '=I42')
+[?2004l[?2004h> setf('K56', '=K42')
+[?2004l[?2004h> setf('L57', '=L43')
+[?2004l[?2004h> setf('O57', '=O43')
+[?2004l[?2004h> setf('G58', '=G44')
+[?2004l[?2004h> setf('K58', '=K44')
+[?2004l[?2004h> setf('O58', '=O44')
+[?2004l[?2004h> setf('H59', '=G59*(1+$C$8)')
+[?2004l[?2004h> setf('N59', '=M59*(1+$C$8)')
+[?2004l[?2004h> setf('E60', '=SUM(E58:E59)')
+[?2004l[?2004h> setf('F60r', '_')
+[?2004l[?2004h> # Row 60 F60 is existing value; skip. Missing G? already. E60 missing (should formula? no value)
+[?2004l[?2004h> # Debt service row 61 missing I61/L61 links + preserves F61 constant? maybe F61 should formula but leave constant if not blank.
+[?2004l[?2004h> setf('I61', '=H61')
+[?2004l[?2004h> setf('L61', '=K61')
+[?2004l[?2004h> # Total cash flow missing I65/J65
+[?2004l[?2004h> setf('I65', '=SUM(I63:I64)')
+[?2004l[?2004h> setf('J65', '=SUM(J63:J64)')
+[?2004l[?2004h> # Purchasing power adjustment missing E66,G66
+[?2004l[?2004h> setf('E66', '=(1+$C$13)^E55')
+[?2004l[?2004h> setf('G66', '=(1+$C$13)^G55')
+[?2004l[?2004h> # Real cash flow missing M67
+[?2004l[?2004h> setf('M67', '=M65/M66')
+[?2004l[?2004h> # Mortgage schedule
+[?2004l[?2004h> setf('D72', '=C27')
+[?2004l[?2004h> setf('E72', '=D76')
+[?2004l[?2004h> setf('N72', '=M76')
+[?2004l[?2004h> setf('O72', '=N76')
+[?2004l[?2004h> setf('I74', '=$C$10*-I72')
+[?2004l[?2004h> setf('K74', '=$C$10*-K72')
+[?2004l[?2004h> setf('L74', '=$C$10*-L72')
+[?2004l[?2004h> setf('H75', '=H73+H74')
+[?2004l[?2004h> setf('K75', '=K73+K74')
+[?2004l[?2004h> setf('L75', '=L73+L74')
+[?2004l[?2004h> # Reversion on sale
+[?2004l[?2004h> setf('E82', '=E80/E81')
+[?2004l[?2004h> setf('E85', '=C24-((C24*C12)/C20)*10')
+[?2004l[?2004h> setf('E87', '=-C22*E86')
+[?2004l[?2004h> 
+[?2004l[?2004h> wb.save(out)
+[?2004l[?2004h> print('saved', out)
+[?2004l[?2004h> PY
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# python3 /workspace/patch.py
+[?2004lskip existing G49 '=G46+G47+G48'
+skip existing N50 '=($C$21*-N49)'
+skip existing H51 '=H49+H50'
+skip existing K51 '=K49+K50'
+skip existing L51 '=L49+L50'
+skip existing O57 '=O43'
+Traceback (most recent call last):
+  File "/workspace/patch.py", line 64, in <module>
+    setf('F60r', '_')
+  File "/workspace/patch.py", line 8, in setf
+    c=ws[coord]
+      ~~^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/openpyxl/worksheet/worksheet.py", line 294, in __getitem__
+    min_col, min_row, max_col, max_row = range_boundaries(key)
+                                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/openpyxl/utils/cell.py", line 148, in range_boundaries
+    raise ValueError(msg)
+ValueError: F60r is not a valid coordinate or range
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> ws=openpyxl.load_workbook('/workspace/input.xlsx').active
+[?2004l[?2004h> sections=[(40,42,67),(70,71,76),(79,82,89)]
+[?2004l[?2004h> for r0,r1,r2 in sections:
+[?2004l[?2004h>     print('\nRows',r0,'-' ,r2)
+[?2004l[?2004h>     for r in range(r1,r2+1):
+[?2004l[?2004h>         cells=[]
+[?2004l[?2004h>         for col in ['D','E','F','G','H','I','J','K','L','M','N','O']:
+[?2004l[?2004h>             c=ws[col+str(r)]
+[?2004l[?2004h>             if c.value is None:
+[?2004l[?2004h>                 cells.append(col+':BLANK')
+[?2004l[?2004h>             else:
+[?2004l[?2004h>                 cells.append(f"{col}:{('F' if c.data_type=='f' else 'V')}")
+[?2004l[?2004h>         print(f'{r:3}', ' '.join(cells))
+[?2004l[?2004h> print('Also economic blanks')
+[?2004l[?2004h> for row in range(24,30):
+[?2004l[?2004h>     print(row, [(c.coordinate, c.value) for c in ws[row] if c.coordinate[0] in ['C','D'] and c.coordinate[1:]==str(row)])
+[?2004l[?2004h> PY
+[?2004l
+Rows 40 - 67
+ 42 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 43 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 44 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 45 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 46 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 47 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 48 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 49 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 50 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 51 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 52 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 53 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 54 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 55 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 56 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 57 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 58 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 59 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 60 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 61 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 62 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 63 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 64 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 65 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 66 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 67 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+
+Rows 70 - 76
+ 71 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 72 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 73 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 74 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 75 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 76 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+
+Rows 79 - 89
+ 82 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 83 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 84 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 85 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 86 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 87 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 88 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 89 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+Also economic blanks
+24 [('C24', None), ('D24', None)]
+25 [('C25', None), ('D25', None)]
+26 [('C26', None), ('D26', None)]
+27 [('C27', None), ('D27', None)]
+28 [('C28', None), ('D28', None)]
+29 [('C29', None), ('D29', None)]
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> wb=openpyxl.load_workbook('/workspace/input.xlsx')
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> sections=[(40,41,67),(70,71,76),(79,82,89)]
+[?2004l[?2004h> for r0,r1,r2 in sections:
+[?2004l[?2004h>     print('\nRows',r0,'-',r2)
+[?2004l[?2004h>     for r in range(r1,r2+1):
+[?2004l[?2004h>         cells=[]
+[?2004l[?2004h>         for col in ['D','E','F','G','H','I','J','K','L','M','N','O']:
+[?2004l[?2004h>             c=ws[col+str(r)]
+[?2004l[?2004h>             if c.value is None:
+[?2004l[?2004h>                 cells.append(col+':BLANK')
+[?2004l[?2004h>             else:
+[?2004l[?2004h>                 cells.append(f"{col}:{('F' if c.data_type=='f' else 'V')}")
+[?2004l[?2004h>         print(f'{r:3}', ' '.join(cells))
+[?2004l[?2004h> print('\nEconomic blanks')
+[?2004l[?2004h> for coord in ['C24','C25','C27','C28','C29']:
+[?2004l[?2004h>     c=ws[coord]
+[?2004l[?2004h>     print(coord, c.value, c.data_type)
+[?2004l[?2004h> PY
+[?2004l
+Rows 40 - 67
+ 41 D:V E:V F:V G:V H:V I:V J:V K:V L:V M:V N:V O:V
+ 42 D:V E:BLANK F:F G:F H:F I:F J:F K:BLANK L:F M:F N:F O:F
+ 43 D:V E:F F:F G:F H:BLANK I:F J:BLANK K:F L:BLANK M:F N:F O:F
+ 44 D:V E:F F:F G:F H:F I:F J:F K:F L:F M:F N:F O:F
+ 45 D:V E:V F:F G:BLANK H:F I:F J:BLANK K:F L:F M:BLANK N:F O:F
+ 46 D:V E:F F:F G:BLANK H:F I:F J:F K:BLANK L:F M:F N:F O:BLANK
+ 47 D:V E:F F:F G:BLANK H:F I:F J:BLANK K:F L:F M:F N:F O:F
+ 48 D:V E:F F:F G:BLANK H:F I:F J:F K:F L:F M:F N:F O:F
+ 49 D:V E:F F:F G:F H:BLANK I:F J:F K:F L:F M:BLANK N:F O:F
+ 50 D:V E:F F:F G:F H:F I:F J:F K:BLANK L:F M:F N:F O:F
+ 51 D:V E:F F:BLANK G:BLANK H:F I:F J:F K:F L:F M:BLANK N:F O:F
+ 52 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 53 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 54 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 55 D:V E:V F:V G:V H:V I:V J:V K:V L:V M:V N:V O:V
+ 56 D:V E:F F:BLANK G:BLANK H:BLANK I:BLANK J:F K:BLANK L:F M:F N:F O:F
+ 57 D:V E:F F:F G:F H:F I:F J:F K:F L:BLANK M:F N:F O:F
+ 58 D:V E:F F:F G:BLANK H:F I:F J:F K:BLANK L:F M:F N:F O:BLANK
+ 59 D:V E:V F:F G:F H:BLANK I:F J:F K:F L:F M:F N:BLANK O:F
+ 60 D:V E:BLANK F:V G:F H:F I:F J:F K:F L:F M:F N:F O:F
+ 61 D:V E:F F:V G:F H:F I:BLANK J:F K:F L:BLANK M:F N:F O:V
+ 62 D:V E:F F:F G:F H:F I:F J:F K:BLANK L:F M:F N:F O:V
+ 63 D:V E:F F:F G:F H:F I:F J:F K:F L:F M:F N:F O:V
+ 64 D:F E:V F:V G:V H:V I:V J:V K:V L:V M:V N:F O:V
+ 65 D:F E:F F:F G:F H:F I:BLANK J:BLANK K:F L:F M:F N:F O:V
+ 66 D:V E:BLANK F:F G:BLANK H:F I:F J:F K:F L:F M:F N:F O:V
+ 67 D:F E:F F:F G:F H:F I:F J:F K:F L:F M:BLANK N:F O:V
+
+Rows 70 - 76
+ 71 D:V E:V F:V G:V H:V I:V J:V K:V L:V M:V N:V O:V
+ 72 D:BLANK E:BLANK F:F G:F H:F I:F J:F K:F L:F M:F N:BLANK O:BLANK
+ 73 D:BLANK E:F F:F G:F H:F I:F J:F K:F L:F M:F N:BLANK O:BLANK
+ 74 D:BLANK E:F F:F G:F H:F I:BLANK J:F K:BLANK L:BLANK M:F N:F O:F
+ 75 D:BLANK E:F F:F G:BLANK H:BLANK I:F J:F K:BLANK L:BLANK M:F N:F O:F
+ 76 D:BLANK E:F F:F G:F H:F I:F J:F K:F L:F M:F N:F O:F
+
+Rows 79 - 89
+ 82 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 83 D:BLANK E:F F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 84 D:BLANK E:F F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 85 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 86 D:BLANK E:F F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 87 D:BLANK E:BLANK F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 88 D:BLANK E:F F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+ 89 D:BLANK E:F F:BLANK G:BLANK H:BLANK I:BLANK J:BLANK K:BLANK L:BLANK M:BLANK N:BLANK O:BLANK
+
+Economic blanks
+C24 None n
+C25 None n
+C27 =C9*C24 f
+C28 None n
+C29 =((C10)/((1-(1/(1+C10)^C11)))) f
+[?2004hroot@e1ef3fd93ef4:/workspace# cat > /workspace/patch2.py <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> out='/workspace/output.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> 
+[?2004l[?2004h> def setf(coord, formula):
+[?2004l[?2004h>     c=ws[coord]
+[?2004l[?2004h>     if c.value is None and c.data_type != 'f':
+[?2004l[?2004h>         c.value = formula
+[?2004l[?2004h>     else:
+[?2004l[?2004h>         print('skip', coord, repr(c.value))
+[?2004l[?2004h> 
+[?2004l[?2004h> # Economic values
+[?2004l[?2004h> setf('C24', '=C4/C17')
+[?2004l[?2004h> setf('C28', '=C24-C27')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Decision analysis factors
+[?2004l[?2004h> setf('H34', '=H67')
+[?2004l[?2004h> setf('J35', '=J34/((1+$C$14)^J33)')
+[?2004l[?2004h> setf('M35', '=M34/((1+$C$14)^M33)')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Income statement
+[?2004l[?2004h> setf('E42', '=C4')
+[?2004l[?2004h> setf('K42', '=J42*(1+$C$7)')
+[?2004l[?2004h> setf('H43', '=-(H42*$C$5)')
+[?2004l[?2004h> setf('J43', '=-(J42*$C$5)')
+[?2004l[?2004h> setf('L43', '=-(L42*$C$5)')
+[?2004l[?2004h> setf('G45', '=F45*(1+$C$8)')
+[?2004l[?2004h> setf('J45', '=I45*(1+$C$8)')
+[?2004l[?2004h> setf('M45', '=L45*(1+$C$8)')
+[?2004l[?2004h> setf('G46', '=SUM(G44:G45)')
+[?2004l[?2004h> setf('K46', '=SUM(K44:K45)')
+[?2004l[?2004h> setf('O46', '=SUM(O44:O45)')
+[?2004l[?2004h> setf('G47', '=G74')
+[?2004lH49', '=H46+H47+H48')
+setf('M49', '=M46+M47+M48')
+setf('K50', '=($C$21*-K49)')
+setf('N50', '=($C$21*-N49)')
+setf('F51', '=F49+F50')
+setf('G51', '=G49+G50')
+setf('M51', '=M49+M50')
+
+# Cash flow statement
+setf('F56', '=F42')
+setf('G56', '=G42')
+setf('H56', '=H42')
+setf('I56', '=I42')
+setf('K56', '=K42')
+setf('L57', '=L43')
+setf('G58', '=G44')
+setf('K58', '=K44')
+setf('O58', '=O44')
+setf('H59', '=G59*(1+$C$8)')
+setf('N59', '=M59*(1+$C$8)')
+setf('E60', '=SUM(E58:E59)')
+setf('I61', '=H61')
+setf('L61', '=K61')
+setf('I65', '=SUM(I63:I64)')
+setf('J65', '=SUM(J63:J64)')
+setf('E66', '=(1+$C$13)^E55')
+setf('G66', '=(1+$C$13)^G55')
+setf('M67', '=M65/M66')
+
+# Mortgage schedule
+setf('D72', '=C27')
+setf('E72', '=D76')
+setf('N72', '=M76')
+setf('O72', '=N76')
+setf('N73', '=M73')
+setf('O73', '=N73')
+setf('I74', '=$C$10*-I72')
+setf('K74', '=$C$10*-K72')
+setf('L74', '=$C$10*-L72')
+setf('G75', '=G73+G74')
+setf('H75', '=H73+H74')
+setf('K75', '=K73+K74')
+setf('L75', '=L73+L74')
+
+# Reversion on sale
+setf('E82', '=E80/E81')
+setf('E85', '=C24-((C24*C12)/C20)*10')
+setf('E87', '=-C22*E86')
+
+wb.save(out)
+print('saved', out)
+PY
+rm -f /workspace/output.xlsx
+python3 /workspace/patch2.py
+[?2004h> setf('J47', '=J74')
+[?2004l[?2004h> setf('G48', '=F48')  # depreciation constant formula =G48? existing convention: E=(C24*C12)/-C20; F=E; H=G; etc. G=D? Actually need chain from F.
+[?2004l[?2004h> setf('H49', '=H46+H47+H48')
+[?2004l[?2004h> setf('M49', '=M46+M47+M48')
+[?2004l[?2004h> setf('K50', '=($C$21*-K49)')
+[?2004l[?2004h> setf('N50', '=($C$21*-N49)')
+[?2004l[?2004h> setf('F51', '=F49+F50')
+[?2004l[?2004h> setf('G51', '=G49+G50')
+[?2004l[?2004h> setf('M51', '=M49+M50')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Cash flow statement
+[?2004l[?2004h> setf('F56', '=F42')
+[?2004l[?2004h> setf('G56', '=G42')
+[?2004l[?2004h> setf('H56', '=H42')
+[?2004l[?2004h> setf('I56', '=I42')
+[?2004l[?2004h> setf('K56', '=K42')
+[?2004l[?2004h> setf('L57', '=L43')
+[?2004l[?2004h> setf('G58', '=G44')
+[?2004l[?2004h> setf('K58', '=K44')
+[?2004l[?2004h> setf('O58', '=O44')
+[?2004l[?2004h> setf('H59', '=G59*(1+$C$8)')
+[?2004l[?2004h> setf('N59', '=M59*(1+$C$8)')
+[?2004l[?2004h> setf('E60', '=SUM(E58:E59)')
+[?2004l[?2004h> setf('I61', '=H61')
+[?2004l[?2004h> setf('L61', '=K61')
+[?2004l[?2004h> setf('I65', '=SUM(I63:I64)')
+[?2004l[?2004h> setf('J65', '=SUM(J63:J64)')
+[?2004l[?2004h> setf('E66', '=(1+$C$13)^E55')
+[?2004l[?2004h> setf('G66', '=(1+$C$13)^G55')
+[?2004l[?2004h> setf('M67', '=M65/M66')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Mortgage schedule
+[?2004l[?2004h> setf('D72', '=C27')
+[?2004l[?2004h> setf('E72', '=D76')
+[?2004l[?2004h> setf('N72', '=M76')
+[?2004l[?2004h> setf('O72', '=N76')
+[?2004l[?2004h> setf('N73', '=M73')
+[?2004l[?2004h> setf('O73', '=N73')
+[?2004l[?2004h> setf('I74', '=$C$10*-I72')
+[?2004l[?2004h> setf('K74', '=$C$10*-K72')
+[?2004l[?2004h> setf('L74', '=$C$10*-L72')
+[?2004l[?2004h> setf('G75', '=G73+G74')
+[?2004l[?2004h> setf('H75', '=H73+H74')
+[?2004l[?2004h> setf('K75', '=K73+K74')
+[?2004l[?2004h> setf('L75', '=L73+L74')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Reversion on sale
+[?2004l[?2004h> setf('E82', '=E80/E81')
+[?2004l[?2004h> setf('E85', '=C24-((C24*C12)/C20)*10')
+[?2004l[?2004h> setf('E87', '=-C22*E86')
+[?2004l[?2004h> 
+[?2004l[?2004h> wb.save(out)
+[?2004l[?2004h> print('saved', out)
+[?2004l[?2004h> PY
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# rm -f /workspace/output.xlsx
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# python3 /workspace/patch2.py
+[?2004lskip N50 '=($C$21*-N49)'
+saved /workspace/output.xlsx
+[?2004hroot@e1ef3fd93ef4:/workspace# libreoffice --headless --convert-to xlsx --outdir /workspace/recalc /workspace/output.xlsx >/tmp/recalc.log 2>&1 || true
+[?2004l        print(coord, ws[coord].value)
+PY
+[?2004hroot@e1ef3fd93ef4:/workspace# cat /tmp/recalc.log
+[?2004ljavaldx: Could not find a Java Runtime Environment!
+Please ensure that a JVM and the package libreoffice-java-common
+is installed.
+If it is already installed then try removing ~/.config/libreoffice/4/user/config/javasettings_Linux_*.xml
+Warning: failed to read path from javaldx
+convert /workspace/output.xlsx -> /workspace/recalc/output.xlsx using filter : Calc MS Excel 2007 XML
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl, os, glob
+[?2004l[?2004h> p='/workspace/recalc/output.xlsx'
+[?2004l[?2004h> if not os.path.exists(p):
+[?2004l[?2004h>     print('No recalc file')
+[?2004l[?2004h> else:
+[?2004l[?2004h>     wbf=openpyxl.load_workbook(p, data_only=True)
+[?2004l[?2004h>     ws=wbf['Model']
+[?2004l[?2004h>     errs=[]
+[?2004l[?2004h>     for row in ws.iter_rows(min_row=1, max_row=101):
+[?2004l[?2004h>         for c in row:
+[?2004l[?2004h>             if isinstance(c.value, str) and c.value.startswith('#'):
+[?2004l[?2004h>                 errs.append(c.coordinate+':'+c.value)
+[?2004l[?2004h>     print('errors:', errs[:50])
+[?2004l[?2004h>     for coord in ['C24','C27','C28','C29','C37','C38','E42','K42','H43','J43','L43','G45','J45','M45','G46','K46','O46','G47','J47','G48','H49','M49','K50','N50','F51','G51','M51','F56','G56','H56','I56','K56','L57','G58','K58','O58','H59','N59','E60','I61','L61','H34','J35','M35','I65','J65','E66','G66','M67','D72','E72','N72','O72','N73','O73','I74','K74','L74','G75','H75','K75','L75','E82','E85','E86','E87','E89','E88','E84']:
+[?2004l[?2004h>         print(coord, ws[coord].value)
+[?2004l[?2004h> PY
+[?2004lerrors: []
+C24 2013245.03311258
+C27 1509933.77483444
+C28 503311.258278146
+C29 0.078226718212274
+C37 1414349.43973796
+C38 0.35739252575034
+E42 182400
+K42 217795.13888689
+H43 -9965.67024
+J43 -10572.579557616
+L43 -11216.4496526748
+G45 -58922.386
+J45 -64386.082086622
+M45 -70356.4103202682
+G46 124910.366
+K46 140587.717393324
+O46 158232.714503977
+G47 0
+J47 0
+G48 -43878.4173883512
+H49 84779.2595916489
+M49 105271.091994227
+K50 -24177.3250012433
+N50 -27436.394318926
+F51 58045.3369587366
+G51 60773.9614587366
+M51 78953.3189956701
+F56 187872
+G56 193508.16
+H56 199313.4048
+I56 205292.806944
+K56 217795.13888689
+L57 -11216.4496526748
+G58 183832.752
+K58 206905.381942545
+O58 232873.830212749
+H59 -60690.05758
+N59 -72467.1026298763
+E60 117740
+I61 94731.8503068155
+L61 94731.8503068155
+H34 179647.383114578
+J35 109811.036306051
+M35 83413.7004625549
+I65 205089.510120953
+J65 208071.151784965
+E66 1.03
+G66 1.092727
+M67 166744.37318855
+D72 1509933.77483444
+E72 0
+N72 0
+O72 0
+N73 0
+O73 0
+I74 0
+K74 0
+L74 0
+G75 0
+H75 0
+K75 0
+L75 0
+E82 1977908.93129971
+E85 1574460.85922907
+E86 3374357.98671181
+E87 -506153.698006771
+E89 2306050.82548951
+E88 0
+E84 1799897.12748274
+[?2004hroot@e1ef3fd93ef4:/workspace# cat > /workspace/patch3.py <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/input.xlsx'
+[?2004l[?2004h> out='/workspace/output.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> 
+[?2004l[?2004h> def setf(coord, formula):
+[?2004l[?2004h>     c=ws[coord]
+[?2004l[?2004h>     if c.value is None:
+[?2004l[?2004h>         c.value = formula
+[?2004l[?2004h>     else:
+[?2004l[?2004h>         print('skip existing', coord, repr(c.value))
+[?2004l[?2004h> 
+[?2004l[?2004h> # Economic values
+[?2004l[?2004h> # Purchase cap rate should capitalize first-year NOI: gross rent less vacancy/expenses divided by cap rate.
+[?2004l[?2004h> setf('C24', '=(C4*(1-C5)-C6)/C17')
+[?2004l[?2004h> setf('C28', '=C24-C27')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Decision analysis factors
+[?2004l[?2004h> setf('H34', '=H67')
+[?2004l[?2004h> setf('J35', '=J34/((1+$C$14)^J33)')
+[?2004l[?2004h> setf('M35', '=M34/((1+$C$14)^M33)')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Income statement
+[?2004l[?2004h> setf('E42', '=C4')
+[?2004l[?2004h> setf('K42', '=J42*(1+$C$7)')
+[?2004l[?2004h> setf('H43', '=-(H42*$C$5)')
+[?2004l[?2004h> setf('J43', '=-(J42*$C$5)')
+[?2004l[?2004h> setf('L43', '=-(L42*$C$5)')
+[?2004l[?2004h> setf('G45', '=F45*(1+$C$8)')
+[?2004l[?2004h> setf('J45', '=I45*(1+$C$8)')
+[?2004l[?2004h> setf('M45', '=L45*(1+$C$8)')
+[?2004l[?2004h> setf('G46', '=SUM(G44:G45)')
+[?2004l[?2004h> setf('K46', '=SUM(K44:K45)')
+[?2004lC20)*10')
+setf('E87', '=-C22*E86')
+
+wb.save(out)
+print('saved', out)
+PY
+rm -f /workspace/output.xlsx /workspace/recalc/output.xlsx
+python3 /workspace/patch3.py
+libreoffice --headless --convert-to xlsx --outdir /workspace/recalc /workspace/output.xlsx >/tmp/recalc.log 2>&1 || true
+cat /tmp/recalc.log
+python3 - <<'PY'
+import openpyxl, os
+p='/workspace/recalc/output.xlsx'
+wbf=openpyxl.load_workbook(p, data_only=True)
+ws=wbf['Model']
+errs=[]
+for row in ws.iter_rows(min_row=1, max_row=101):
+    for c in row:
+        if isinstance(c.value, str) and c.value.startswith('#'):
+            errs.append(c.coordinate+':'+c.value)
+print('errors:', errs[:50])
+for coord in ['C24','C27','C28','E71','F71','N71','O71','E72','E73','N73','O73','E76','N76','O76','E80','E82','E85','E86','E87','E88','E89','E61','F61','F60']:
+    print(coord, ws[coord].value)
+PY
+[?2004h> setf('O46', '=SUM(O44:O45)')
+[?2004l[?2004h> setf('G47', '=G74')
+[?2004l[?2004h> setf('J47', '=J74')
+[?2004l[?2004h> setf('G48', '=F48')
+[?2004l[?2004h> setf('H49', '=H46+H47+H48')
+[?2004l[?2004h> setf('M49', '=M46+M47+M48')
+[?2004l[?2004h> setf('K50', '=($C$21*-K49)')
+[?2004l[?2004h> setf('N50', '=($C$21*-N49)')
+[?2004l[?2004h> setf('F51', '=F49+F50')
+[?2004l[?2004h> setf('G51', '=G49+G50')
+[?2004l[?2004h> setf('M51', '=M49+M50')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Cash flow statement
+[?2004l[?2004h> setf('F56', '=F42')
+[?2004l[?2004h> setf('G56', '=G42')
+[?2004l[?2004h> setf('H56', '=H42')
+[?2004l[?2004h> setf('I56', '=I42')
+[?2004l[?2004h> setf('K56', '=K42')
+[?2004l[?2004h> setf('L57', '=L43')
+[?2004l[?2004h> setf('G58', '=G44')
+[?2004l[?2004h> setf('K58', '=K44')
+[?2004l[?2004h> setf('O58', '=O44')
+[?2004l[?2004h> setf('H59', '=G59*(1+$C$8)')
+[?2004l[?2004h> setf('N59', '=M59*(1+$C$8)')
+[?2004l[?2004h> setf('E60', '=SUM(E58:E59)')
+[?2004l[?2004h> setf('I61', '=H61')
+[?2004l[?2004h> setf('L61', '=K61')
+[?2004l[?2004h> setf('I65', '=SUM(I63:I64)')
+[?2004l[?2004h> setf('J65', '=SUM(J63:J64)')
+[?2004l[?2004h> setf('E66', '=(1+$C$13)^E55')
+[?2004l[?2004h> setf('G66', '=(1+$C$13)^G55')
+[?2004l[?2004h> setf('M67', '=M65/M66')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Mortgage schedule
+[?2004l[?2004h> setf('D72', '=C27')
+[?2004l[?2004h> setf('E72', '=D72')
+[?2004l[?2004h> setf('N72', '=M76')
+[?2004l[?2004h> setf('O72', '=N76')
+[?2004l[?2004h> setf('N73', '=M73')
+[?2004l[?2004h> setf('O73', '=N73')
+[?2004l[?2004h> setf('I74', '=$C$10*-I72')
+[?2004l[?2004h> setf('K74', '=$C$10*-K72')
+[?2004l[?2004h> setf('L74', '=$C$10*-L72')
+[?2004l[?2004h> setf('G75', '=G73+G74')
+[?2004l[?2004h> setf('H75', '=H73+H74')
+[?2004l[?2004h> setf('K75', '=K73+K74')
+[?2004l[?2004h> setf('L75', '=L73+L74')
+[?2004l[?2004h> 
+[?2004l[?2004h> # Reversion on sale
+[?2004l[?2004h> setf('E82', '=E80/E81')
+[?2004l[?2004h> setf('E85', '=C24-((C24*C12)/C20)*10')
+[?2004l[?2004h> setf('E87', '=-C22*E86')
+[?2004l[?2004h> 
+[?2004l[?2004h> wb.save(out)
+[?2004l[?2004h> print('saved', out)
+[?2004l[?2004h> PY
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# rm -f /workspace/output.xlsx /workspace/recalc/output.xlsx
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# python3 /workspace/patch3.py
+[?2004lskip existing N50 '=($C$21*-N49)'
+saved /workspace/output.xlsx
+[?2004hroot@e1ef3fd93ef4:/workspace# libreoffice --headless --convert-to xlsx --outdir /workspace/recalc /workspace/output.xlsx >/tmp/recalc.log 2>&1 || true
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# cat /tmp/recalc.log
+[?2004ljavaldx: Could not find a Java Runtime Environment!
+Please ensure that a JVM and the package libreoffice-java-common
+is installed.
+If it is already installed then try removing ~/.config/libreoffice/4/user/config/javasettings_Linux_*.xml
+Warning: failed to read path from javaldx
+convert /workspace/output.xlsx -> /workspace/recalc/output.xlsx using filter : Calc MS Excel 2007 XML
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl, os
+[?2004l[?2004h> p='/workspace/recalc/output.xlsx'
+[?2004l[?2004h> wbf=openpyxl.load_workbook(p, data_only=True)
+[?2004l[?2004h> ws=wbf['Model']
+[?2004l[?2004h> errs=[]
+[?2004l[?2004h> for row in ws.iter_rows(min_row=1, max_row=101):
+[?2004l[?2004h>     for c in row:
+[?2004l[?2004h>         if isinstance(c.value, str) and c.value.startswith('#'):
+[?2004l[?2004h>             errs.append(c.coordinate+':'+c.value)
+[?2004l[?2004h> print('errors:', errs[:50])
+[?2004l[?2004h> for coord in ['C24','C27','C28','E71','F71','N71','O71','E72','E73','N73','O73','E76','N76','O76','E80','E82','E85','E86','E87','E88','E89','E61','F61','F60']:
+[?2004l[?2004h>     print(coord, ws[coord].value)
+[?2004l[?2004h> PY
+[?2004lerrors: []
+C24 1299558.49889625
+C27 974668.874172185
+C28 324889.624724062
+E71 1
+F71 2
+N71 10
+O71 11
+E72 974668.874172185
+E73 76245.1473701418
+N73 76245.1473701418
+O73 76245.1473701418
+E76 956903.859252375
+N76 740511.855365823
+O76 708697.419317631
+E80 158232.714503977
+E82 1977908.93129971
+E85 1016321.39016245
+E86 2816218.51764519
+E87 -140810.925882259
+E88 740511.855365823
+E89 1200196.19799917
+E61 -76245.1473701418
+F61 94731.8503068155
+F60 127443.6224642
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/output.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> print('sheets', wb.sheetnames)
+[?2004l[?2004h> print('dims', ws.dimensions)
+[?2004l[?2004h> print('\nKey formulas patched:')
+[?2004l[?2004h> for coord in ['C24','C28','H34','J35','M35','E42','K42','H43','J43','L43','G45','J45','M45','G46','K46','O46','G47','J47','G48','H49','M49','K50','F51','G51','M51','F56','G56','H56','I56','K56','L57','G58','K58','O58','H59','N59','E60','I61','L61','I65','J65','E66','G66','M67','D72','E72','N72','O72','N73','O73','I74','K74','L74','G75','H75','K75','L75','E82','E85','E87']:
+[?2004l[?2004h>     c=ws[coord]
+[?2004l[?2004h>     print(coord, c.value)
+[?2004l[?2004h> print('\nBlank formula cells remaining in main blocks:')
+[?2004l[?2004h> blanks=[]
+[?2004l[?2004h> for r in list(range(24,30))+list(range(34,39))+list(range(42,68))+list(range(72,77))+list(range(82,90)):
+[?2004l[?2004h>     for c in ws[r]:
+[?2004l[?2004h>         if c.value is None and c.column_letter in 'CDEFGHIJKLMNO':
+[?2004l[?2004h>             blanks.append(c.coordinate)
+[?2004l[?2004h> print(blanks[:200])
+[?2004l[?2004h> PY
+[?2004lsheets ['Description', 'Model']
+dims A1:AE401
+
+Key formulas patched:
+C24 =(C4*(1-C5)-C6)/C17
+C28 =C24-C27
+H34 =H67
+J35 =J34/((1+$C$14)^J33)
+M35 =M34/((1+$C$14)^M33)
+E42 =C4
+K42 =J42*(1+$C$7)
+H43 =-(H42*$C$5)
+J43 =-(J42*$C$5)
+L43 =-(L42*$C$5)
+G45 =F45*(1+$C$8)
+J45 =I45*(1+$C$8)
+M45 =L45*(1+$C$8)
+G46 =SUM(G44:G45)
+K46 =SUM(K44:K45)
+O46 =SUM(O44:O45)
+G47 =G74
+J47 =J74
+G48 =F48
+H49 =H46+H47+H48
+M49 =M46+M47+M48
+K50 =($C$21*-K49)
+F51 =F49+F50
+G51 =G49+G50
+M51 =M49+M50
+F56 =F42
+G56 =G42
+H56 =H42
+I56 =I42
+K56 =K42
+L57 =L43
+G58 =G44
+K58 =K44
+O58 =O44
+H59 =G59*(1+$C$8)
+N59 =M59*(1+$C$8)
+E60 =SUM(E58:E59)
+I61 =H61
+L61 =K61
+I65 =SUM(I63:I64)
+J65 =SUM(J63:J64)
+E66 =(1+$C$13)^E55
+G66 =(1+$C$13)^G55
+M67 =M65/M66
+D72 =C27
+E72 =D72
+N72 =M76
+O72 =N76
+N73 =M73
+O73 =N73
+I74 =$C$10*-I72
+K74 =$C$10*-K72
+L74 =$C$10*-L72
+G75 =G73+G74
+H75 =H73+H74
+K75 =K73+K74
+L75 =L73+L74
+E82 =E80/E81
+E85 =C24-((C24*C12)/C20)*10
+E87 =-C22*E86
+
+Blank formula cells remaining in main blocks:
+['D24', 'E24', 'F24', 'G24', 'H24', 'I24', 'J24', 'K24', 'L24', 'M24', 'N24', 'O24', 'C25', 'D25', 'E25', 'F25', 'G25', 'H25', 'I25', 'J25', 'K25', 'L25', 'M25', 'N25', 'O25', 'C26', 'D26', 'E26', 'F26', 'G26', 'H26', 'I26', 'J26', 'K26', 'L26', 'M26', 'N26', 'O26', 'D27', 'E27', 'F27', 'G27', 'H27', 'I27', 'J27', 'K27', 'L27', 'M27', 'N27', 'O27', 'D28', 'E28', 'F28', 'G28', 'H28', 'I28', 'J28', 'K28', 'L28', 'M28', 'N28', 'O28', 'D29', 'E29', 'F29', 'G29', 'H29', 'I29', 'J29', 'K29', 'L29', 'M29', 'N29', 'O29', 'C34', 'C35', 'C36', 'D36', 'E36', 'F36', 'G36', 'H36', 'I36', 'J36', 'K36', 'L36', 'M36', 'N36', 'O36', 'D37', 'E37', 'F37', 'G37', 'H37', 'I37', 'J37', 'K37', 'L37', 'M37', 'N37', 'O37', 'D38', 'E38', 'F38', 'G38', 'H38', 'I38', 'J38', 'K38', 'L38', 'M38', 'N38', 'O38', 'C42', 'C43', 'C44', 'C45', 'C46', 'C47', 'C48', 'C49', 'C50', 'C51', 'C52', 'D52', 'E52', 'F52', 'G52', 'H52', 'I52', 'J52', 'K52', 'L52', 'M52', 'N52', 'O52', 'C53', 'D53', 'E53', 'F53', 'G53', 'H53', 'I53', 'J53', 'K53', 'L53', 'M53', 'N53', 'O53', 'C54', 'D54', 'E54', 'F54', 'G54', 'H54', 'I54', 'J54', 'K54', 'L54', 'M54', 'N54', 'O54', 'C56', 'C57', 'C58', 'C59', 'C60', 'C61', 'C62', 'K62', 'C63', 'C64', 'C65', 'C66', 'C67', 'C72', 'C73', 'D73', 'C74', 'D74', 'C75', 'D75', 'C76', 'D76', 'C82', 'D82', 'F82', 'G82', 'H82', 'I82', 'J82', 'K82', 'L82', 'M82', 'N82', 'O82', 'C83', 'D83', 'F83', 'G83']
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> p='/workspace/output.xlsx'
+[?2004l[?2004h> wb=openpyxl.load_workbook(p)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> # Patch additional known missing formula
+[?2004l[?2004h> ws['K62'] = '=K50'
+[?2004l[?2004h> # Print actual blanks in formula row/column areas; ignore C labels and D73-D76 maybe but inspect
+[?2004l[?2004h> for r in list(range(34,39))+list(range(42,68))+list(range(72,77))+list(range(82,90)):
+[?2004l[?2004h>     blanks=[]
+[?2004l[?2004h>     for col in 'EFGHIJKLMNO':
+[?2004l[?2004h>         c=ws[col+str(r)]
+[?2004l[?2004h>         if c.value is None:
+[?2004l[?2004h>             blanks.append(c.coordinate)
+[?2004l[?2004h>     if blanks:
+[?2004l[?2004h>         print(r, blanks)
+[?2004l[?2004h> wb.save(p)
+[?2004l[?2004h> print('patched K62 and saved')
+[?2004l[?2004h> PY
+[?2004l.value)
+print('errors:', errs[:50])
+for coord in ['K62','C37','C38','E89']:
+    print(coord, ws[coord].value)
+PY
+36 ['E36', 'F36', 'G36', 'H36', 'I36', 'J36', 'K36', 'L36', 'M36', 'N36', 'O36']
+37 ['E37', 'F37', 'G37', 'H37', 'I37', 'J37', 'K37', 'L37', 'M37', 'N37', 'O37']
+38 ['E38', 'F38', 'G38', 'H38', 'I38', 'J38', 'K38', 'L38', 'M38', 'N38', 'O38']
+52 ['E52', 'F52', 'G52', 'H52', 'I52', 'J52', 'K52', 'L52', 'M52', 'N52', 'O52']
+53 ['E53', 'F53', 'G53', 'H53', 'I53', 'J53', 'K53', 'L53', 'M53', 'N53', 'O53']
+54 ['E54', 'F54', 'G54', 'H54', 'I54', 'J54', 'K54', 'L54', 'M54', 'N54', 'O54']
+82 ['F82', 'G82', 'H82', 'I82', 'J82', 'K82', 'L82', 'M82', 'N82', 'O82']
+83 ['F83', 'G83', 'H83', 'I83', 'J83', 'K83', 'L83', 'M83', 'N83', 'O83']
+84 ['F84', 'G84', 'H84', 'I84', 'J84', 'K84', 'L84', 'M84', 'N84', 'O84']
+85 ['F85', 'G85', 'H85', 'I85', 'J85', 'K85', 'L85', 'M85', 'N85', 'O85']
+86 ['F86', 'G86', 'H86', 'I86', 'J86', 'K86', 'L86', 'M86', 'N86', 'O86']
+87 ['F87', 'G87', 'H87', 'I87', 'J87', 'K87', 'L87', 'M87', 'N87', 'O87']
+88 ['F88', 'G88', 'H88', 'I88', 'J88', 'K88', 'L88', 'M88', 'N88', 'O88']
+89 ['F89', 'G89', 'H89', 'I89', 'J89', 'K89', 'L89', 'M89', 'N89', 'O89']
+patched K62 and saved
+[?2004hroot@e1ef3fd93ef4:/workspace# rm -f /workspace/recalc/output.xlsx
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# libreoffice --headless --convert-to xlsx --outdir /workspace/recalc /workspace/output.xlsx >/tmp/recalc.log 2>&1 || true
+[?2004l[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> ws=openpyxl.load_workbook('/workspace/recalc/output.xlsx', data_only=True)['Model']
+[?2004l[?2004h> errs=[]
+[?2004l[?2004h> for row in ws.iter_rows(min_row=1, max_row=101):
+[?2004l[?2004h>     for c in row:
+[?2004l[?2004h>         if isinstance(c.value,str) and c.value.startswith('#'):
+[?2004l[?2004h>             errs.append(c.coordinate+':'+c.value)
+[?2004l[?2004h> print('errors:', errs[:50])
+[?2004l[?2004h> for coord in ['K62','C37','C38','E89']:
+[?2004l[?2004h>     print(coord, ws[coord].value)
+[?2004l[?2004h> PY
+[?2004lerrors: []
+K62 -9182.8308514601
+C37 1216349.05290126
+C38 0.460569790721794
+E89 1200196.19799917
+[?2004hroot@e1ef3fd93ef4:/workspace# ls -l /workspace/output.xlsx
+[?2004l-rw-r--r-- 1 root root 24116 Aug 18 02:35 /workspace/output.xlsx
+[?2004hroot@e1ef3fd93ef4:/workspace# python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> wb=openpyxl.load_workbook('/workspace/output.xlsx')
+[?2004l[?2004h> print(wb.sheetnames)
+[?2004l[?2004h> ws=wb['Model']
+[?2004l[?2004h> print(ws['C24'].value)
+[?2004l[?2004h> print(ws['K62'].value)
+[?2004l[?2004h> PY
+[?2004l['Description', 'Model']
+=(C4*(1-C5)-C6)/C17
+=K50
+[?2004hroot@e1ef3fd93ef4:/workspace# 

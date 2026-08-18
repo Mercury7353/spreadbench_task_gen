@@ -1,0 +1,224 @@
+{
+  "task_id": "debugging-02-commercial-real-estate",
+  "category": "debugging",
+  "source": {
+    "slug": "commercial-real-estate",
+    "filename": "Commercial Real Estate Valuation Model.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "02_02",
+    "02_05"
+  ],
+  "weaknesses": [
+    "incomplete-target-coverage",
+    "over-editing"
+  ],
+  "source_case_weaknesses": {
+    "02_02": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "02_05": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ]
+  },
+  "required_cells": [
+    "Model!I45",
+    "Model!J47",
+    "Model!J63",
+    "Model!L63",
+    "Model!I47",
+    "Model!N46",
+    "Model!K47",
+    "Model!N57",
+    "Model!E83",
+    "Model!L46",
+    "Model!M44",
+    "Model!K61",
+    "Model!H66",
+    "Model!F67",
+    "Model!E44",
+    "Model!K74",
+    "Model!K67",
+    "Model!N74",
+    "Model!J49",
+    "Model!K73",
+    "Model!I72",
+    "Model!M47",
+    "Model!E89",
+    "Model!N35"
+  ],
+  "mutations": [
+    {
+      "sheet": "Model",
+      "cell": "I45",
+      "operator": "sign_flip",
+      "reference": "=H45*(1+$C$8)",
+      "injected": "=-1*(H45*(1+$C$8))"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J47",
+      "operator": "offset",
+      "reference": "=J74",
+      "injected": "=1+(J74)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J63",
+      "operator": "reference_drift",
+      "reference": "=J60+J61+J62",
+      "injected": "=J61+J61+J62"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L63",
+      "operator": "sign_flip",
+      "reference": "=L60+L61+L62",
+      "injected": "=-1*(L60+L61+L62)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "I47",
+      "operator": "offset",
+      "reference": "=I74",
+      "injected": "=1+(I74)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N46",
+      "operator": "reference_drift",
+      "reference": "=SUM(N44:N45)",
+      "injected": "=SUM(N45:N45)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K47",
+      "operator": "sign_flip",
+      "reference": "=K74",
+      "injected": "=-1*(K74)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N57",
+      "operator": "offset",
+      "reference": "=N43",
+      "injected": "=1+(N43)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E83",
+      "operator": "reference_drift",
+      "reference": "=E82*-C16",
+      "injected": "=E83*-C16"
+    },
+    {
+      "sheet": "Model",
+      "cell": "L46",
+      "operator": "sign_flip",
+      "reference": "=SUM(L44:L45)",
+      "injected": "=-1*(SUM(L44:L45))"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M44",
+      "operator": "offset",
+      "reference": "=M42+M43",
+      "injected": "=1+(M42+M43)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K61",
+      "operator": "reference_drift",
+      "reference": "=J61",
+      "injected": "=J62"
+    },
+    {
+      "sheet": "Model",
+      "cell": "H66",
+      "operator": "sign_flip",
+      "reference": "=(1+$C$13)^H55",
+      "injected": "=-1*((1+$C$13)^H55)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "F67",
+      "operator": "offset",
+      "reference": "=F65/F66",
+      "injected": "=1+(F65/F66)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E44",
+      "operator": "reference_drift",
+      "reference": "=E42+E43",
+      "injected": "=E43+E43"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K74",
+      "operator": "sign_flip",
+      "reference": "=$C$10*-K72",
+      "injected": "=-1*($C$10*-K72)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K67",
+      "operator": "offset",
+      "reference": "=K65/K66",
+      "injected": "=1+(K65/K66)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N74",
+      "operator": "reference_drift",
+      "reference": "=$C$10*-N72",
+      "injected": "=$C$11*-N72"
+    },
+    {
+      "sheet": "Model",
+      "cell": "J49",
+      "operator": "sign_flip",
+      "reference": "=J46+J47+J48",
+      "injected": "=-1*(J46+J47+J48)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "K73",
+      "operator": "offset",
+      "reference": "=J73",
+      "injected": "=1+(J73)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "I72",
+      "operator": "reference_drift",
+      "reference": "=H76",
+      "injected": "=H77"
+    },
+    {
+      "sheet": "Model",
+      "cell": "M47",
+      "operator": "sign_flip",
+      "reference": "=M74",
+      "injected": "=-1*(M74)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "E89",
+      "operator": "offset",
+      "reference": "=E84-E87-E88",
+      "injected": "=1+(E84-E87-E88)"
+    },
+    {
+      "sheet": "Model",
+      "cell": "N35",
+      "operator": "reference_drift",
+      "reference": "=N34/((1+$C$14)^N33)",
+      "injected": "=N35/((1+$C$14)^N33)"
+    }
+  ]
+}

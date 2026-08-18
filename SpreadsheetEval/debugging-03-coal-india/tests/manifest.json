@@ -1,0 +1,224 @@
+{
+  "task_id": "debugging-03-coal-india",
+  "category": "debugging",
+  "source": {
+    "slug": "coal-india",
+    "filename": "Coal India Limited Financial Model & Valuation.xlsx",
+    "origin": "IanMadlenya/finance-excel",
+    "license": "Apache-2.0"
+  },
+  "source_original_cases": [
+    "03_01",
+    "03_03"
+  ],
+  "weaknesses": [
+    "incomplete-target-coverage",
+    "over-editing"
+  ],
+  "source_case_weaknesses": {
+    "03_01": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ],
+    "03_03": [
+      "incomplete-target-coverage",
+      "over-editing"
+    ]
+  },
+  "required_cells": [
+    "Valuation!S45",
+    "Valuation!M18",
+    "Valuation!I19",
+    "Valuation!N20",
+    "Valuation!T46",
+    "Valuation!I14",
+    "Valuation!U36",
+    "Valuation!W35",
+    "CF!N17",
+    "CF!K42",
+    "CF!I10",
+    "CF!H7",
+    "CF!K15",
+    "CF!L15",
+    "CF!M14",
+    "CF!L30",
+    "P&L!L60",
+    "P&L!I28",
+    "P&L!K60",
+    "P&L!N27",
+    "P&L!N15",
+    "P&L!F42",
+    "P&L!G22",
+    "P&L!K59"
+  ],
+  "mutations": [
+    {
+      "sheet": "Valuation",
+      "cell": "S45",
+      "operator": "sign_flip",
+      "reference": "=TABLE($L$34,$F$8,$L45,$F$5,S$34)",
+      "injected": "=-1*(TABLE($L$34,$F$8,$L45,$F$5,S$34))"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "M18",
+      "operator": "offset",
+      "reference": "=BS!M20-BS!L20",
+      "injected": "=1+(BS!M20-BS!L20)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "I19",
+      "operator": "reference_drift",
+      "reference": "=BS!I21-BS!H21",
+      "injected": "=BS!I22-BS!H21"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "N20",
+      "operator": "sign_flip",
+      "reference": "=BS!N23-BS!M23",
+      "injected": "=-1*(BS!N23-BS!M23)"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "T46",
+      "operator": "offset",
+      "reference": "=TABLE($L$34,$F$8,$L46,$F$5,T$34)",
+      "injected": "=1+(TABLE($L$34,$F$8,$L46,$F$5,T$34))"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "I14",
+      "operator": "reference_drift",
+      "reference": "='P&L'!I25",
+      "injected": "='P&L'!I26"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "U36",
+      "operator": "sign_flip",
+      "reference": "=TABLE($L$34,$F$8,$L36,$F$5,U$34)",
+      "injected": "=-1*(TABLE($L$34,$F$8,$L36,$F$5,U$34))"
+    },
+    {
+      "sheet": "Valuation",
+      "cell": "W35",
+      "operator": "offset",
+      "reference": "=TABLE($L$34,$F$8,$L35,$F$5,W$34)",
+      "injected": "=1+(TABLE($L$34,$F$8,$L35,$F$5,W$34))"
+    },
+    {
+      "sheet": "CF",
+      "cell": "N17",
+      "operator": "reference_drift",
+      "reference": "=BS!N34-BS!M34",
+      "injected": "=BS!N35-BS!M34"
+    },
+    {
+      "sheet": "CF",
+      "cell": "K42",
+      "operator": "sign_flip",
+      "reference": "=J44",
+      "injected": "=-1*(J44)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "I10",
+      "operator": "offset",
+      "reference": "=BS!I13-BS!H13",
+      "injected": "=1+(BS!I13-BS!H13)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "H7",
+      "operator": "reference_drift",
+      "reference": "='P&L'!H52",
+      "injected": "='P&L'!H53"
+    },
+    {
+      "sheet": "CF",
+      "cell": "K15",
+      "operator": "sign_flip",
+      "reference": "=BS!K31-BS!J31",
+      "injected": "=-1*(BS!K31-BS!J31)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "L15",
+      "operator": "offset",
+      "reference": "=BS!L31-BS!K31",
+      "injected": "=1+(BS!L31-BS!K31)"
+    },
+    {
+      "sheet": "CF",
+      "cell": "M14",
+      "operator": "reference_drift",
+      "reference": "=BS!M23-BS!L23",
+      "injected": "=BS!M24-BS!L23"
+    },
+    {
+      "sheet": "CF",
+      "cell": "L30",
+      "operator": "sign_flip",
+      "reference": "=Reserves!L13-Reserves!K13",
+      "injected": "=-1*(Reserves!L13-Reserves!K13)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "L60",
+      "operator": "offset",
+      "reference": "=K60/K56*L56",
+      "injected": "=1+(K60/K56*L56)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "I28",
+      "operator": "reference_drift",
+      "reference": "=SUM(I14:I27)",
+      "injected": "=SUM(I15:I27)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "K60",
+      "operator": "sign_flip",
+      "reference": "=J60/J56*K56",
+      "injected": "=-1*(J60/J56*K56)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "N27",
+      "operator": "offset",
+      "reference": "=Assumptions!N46*BS!N9",
+      "injected": "=1+(Assumptions!N46*BS!N9)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "N15",
+      "operator": "reference_drift",
+      "reference": "=Assumptions!N16*N7",
+      "injected": "=Assumptions!N17*N7"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "F42",
+      "operator": "sign_flip",
+      "reference": "=F40+F41",
+      "injected": "=-1*(F40+F41)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "G22",
+      "operator": "offset",
+      "reference": "='Debt Schedule'!G20",
+      "injected": "=1+('Debt Schedule'!G20)"
+    },
+    {
+      "sheet": "P&L",
+      "cell": "K59",
+      "operator": "reference_drift",
+      "reference": "=J59",
+      "injected": "=J60"
+    }
+  ]
+}

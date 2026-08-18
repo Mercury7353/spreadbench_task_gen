@@ -7,6 +7,7 @@ build/
 *.so
 .env
 *.env
+.venv*/
 keys.yaml
 keys*.cfg
 *.DS_Store
@@ -17,4 +18,7 @@ keys*.cfg
 data/
 results/
 trajectories/
+.tmp/
+.cache/
+jobs/
 output_excel/

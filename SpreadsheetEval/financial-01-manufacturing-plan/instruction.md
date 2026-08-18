@@ -1,0 +1,1 @@
+Complete every missing formula in the provided manufacturing-plan financial model. Preserve all existing values, formulas, formatting, sheet names, and workbook structure. Save the completed workbook as /workspace/output.xlsx.
